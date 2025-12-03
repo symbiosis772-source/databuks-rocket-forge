@@ -65,7 +65,7 @@ const HeroSection = () => {
           animationDelay: "0.2s"
         }}>
             DataBuks creates custom websites, software systems, automations, and MVPs 
-            with fast delivery timelines of 1–1.5 months — quality, speed, and affordability in one place.
+            with fast delivery timelines of 1–1.5 weeks — quality, speed, and affordability in one place.
           </p>
 
           {/* Highlights */}
