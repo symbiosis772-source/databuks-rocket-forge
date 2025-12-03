@@ -13,7 +13,6 @@ const HeroSection = () => {
   ];
 
   const stats = [
-    { value: "50+", label: "Projects Delivered" },
     { value: "1-1.5", label: "Weeks Avg. Delivery" },
     { value: "100%", label: "Custom Solutions" },
     { value: "24/7", label: "Support Available" },
