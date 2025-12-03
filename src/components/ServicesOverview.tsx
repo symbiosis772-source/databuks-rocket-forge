@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Globe, Smartphone, Workflow, Plug, Bot, ArrowRight } from "lucide-react";
+import { Globe, Smartphone, Workflow, Bot, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const ServicesOverview = () => {
@@ -7,27 +7,26 @@ const ServicesOverview = () => {
     {
       icon: Globe,
       title: "Website Development",
-      description: "Business sites, portfolios, landing pages — SEO-ready and mobile-first.",
+      description: "Modern, fast, mobile-first websites tailored to your brand.",
+      link: "/services",
     },
     {
       icon: Smartphone,
       title: "App & Software Development",
-      description: "Web apps, admin panels, CRM systems, and custom dashboards.",
+      description: "Custom dashboards, tools, web apps, business management systems.",
+      link: "/services",
     },
     {
       icon: Workflow,
-      title: "Automation Solutions",
-      description: "WhatsApp workflows, CRM automation, email sequences, and more.",
-    },
-    {
-      icon: Plug,
-      title: "API Integrations",
-      description: "Payment gateways, WhatsApp APIs, CRM tools, and third-party services.",
+      title: "Automations & Integrations",
+      description: "Lead automation, workflow automation, WhatsApp & payment integrations.",
+      link: "/services",
     },
     {
       icon: Bot,
-      title: "AI Solutions",
-      description: "Custom chatbots, AI workflows, NLP systems, and intelligent automation.",
+      title: "AI Tools & Workflows",
+      description: "Custom AI chatbots, agents, RAG workflows, business AI tools.",
+      link: "/services",
     },
   ];
 
@@ -47,21 +46,27 @@ const ServicesOverview = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-4 max-w-6xl mx-auto mb-10">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mb-10">
           {services.map((service) => (
             <div
               key={service.title}
-              className="p-6 rounded-2xl bg-card border border-border hover:border-primary/30 hover:shadow-md transition-all duration-300 group text-center"
+              className="group p-6 rounded-2xl bg-card border border-border hover:border-primary/30 hover:shadow-lg transition-all duration-300"
             >
-              <div className="w-12 h-12 mx-auto rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                <service.icon className="w-6 h-6 text-primary" />
+              <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/20 transition-colors">
+                <service.icon className="w-7 h-7 text-primary" />
               </div>
-              <h3 className="font-heading font-semibold text-foreground mb-2">
+              <h3 className="font-heading text-lg font-semibold text-foreground mb-3">
                 {service.title}
               </h3>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
                 {service.description}
               </p>
+              <Button variant="ghost" size="sm" asChild className="p-0 h-auto text-primary hover:text-primary/80">
+                <Link to={service.link}>
+                  View More
+                  <ArrowRight className="w-4 h-4 ml-1" />
+                </Link>
+              </Button>
             </div>
           ))}
         </div>

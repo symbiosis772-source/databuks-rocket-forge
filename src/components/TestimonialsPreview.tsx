@@ -3,15 +3,11 @@ import { Star, Quote } from "lucide-react";
 const TestimonialsPreview = () => {
   const testimonials = [
     {
-      name: "Rahul Sharma",
-      role: "Founder, Foster Digital",
-      content: "DataBuks delivered our website in just 5 days. The design was exactly what we wanted, and communication was crystal clear throughout. Highly recommended!",
+      content: "Clean work, fast delivery, and great communication. Highly recommended.",
       rating: 5,
     },
     {
-      name: "Priya Deshmukh",
-      role: "CEO, Arinal Software",
-      content: "We needed a custom CRM dashboard urgently. DataBuks understood our requirements perfectly and delivered a clean, functional system on time. Great work!",
+      content: "Our website + automation workflow was delivered smoothly. Amazing experience.",
       rating: 5,
     },
   ];
@@ -35,7 +31,7 @@ const TestimonialsPreview = () => {
         <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
           {testimonials.map((testimonial, index) => (
             <div
-              key={testimonial.name}
+              key={index}
               className="relative p-8 rounded-2xl bg-card border border-border hover:border-primary/30 hover:shadow-lg transition-all duration-300"
             >
               <Quote className="absolute top-6 right-6 w-10 h-10 text-primary/10" />
@@ -46,25 +42,13 @@ const TestimonialsPreview = () => {
                 ))}
               </div>
               
-              <p className="text-foreground leading-relaxed mb-6">
+              <p className="text-foreground leading-relaxed mb-6 text-lg">
                 "{testimonial.content}"
               </p>
               
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                  <span className="font-heading font-bold text-primary">
-                    {testimonial.name.charAt(0)}
-                  </span>
-                </div>
-                <div>
-                  <h4 className="font-heading font-semibold text-foreground">
-                    {testimonial.name}
-                  </h4>
-                  <p className="text-sm text-muted-foreground">
-                    {testimonial.role}
-                  </p>
-                </div>
-              </div>
+              <p className="text-sm text-muted-foreground font-medium">
+                — Client Review
+              </p>
             </div>
           ))}
         </div>
