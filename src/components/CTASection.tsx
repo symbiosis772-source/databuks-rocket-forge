@@ -17,18 +17,17 @@ const CTASection = () => {
             Get Started
           </span>
           <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            Let's Build{" "}
-            <span className="gradient-text">Something Great</span>{" "}
-            Together
+            Ready to Build Your Website, App, Software, or{" "}
+            <span className="gradient-text">MVP?</span>
           </h2>
           <p className="text-lg text-muted-foreground mb-10 max-w-2xl mx-auto">
-            Ready to start your project? Get in touch with us today. We'll discuss your requirements and deliver exactly what you need — fast and affordable.
+            Let's create something powerful and fast.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button variant="hero" size="xl" asChild>
               <Link to="/contact">
-                Start Your Project
+                Contact Us
                 <ArrowRight className="w-5 h-5" />
               </Link>
             </Button>
