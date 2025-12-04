@@ -5,7 +5,6 @@ import ServicesOverview from "@/components/ServicesOverview";
 import MVPSection from "@/components/MVPSection";
 import FastDeliverySection from "@/components/FastDeliverySection";
 import WhyChooseSection from "@/components/WhyChooseSection";
-import PortfolioPreview from "@/components/PortfolioPreview";
 import TestimonialsPreview from "@/components/TestimonialsPreview";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
@@ -22,7 +21,6 @@ const Home = () => {
         <MVPSection />
         <FastDeliverySection />
         <WhyChooseSection />
-        <PortfolioPreview />
         <TestimonialsPreview />
         <CTASection />
       </main>
