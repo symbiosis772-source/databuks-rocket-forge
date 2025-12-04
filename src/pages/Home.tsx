@@ -1,6 +1,5 @@
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
-import HeroScrollShowcase from "@/components/HeroScrollShowcase";
 import CompanyOverview from "@/components/CompanyOverview";
 import ServicesOverview from "@/components/ServicesOverview";
 import MVPSection from "@/components/MVPSection";
@@ -17,7 +16,6 @@ const Home = () => {
       <Header />
       <main>
         <HeroSection />
-        <HeroScrollShowcase />
         <CompanyOverview />
         <ServicesOverview />
         <MVPSection />
