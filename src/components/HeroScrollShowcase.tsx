@@ -1,4 +1,5 @@
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
+import dashboardMockup from "@/assets/dashboard-mockup.png";
 
 const HeroScrollShowcase = () => {
   return (
@@ -16,8 +17,8 @@ const HeroScrollShowcase = () => {
         }
       >
         <img
-          src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1400&q=80"
-          alt="Modern dashboard interface"
+          src={dashboardMockup}
+          alt="Modern dashboard interface built by DataBuks"
           className="mx-auto rounded-2xl object-cover h-full w-full object-center"
           draggable={false}
         />
