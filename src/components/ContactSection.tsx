@@ -57,7 +57,7 @@ const ContactSection = () => {
 
               <div className="space-y-4 mb-8">
                 <a
-                  href="https://wa.me/919999999999"
+                  href="https://wa.me/918788606608"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 p-4 rounded-xl bg-card border border-border hover:border-primary/30 transition-colors group"
@@ -67,7 +67,7 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <p className="font-medium text-foreground">WhatsApp</p>
-                    <p className="text-sm text-muted-foreground">Chat with us instantly</p>
+                    <p className="text-sm text-muted-foreground">+91 87886 06608</p>
                   </div>
                 </a>
 
@@ -87,7 +87,7 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <p className="font-medium text-foreground">Location</p>
-                    <p className="text-sm text-muted-foreground">Remote - Serving clients worldwide</p>
+                    <p className="text-sm text-muted-foreground">India - Serving clients across India & worldwide</p>
                   </div>
                 </div>
               </div>
@@ -104,7 +104,7 @@ const ContactSection = () => {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    placeholder="John Doe"
+                    placeholder="Rahul Sharma"
                     required
                     className="h-12"
                   />
@@ -120,7 +120,7 @@ const ContactSection = () => {
                     type="email"
                     value={formData.email}
                     onChange={handleChange}
-                    placeholder="john@example.com"
+                    placeholder="rahul@example.com"
                     required
                     className="h-12"
                   />
