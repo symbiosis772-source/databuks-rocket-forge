@@ -2,28 +2,7 @@ import { ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const ProjectsSection = () => {
-  const projects = [
-    {
-      name: "Foster Digital Marketing",
-      category: "Website Development",
-      description: "Complete digital marketing agency website with modern design",
-    },
-    {
-      name: "RGVP Software Services",
-      category: "Software Development",
-      description: "Professional software services company website",
-    },
-    {
-      name: "Arinal Software Tech",
-      category: "Web Application",
-      description: "Tech company website with service showcase",
-    },
-    {
-      name: "Website Design Services",
-      category: "Portfolio Site",
-      description: "Web design agency portfolio and services site",
-    },
-  ];
+  const projects: { name: string; category: string; description: string }[] = [];
 
   return (
     <section id="projects" className="py-20 bg-background">
