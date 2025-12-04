@@ -19,7 +19,7 @@ const Footer = () => {
   ];
 
   const socials = [
-    { label: "WhatsApp", href: "https://wa.me/919999999999" },
+    { label: "WhatsApp", href: "https://wa.me/918788606608" },
     { label: "LinkedIn", href: "#" },
     { label: "Twitter", href: "#" },
     { label: "Instagram", href: "#" },

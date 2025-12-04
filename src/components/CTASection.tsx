@@ -42,7 +42,7 @@ const CTASection = () => {
           <p className="mt-8 text-sm text-muted-foreground">
             Or chat directly on{" "}
             <a
-              href="https://wa.me/919999999999"
+              href="https://wa.me/918788606608"
               target="_blank"
               rel="noopener noreferrer"
               className="text-primary hover:underline font-medium"
