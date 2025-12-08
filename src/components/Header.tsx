@@ -27,9 +27,6 @@ const Header = () => {
     label: "Technologies",
     href: "/technologies"
   }, {
-    label: "Projects",
-    href: "/projects"
-  }, {
     label: "Pricing",
     href: "/pricing"
   }, {
