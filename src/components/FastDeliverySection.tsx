@@ -32,7 +32,7 @@ const FastDeliverySection = () => {
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               We deliver complete software, web apps, websites, workflows, and MVPs 
-              in 1–1.5 months, thanks to:
+              in 1–1.5 weeks, thanks to:
             </p>
           </div>
 
