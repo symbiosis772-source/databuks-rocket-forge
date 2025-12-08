@@ -4,47 +4,65 @@ import {
   Workflow, 
   Plug, 
   Bot, 
-  MessageSquare,
-  ChevronRight 
+  MessageSquare
 } from "lucide-react";
+import { BentoCard, BentoGrid } from "@/components/ui/bento-grid";
 
 const ServicesSection = () => {
   const services = [
     {
-      icon: Globe,
-      title: "Website Development",
-      description: "Business websites, shop/brand sites, company profiles, portfolio sites, landing pages",
-      features: ["SEO-ready builds", "High-speed, mobile-first", "Custom designs"],
+      Icon: Globe,
+      name: "Website Development",
+      description: "Business websites, shop/brand sites, company profiles, portfolio sites, landing pages. SEO-ready, high-speed, mobile-first builds.",
+      href: "/services",
+      cta: "Learn more",
+      background: <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent" />,
+      className: "lg:col-start-1 lg:col-end-2 lg:row-start-1 lg:row-end-3",
     },
     {
-      icon: Smartphone,
-      title: "App & Software Development",
-      description: "Web applications, admin panels, CRM systems, billing/management systems",
-      features: ["Dashboard systems", "Internal tools", "Custom solutions"],
+      Icon: Smartphone,
+      name: "App & Software Development",
+      description: "Web applications, admin panels, CRM systems, billing/management systems with custom dashboard solutions.",
+      href: "/services",
+      cta: "Learn more",
+      background: <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent" />,
+      className: "lg:col-start-2 lg:col-end-3 lg:row-start-1 lg:row-end-2",
     },
     {
-      icon: Workflow,
-      title: "Automation Solutions",
-      description: "WhatsApp workflows, CRM automation, lead automation, email workflows",
-      features: ["Payment workflows", "Data processing", "N8N/Make/Custom"],
+      Icon: Workflow,
+      name: "Automation Solutions",
+      description: "WhatsApp workflows, CRM automation, lead automation, email workflows, payment workflows using N8N/Make/Custom.",
+      href: "/services",
+      cta: "Learn more",
+      background: <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent" />,
+      className: "lg:col-start-3 lg:col-end-4 lg:row-start-1 lg:row-end-2",
     },
     {
-      icon: Plug,
-      title: "API Integrations",
-      description: "Payment gateways, WhatsApp APIs, CRM integrations, AI APIs",
-      features: ["Third-party tools", "Custom APIs", "Seamless connections"],
+      Icon: Plug,
+      name: "API Integrations",
+      description: "Payment gateways, WhatsApp APIs, CRM integrations, AI APIs with seamless third-party connections.",
+      href: "/services",
+      cta: "Learn more",
+      background: <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent" />,
+      className: "lg:col-start-2 lg:col-end-3 lg:row-start-2 lg:row-end-3",
     },
     {
-      icon: Bot,
-      title: "AI Agents & Chatbot Development",
-      description: "DataBuks builds custom AI agents, chatbots, conversational systems, and automated support tools designed to improve customer engagement and streamline business workflows.",
-      features: ["Website & App integration", "WhatsApp & CRM bots", "Automated support tools"],
+      Icon: Bot,
+      name: "AI Agents & Chatbot Development",
+      description: "Custom AI agents, chatbots, conversational systems, and automated support tools for customer engagement.",
+      href: "/services",
+      cta: "Learn more",
+      background: <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent" />,
+      className: "lg:col-start-3 lg:col-end-4 lg:row-start-2 lg:row-end-4",
     },
     {
-      icon: MessageSquare,
-      title: "Consultation",
-      description: "Tech planning, workflow strategy, software consultation",
-      features: ["Expert guidance", "Best practices", "Growth planning"],
+      Icon: MessageSquare,
+      name: "Consultation",
+      description: "Tech planning, workflow strategy, software consultation with expert guidance and best practices.",
+      href: "/services",
+      cta: "Learn more",
+      background: <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent" />,
+      className: "lg:col-start-1 lg:col-end-3 lg:row-start-3 lg:row-end-4",
     },
   ];
 
@@ -64,36 +82,11 @@ const ServicesSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {services.map((service, index) => (
-            <div
-              key={service.title}
-              className="group bg-card rounded-2xl p-6 shadow-sm border border-border hover:shadow-lg hover:border-primary/20 transition-all duration-300"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <div className="w-14 h-14 rounded-xl gradient-primary flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
-                <service.icon className="w-7 h-7 text-primary-foreground" />
-              </div>
-              
-              <h3 className="font-heading text-xl font-bold text-foreground mb-3">
-                {service.title}
-              </h3>
-              
-              <p className="text-muted-foreground text-sm mb-4">
-                {service.description}
-              </p>
-
-              <ul className="space-y-2">
-                {service.features.map((feature) => (
-                  <li key={feature} className="flex items-center gap-2 text-sm">
-                    <ChevronRight className="w-4 h-4 text-primary" />
-                    <span className="text-foreground">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+        <BentoGrid className="lg:grid-rows-3 max-w-6xl mx-auto">
+          {services.map((service) => (
+            <BentoCard key={service.name} {...service} />
           ))}
-        </div>
+        </BentoGrid>
       </div>
     </section>
   );
