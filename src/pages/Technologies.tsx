@@ -3,7 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { Button } from "@/components/ui/button";
-import { BentoCard, BentoGrid } from "@/components/ui/bento-grid";
+import { CategoryList, Category } from "@/components/ui/category-list";
 import { 
   Code2, 
   Server, 
@@ -14,73 +14,128 @@ import {
   Brain, 
   Palette,
   ArrowRight,
-  MessageCircle
+  MessageCircle,
+  Layers
 } from "lucide-react";
 
 const Technologies = () => {
-  const techCategories = [
+  const techCategories: Category[] = [
     {
-      Icon: Code2,
-      name: "Frontend Technologies",
-      description: "React.js, Next.js, Tailwind CSS, HTML/CSS/JavaScript - Building fast, responsive user interfaces with component-based architecture.",
-      href: "/contact",
-      cta: "Start a project",
-      background: <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent" />,
-      className: "lg:col-start-1 lg:col-end-2 lg:row-start-1 lg:row-end-3",
+      id: "frontend",
+      title: "Frontend Technologies",
+      subtitle: "Building fast, responsive user interfaces",
+      icon: <Code2 className="w-6 h-6" />,
+      featured: true,
+      technologies: [
+        { name: "React.js", description: "Component-based UI library" },
+        { name: "Next.js", description: "React framework with SSR" },
+        { name: "Tailwind CSS", description: "Utility-first CSS" },
+        { name: "TypeScript", description: "Type-safe JavaScript" },
+        { name: "HTML5/CSS3", description: "Modern web standards" },
+        { name: "JavaScript ES6+", description: "Modern JS features" },
+        { name: "Framer Motion", description: "Animation library" },
+        { name: "Shadcn/UI", description: "Component library" },
+      ],
     },
     {
-      Icon: Server,
-      name: "Backend Technologies",
-      description: "Node.js, Express.js, Python, PHP - Scalable and secure server-side solutions for modern applications.",
-      href: "/contact",
-      cta: "Learn more",
-      background: <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent" />,
-      className: "lg:col-start-2 lg:col-end-3 lg:row-start-1 lg:row-end-2",
+      id: "backend",
+      title: "Backend Technologies",
+      subtitle: "Scalable server-side solutions",
+      icon: <Server className="w-6 h-6" />,
+      technologies: [
+        { name: "Node.js", description: "JavaScript runtime" },
+        { name: "Express.js", description: "Web framework" },
+        { name: "Python", description: "Versatile language" },
+        { name: "PHP", description: "Server scripting" },
+        { name: "REST APIs", description: "API architecture" },
+        { name: "GraphQL", description: "Query language" },
+      ],
     },
     {
-      Icon: Database,
-      name: "Databases",
-      description: "PostgreSQL, MongoDB, Firebase, Supabase - Reliable data storage with real-time sync capabilities.",
-      href: "/contact",
-      cta: "Learn more",
-      background: <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent" />,
-      className: "lg:col-start-3 lg:col-end-4 lg:row-start-1 lg:row-end-2",
+      id: "databases",
+      title: "Databases",
+      subtitle: "Reliable data storage solutions",
+      icon: <Database className="w-6 h-6" />,
+      technologies: [
+        { name: "PostgreSQL", description: "Relational database" },
+        { name: "MongoDB", description: "NoSQL database" },
+        { name: "Firebase", description: "Google's BaaS" },
+        { name: "Supabase", description: "Open source Firebase" },
+        { name: "MySQL", description: "Popular RDBMS" },
+        { name: "Redis", description: "In-memory cache" },
+      ],
     },
     {
-      Icon: Workflow,
-      name: "Automation Tools",
-      description: "N8N, Make.com, Custom Scripts, Webhook Integrations - Streamline your business workflows.",
-      href: "/contact",
-      cta: "Learn more",
-      background: <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent" />,
-      className: "lg:col-start-2 lg:col-end-3 lg:row-start-2 lg:row-end-3",
+      id: "automation",
+      title: "Automation Tools",
+      subtitle: "Streamline your business workflows",
+      icon: <Workflow className="w-6 h-6" />,
+      technologies: [
+        { name: "N8N", description: "Workflow automation" },
+        { name: "Make.com", description: "Integration platform" },
+        { name: "Zapier", description: "App connections" },
+        { name: "Custom Scripts", description: "Tailored solutions" },
+        { name: "Webhooks", description: "Event-driven automation" },
+        { name: "Cron Jobs", description: "Scheduled tasks" },
+      ],
     },
     {
-      Icon: Plug,
-      name: "API Integrations",
-      description: "Payment gateways, WhatsApp Cloud API, CRM integrations, AI APIs - Connect with popular services.",
-      href: "/contact",
-      cta: "Learn more",
-      background: <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent" />,
-      className: "lg:col-start-1 lg:col-end-2 lg:row-start-3 lg:row-end-4",
+      id: "integrations",
+      title: "API Integrations",
+      subtitle: "Connect with popular services",
+      icon: <Plug className="w-6 h-6" />,
+      technologies: [
+        { name: "Stripe", description: "Payment processing" },
+        { name: "Razorpay", description: "India payments" },
+        { name: "WhatsApp Cloud API", description: "Messaging" },
+        { name: "Twilio", description: "Communication APIs" },
+        { name: "SendGrid", description: "Email service" },
+        { name: "OpenAI API", description: "AI integration" },
+      ],
     },
     {
-      Icon: Cloud,
-      name: "DevOps & Hosting",
-      description: "Vercel, Netlify, Cloudflare, GitHub, Docker - Fast, secure, and reliable deployment solutions.",
-      href: "/contact",
-      cta: "Learn more",
-      background: <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent" />,
-      className: "lg:col-start-2 lg:col-end-3 lg:row-start-3 lg:row-end-4",
+      id: "devops",
+      title: "DevOps & Hosting",
+      subtitle: "Fast and reliable deployment",
+      icon: <Cloud className="w-6 h-6" />,
+      technologies: [
+        { name: "Vercel", description: "Frontend hosting" },
+        { name: "Netlify", description: "JAMstack hosting" },
+        { name: "Cloudflare", description: "CDN & security" },
+        { name: "AWS", description: "Cloud services" },
+        { name: "Docker", description: "Containerization" },
+        { name: "GitHub Actions", description: "CI/CD pipelines" },
+      ],
     },
     {
-      Icon: Brain,
-      name: "AI & Machine Learning",
-      description: "GPT Models, Vector Databases, NLP Pipelines, RAG Systems, Custom AI Agents - Intelligent solutions.",
-      href: "/contact",
-      cta: "Start AI project",
-      background: <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent" />,
-      className: "lg:col-start-3 lg:col-end-4 lg:row-start-2 lg:row-end-4",
+      id: "ai",
+      title: "AI & Machine Learning",
+      subtitle: "Intelligent solutions for your business",
+      icon: <Brain className="w-6 h-6" />,
+      featured: true,
+      technologies: [
+        { name: "GPT Models", description: "Language AI" },
+        { name: "Claude AI", description: "Anthropic's AI" },
+        { name: "Vector Databases", description: "Embeddings storage" },
+        { name: "LangChain", description: "LLM framework" },
+        { name: "RAG Systems", description: "Retrieval-augmented" },
+        { name: "Custom AI Agents", description: "Automated workflows" },
+        { name: "NLP Pipelines", description: "Text processing" },
+        { name: "Computer Vision", description: "Image analysis" },
+      ],
+    },
+    {
+      id: "design",
+      title: "Design Tools",
+      subtitle: "Creating beautiful user experiences",
+      icon: <Palette className="w-6 h-6" />,
+      technologies: [
+        { name: "Figma", description: "UI/UX design" },
+        { name: "Canva", description: "Graphics & social" },
+        { name: "Adobe Illustrator", description: "Vector graphics" },
+        { name: "Adobe Photoshop", description: "Image editing" },
+        { name: "Framer", description: "Interactive prototypes" },
+      ],
     },
   ];
 
@@ -106,41 +161,13 @@ const Technologies = () => {
       <main className="py-16">
         <div className="container mx-auto px-4 space-y-20">
           
-          {/* Bento Grid */}
-          <section>
-            <BentoGrid className="lg:grid-rows-3 max-w-6xl mx-auto">
-              {techCategories.map((category) => (
-                <BentoCard key={category.name} {...category} />
-              ))}
-            </BentoGrid>
-          </section>
-
-          {/* Design Tools Section */}
-          <section className="max-w-6xl mx-auto">
-            <div className="flex items-center gap-4 mb-8">
-              <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center">
-                <Palette className="w-7 h-7 text-primary" />
-              </div>
-              <div>
-                <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground">Design Tools</h2>
-                <p className="text-muted-foreground mt-1">Creating beautiful user experiences</p>
-              </div>
-            </div>
-            <div className="grid sm:grid-cols-3 gap-4">
-              <div className="bg-card border border-border rounded-xl p-5 hover:border-primary/30 hover:shadow-lg transition-all duration-300 group">
-                <h4 className="font-heading font-semibold text-foreground group-hover:text-primary transition-colors">Figma</h4>
-                <p className="text-sm text-muted-foreground mt-1">UI/UX design and prototyping</p>
-              </div>
-              <div className="bg-card border border-border rounded-xl p-5 hover:border-primary/30 hover:shadow-lg transition-all duration-300 group">
-                <h4 className="font-heading font-semibold text-foreground group-hover:text-primary transition-colors">Canva</h4>
-                <p className="text-sm text-muted-foreground mt-1">Simple graphics and social media assets</p>
-              </div>
-              <div className="bg-card border border-border rounded-xl p-5 hover:border-primary/30 hover:shadow-lg transition-all duration-300 group">
-                <h4 className="font-heading font-semibold text-foreground group-hover:text-primary transition-colors">Illustrator</h4>
-                <p className="text-sm text-muted-foreground mt-1">Custom branding and logo assets</p>
-              </div>
-            </div>
-          </section>
+          {/* Category List with Expandable Tech Stacks */}
+          <CategoryList
+            title="Explore Our Tech Stack"
+            subtitle="Click on any category to see the technologies we use"
+            categories={techCategories}
+            headerIcon={<Layers className="w-8 h-8" />}
+          />
 
           {/* CTA Section */}
           <section className="py-16">
