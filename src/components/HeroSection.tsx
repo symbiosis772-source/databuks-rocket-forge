@@ -57,8 +57,8 @@ const HeroSection = () => {
           <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 animate-fade-up" style={{
           animationDelay: "0.1s"
         }}>
-            Build Websites, Apps, Software & MVPs —{" "}
-            <span className="gradient-text">l</span>
+            Where ideas become products and products become{" "}
+            <span className="gradient-text">impact.</span>
           </h1>
 
           
