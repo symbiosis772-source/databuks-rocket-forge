@@ -1,5 +1,5 @@
-import { ArrowRight, Zap } from "lucide-react";
-import { StarButton } from "@/components/ui/star-button";
+import { Zap } from "lucide-react";
+import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
@@ -126,13 +126,10 @@ const HeroSection = () => {
             className="flex items-center justify-center"
           >
             <Link to="/contact">
-              <StarButton
-                lightColor="#3B82F6"
-                className="px-8 py-6 text-lg font-semibold"
-              >
-                Start Your Project
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </StarButton>
+              <InteractiveHoverButton
+                text="Start Your Project"
+                className="w-auto px-8 py-4 text-lg"
+              />
             </Link>
           </motion.div>
         </div>
