@@ -56,9 +56,7 @@ const Header = () => {
             <Link to="/contact">Get Quote</Link>
           </Button>
           <Button variant="whatsapp" size="sm" asChild>
-            <a href="https://wa.me/919999999999" target="_blank" rel="noopener noreferrer">
-              WhatsApp
-            </a>
+            
           </Button>
         </div>
 
