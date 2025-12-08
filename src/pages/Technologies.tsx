@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { Button } from "@/components/ui/button";
+import { BentoCard, BentoGrid } from "@/components/ui/bento-grid";
 import { 
   Code2, 
   Server, 
@@ -16,26 +17,73 @@ import {
   MessageCircle
 } from "lucide-react";
 
-const TechCard = ({ name, description }: { name: string; description: string }) => (
-  <div className="bg-card border border-border rounded-xl p-5 hover:border-primary/30 hover:shadow-lg transition-all duration-300 group">
-    <h4 className="font-heading font-semibold text-foreground group-hover:text-primary transition-colors">{name}</h4>
-    <p className="text-sm text-muted-foreground mt-1">{description}</p>
-  </div>
-);
-
-const SectionTitle = ({ icon: Icon, title, subtitle }: { icon: any; title: string; subtitle?: string }) => (
-  <div className="flex items-center gap-4 mb-8">
-    <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center">
-      <Icon className="w-7 h-7 text-primary" />
-    </div>
-    <div>
-      <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground">{title}</h2>
-      {subtitle && <p className="text-muted-foreground mt-1">{subtitle}</p>}
-    </div>
-  </div>
-);
-
 const Technologies = () => {
+  const techCategories = [
+    {
+      Icon: Code2,
+      name: "Frontend Technologies",
+      description: "React.js, Next.js, Tailwind CSS, HTML/CSS/JavaScript - Building fast, responsive user interfaces with component-based architecture.",
+      href: "/contact",
+      cta: "Start a project",
+      background: <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent" />,
+      className: "lg:col-start-1 lg:col-end-2 lg:row-start-1 lg:row-end-3",
+    },
+    {
+      Icon: Server,
+      name: "Backend Technologies",
+      description: "Node.js, Express.js, Python, PHP - Scalable and secure server-side solutions for modern applications.",
+      href: "/contact",
+      cta: "Learn more",
+      background: <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent" />,
+      className: "lg:col-start-2 lg:col-end-3 lg:row-start-1 lg:row-end-2",
+    },
+    {
+      Icon: Database,
+      name: "Databases",
+      description: "PostgreSQL, MongoDB, Firebase, Supabase - Reliable data storage with real-time sync capabilities.",
+      href: "/contact",
+      cta: "Learn more",
+      background: <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent" />,
+      className: "lg:col-start-3 lg:col-end-4 lg:row-start-1 lg:row-end-2",
+    },
+    {
+      Icon: Workflow,
+      name: "Automation Tools",
+      description: "N8N, Make.com, Custom Scripts, Webhook Integrations - Streamline your business workflows.",
+      href: "/contact",
+      cta: "Learn more",
+      background: <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent" />,
+      className: "lg:col-start-2 lg:col-end-3 lg:row-start-2 lg:row-end-3",
+    },
+    {
+      Icon: Plug,
+      name: "API Integrations",
+      description: "Payment gateways, WhatsApp Cloud API, CRM integrations, AI APIs - Connect with popular services.",
+      href: "/contact",
+      cta: "Learn more",
+      background: <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent" />,
+      className: "lg:col-start-1 lg:col-end-2 lg:row-start-3 lg:row-end-4",
+    },
+    {
+      Icon: Cloud,
+      name: "DevOps & Hosting",
+      description: "Vercel, Netlify, Cloudflare, GitHub, Docker - Fast, secure, and reliable deployment solutions.",
+      href: "/contact",
+      cta: "Learn more",
+      background: <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent" />,
+      className: "lg:col-start-2 lg:col-end-3 lg:row-start-3 lg:row-end-4",
+    },
+    {
+      Icon: Brain,
+      name: "AI & Machine Learning",
+      description: "GPT Models, Vector Databases, NLP Pipelines, RAG Systems, Custom AI Agents - Intelligent solutions.",
+      href: "/contact",
+      cta: "Start AI project",
+      background: <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent" />,
+      className: "lg:col-start-3 lg:col-end-4 lg:row-start-2 lg:row-end-4",
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -58,101 +106,39 @@ const Technologies = () => {
       <main className="py-16">
         <div className="container mx-auto px-4 space-y-20">
           
-          {/* Frontend Technologies */}
+          {/* Bento Grid */}
           <section>
-            <SectionTitle icon={Code2} title="Frontend Technologies" subtitle="Building fast, responsive user interfaces" />
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              <TechCard name="React.js" description="Fast, responsive UI with component-based architecture" />
-              <TechCard name="Next.js" description="High-performance modern websites with SEO optimization" />
-              <TechCard name="Tailwind CSS" description="Clean and elegant interfaces with utility-first CSS" />
-              <TechCard name="HTML / CSS / JavaScript" description="Strong foundation for web performance" />
-            </div>
+            <BentoGrid className="lg:grid-rows-3 max-w-6xl mx-auto">
+              {techCategories.map((category) => (
+                <BentoCard key={category.name} {...category} />
+              ))}
+            </BentoGrid>
           </section>
 
-          {/* Backend Technologies */}
-          <section>
-            <SectionTitle icon={Server} title="Backend Technologies" subtitle="Scalable and secure server-side solutions" />
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              <TechCard name="Node.js" description="Scalable backend environment for modern apps" />
-              <TechCard name="Express.js" description="Clean and fast API development framework" />
-              <TechCard name="Python" description="AI workflows, automation logic, and data processing" />
-              <TechCard name="PHP" description="For specific client requirements and legacy systems" />
-            </div>
-          </section>
-
-          {/* Databases */}
-          <section>
-            <SectionTitle icon={Database} title="Databases" subtitle="Reliable data storage solutions" />
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              <TechCard name="PostgreSQL" description="Reliable relational database for structured data" />
-              <TechCard name="MongoDB" description="Flexible and scalable NoSQL database" />
-              <TechCard name="Firebase" description="Real-time apps with instant data sync" />
-              <TechCard name="Supabase" description="Modern backend features with PostgreSQL power" />
-            </div>
-          </section>
-
-          {/* Automation Tools */}
-          <section>
-            <SectionTitle icon={Workflow} title="Automation Tools" subtitle="Streamline your business workflows" />
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              <TechCard name="N8N" description="Visual workflow automation for complex processes" />
-              <TechCard name="Make.com" description="API linking and business automation made easy" />
-              <TechCard name="Custom Scripts" description="Tailor-made automation workflows for unique needs" />
-              <TechCard name="Webhook Integrations" description="Real-time event triggers and notifications" />
-            </div>
-          </section>
-
-          {/* API Integrations */}
-          <section>
-            <SectionTitle icon={Plug} title="API Integrations" subtitle="Connect with popular services and platforms" />
-            <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-              <TechCard name="Payment Gateways" description="Razorpay, Cashfree, Paytm integration" />
-              <TechCard name="WhatsApp Cloud API" description="Business messaging and notifications" />
-              <TechCard name="CRM Integrations" description="Connect with popular CRM platforms" />
-              <TechCard name="Email Services" description="Transactional and marketing emails" />
-              <TechCard name="Messaging Workflows" description="WhatsApp + SMS automation" />
-              <TechCard name="AI APIs" description="GPT, Claude, and other AI services" />
-              <TechCard name="Third-party Tools" description="Business software integrations" />
-              <TechCard name="Custom APIs" description="Build and connect custom endpoints" />
-            </div>
-          </section>
-
-          {/* DevOps & Hosting */}
-          <section>
-            <SectionTitle icon={Cloud} title="DevOps & Hosting" subtitle="Fast, secure, and reliable deployment" />
-            <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
-              <TechCard name="Vercel" description="Modern and blazing-fast hosting" />
-              <TechCard name="Netlify" description="Lightweight and reliable deployment" />
-              <TechCard name="Cloudflare" description="Speed optimization + security" />
-              <TechCard name="GitHub" description="Version control and collaboration" />
-              <TechCard name="Docker" description="App packaging when needed" />
-            </div>
-          </section>
-
-          {/* AI & Machine Learning */}
-          <section>
-            <SectionTitle icon={Brain} title="AI & Machine Learning Stack" subtitle="Intelligent solutions for modern businesses" />
-            <div className="bg-card border border-border rounded-2xl p-6 md:p-8">
-              <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4 mb-6">
-                <TechCard name="GPT Models" description="Advanced language AI capabilities" />
-                <TechCard name="Vector Databases" description="Pinecone & local vector DBs" />
-                <TechCard name="NLP Pipelines" description="Natural language processing" />
-                <TechCard name="RAG Systems" description="Retrieval-augmented generation" />
-                <TechCard name="Custom AI Agents" description="Task-specific AI solutions" />
+          {/* Design Tools Section */}
+          <section className="max-w-6xl mx-auto">
+            <div className="flex items-center gap-4 mb-8">
+              <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center">
+                <Palette className="w-7 h-7 text-primary" />
               </div>
-              <p className="text-muted-foreground text-center italic">
-                "We build AI-powered tools using modern NLP pipelines, vector search, workflow automation, and custom agent logic."
-              </p>
+              <div>
+                <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground">Design Tools</h2>
+                <p className="text-muted-foreground mt-1">Creating beautiful user experiences</p>
+              </div>
             </div>
-          </section>
-
-          {/* Design Tools */}
-          <section>
-            <SectionTitle icon={Palette} title="Design Tools" subtitle="Creating beautiful user experiences" />
             <div className="grid sm:grid-cols-3 gap-4">
-              <TechCard name="Figma" description="UI/UX design and prototyping" />
-              <TechCard name="Canva" description="Simple graphics and social media assets" />
-              <TechCard name="Illustrator" description="Custom branding and logo assets" />
+              <div className="bg-card border border-border rounded-xl p-5 hover:border-primary/30 hover:shadow-lg transition-all duration-300 group">
+                <h4 className="font-heading font-semibold text-foreground group-hover:text-primary transition-colors">Figma</h4>
+                <p className="text-sm text-muted-foreground mt-1">UI/UX design and prototyping</p>
+              </div>
+              <div className="bg-card border border-border rounded-xl p-5 hover:border-primary/30 hover:shadow-lg transition-all duration-300 group">
+                <h4 className="font-heading font-semibold text-foreground group-hover:text-primary transition-colors">Canva</h4>
+                <p className="text-sm text-muted-foreground mt-1">Simple graphics and social media assets</p>
+              </div>
+              <div className="bg-card border border-border rounded-xl p-5 hover:border-primary/30 hover:shadow-lg transition-all duration-300 group">
+                <h4 className="font-heading font-semibold text-foreground group-hover:text-primary transition-colors">Illustrator</h4>
+                <p className="text-sm text-muted-foreground mt-1">Custom branding and logo assets</p>
+              </div>
             </div>
           </section>
 
