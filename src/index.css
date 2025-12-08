@@ -221,3 +221,195 @@
 .whatsapp-pulse {
   animation: pulse-glow 2s ease-in-out infinite;
 }
+
+/* Horizon Hero Section Styles */
+.hero-container {
+  position: relative;
+  width: 100%;
+  min-height: 300vh;
+  overflow: hidden;
+  background: linear-gradient(180deg, #000000 0%, #0a0a1a 50%, #000000 100%);
+}
+
+.hero-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+}
+
+.side-menu {
+  position: fixed;
+  left: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.menu-icon {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.menu-icon span {
+  width: 30px;
+  height: 2px;
+  background: white;
+  transition: all 0.3s ease;
+}
+
+.menu-icon:hover span:nth-child(1) {
+  transform: translateX(5px);
+}
+
+.menu-icon:hover span:nth-child(3) {
+  transform: translateX(-5px);
+}
+
+.vertical-text {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  font-weight: 500;
+}
+
+.hero-content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  text-align: center;
+  width: 90%;
+  max-width: 1200px;
+}
+
+.hero-title {
+  font-size: clamp(3rem, 12vw, 10rem);
+  font-weight: 800;
+  color: white;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 60px rgba(100, 150, 255, 0.5);
+}
+
+.title-char {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.title-char:hover {
+  transform: translateY(-10px);
+  color: hsl(221, 83%, 60%);
+}
+
+.hero-subtitle {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  line-height: 1.8;
+}
+
+.subtitle-line {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.hero-cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.scroll-progress {
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+
+.scroll-text {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 0.2em;
+}
+
+.progress-track {
+  width: 100px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 1px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, hsl(221, 83%, 53%), hsl(280, 80%, 60%));
+  transition: width 0.1s ease-out;
+}
+
+.section-counter {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-variant-numeric: tabular-nums;
+}
+
+.scroll-sections {
+  position: relative;
+  z-index: 5;
+  padding-top: 100vh;
+}
+
+.content-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 2rem;
+}
+
+.section-title {
+  font-size: clamp(2.5rem, 10vw, 8rem);
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .side-menu {
+    left: 1rem;
+  }
+  
+  .scroll-progress {
+    right: 1rem;
+    bottom: 1rem;
+  }
+  
+  .progress-track {
+    width: 60px;
+  }
+  
+  .hero-cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+}
