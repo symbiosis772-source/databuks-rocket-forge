@@ -1,5 +1,5 @@
 import { ArrowRight, Zap } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { StarButton } from "@/components/ui/star-button";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
@@ -118,50 +118,22 @@ const HeroSection = () => {
             </span>
           </h1>
 
-          {/* CTAs */}
+          {/* CTA */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1, duration: 0.6 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4"
+            className="flex items-center justify-center"
           >
-            <div className="inline-block group relative bg-gradient-to-b from-primary/20 to-background/10 p-px rounded-2xl backdrop-blur-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <Button
-                variant="ghost"
-                size="lg"
-                asChild
-                className="rounded-[0.9rem] px-8 py-6 text-lg font-semibold backdrop-blur-md bg-primary hover:bg-primary/90 text-primary-foreground transition-all duration-300 group-hover:-translate-y-0.5"
+            <Link to="/contact">
+              <StarButton
+                lightColor="#3B82F6"
+                className="px-8 py-6 text-lg font-semibold"
               >
-                <Link to="/contact">
-                  <span className="opacity-90 group-hover:opacity-100 transition-opacity">
-                    Start Your Project
-                  </span>
-                  <ArrowRight className="ml-2 w-5 h-5 opacity-70 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" />
-                </Link>
-              </Button>
-            </div>
-
-            <div className="inline-block group relative bg-gradient-to-b from-green-500/20 to-background/10 p-px rounded-2xl backdrop-blur-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <Button
-                variant="ghost"
-                size="lg"
-                asChild
-                className="rounded-[0.9rem] px-8 py-6 text-lg font-semibold backdrop-blur-md bg-green-600 hover:bg-green-700 text-white transition-all duration-300 group-hover:-translate-y-0.5"
-              >
-                <a
-                  href="https://wa.me/918788606608"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <span className="opacity-90 group-hover:opacity-100 transition-opacity">
-                    WhatsApp Us
-                  </span>
-                  <span className="ml-2 opacity-70 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300">
-                    →
-                  </span>
-                </a>
-              </Button>
-            </div>
+                Start Your Project
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </StarButton>
+            </Link>
           </motion.div>
         </div>
       </div>
