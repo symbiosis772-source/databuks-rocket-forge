@@ -36,9 +36,9 @@ const ServicesSection = () => {
     },
     {
       icon: Bot,
-      title: "AI Solutions",
-      description: "Custom AI chatbots, AI workflows, NLP + RAG systems",
-      features: ["AI website builder (soon)", "AI coding assistant", "Smart automation"],
+      title: "AI Agents & Chatbot Development",
+      description: "DataBuks builds custom AI agents, chatbots, conversational systems, and automated support tools designed to improve customer engagement and streamline business workflows.",
+      features: ["Website & App integration", "WhatsApp & CRM bots", "Automated support tools"],
     },
     {
       icon: MessageSquare,
