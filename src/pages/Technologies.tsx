@@ -4,8 +4,7 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { Button } from "@/components/ui/button";
 import { BentoCard, BentoGrid } from "@/components/ui/bento-grid";
-import MultiOrbitSemiCircle from "@/components/ui/multi-orbit-semi-circle";
-import {
+import { 
   Code2, 
   Server, 
   Database, 
@@ -115,9 +114,6 @@ const Technologies = () => {
               ))}
             </BentoGrid>
           </section>
-
-          {/* Multi Orbit Integration */}
-          <MultiOrbitSemiCircle />
 
           {/* Design Tools Section */}
           <section className="max-w-6xl mx-auto">
