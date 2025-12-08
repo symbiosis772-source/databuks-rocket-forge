@@ -12,7 +12,7 @@ import {
   Plug, 
   Cloud, 
   Brain, 
-  Palette,
+  
   ArrowRight,
   MessageCircle,
   Layers
@@ -122,19 +122,6 @@ const Technologies = () => {
         { name: "Custom AI Agents", description: "Automated workflows" },
         { name: "NLP Pipelines", description: "Text processing" },
         { name: "Computer Vision", description: "Image analysis" },
-      ],
-    },
-    {
-      id: "design",
-      title: "Design Tools",
-      subtitle: "Creating beautiful user experiences",
-      icon: <Palette className="w-6 h-6" />,
-      technologies: [
-        { name: "Figma", description: "UI/UX design" },
-        { name: "Canva", description: "Graphics & social" },
-        { name: "Adobe Illustrator", description: "Vector graphics" },
-        { name: "Adobe Photoshop", description: "Image editing" },
-        { name: "Framer", description: "Interactive prototypes" },
       ],
     },
   ];
