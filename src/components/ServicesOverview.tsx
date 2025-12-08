@@ -61,19 +61,13 @@ const ServicesOverview = () => {
               <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
                 {service.description}
               </p>
-              <Button variant="ghost" size="sm" asChild className="p-0 h-auto text-primary hover:text-primary/80">
-                <Link to={service.link}>
-                  View More
-                  <ArrowRight className="w-4 h-4 ml-1" />
-                </Link>
-              </Button>
             </div>
           ))}
         </div>
 
         <div className="text-center">
           <Button variant="outline" size="lg" asChild>
-            <Link to="/services">
+            <Link to="/services#top">
               View All Services
               <ArrowRight className="w-4 h-4 ml-2" />
             </Link>
