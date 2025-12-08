@@ -36,8 +36,7 @@ const HeroSection = () => {
             </span>
 
             {/* Title */}
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tighter mb-6
-              bg-gradient-to-br from-foreground from-30% to-foreground/50 bg-clip-text text-transparent">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tighter mb-6 text-foreground">
               Where ideas become products and products become{" "}
               <span className="text-primary">impact.</span>
             </h1>
