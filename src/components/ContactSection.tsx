@@ -71,15 +71,18 @@ const ContactSection = () => {
                   </div>
                 </a>
 
-                <div className="flex items-center gap-4 p-4 rounded-xl bg-card border border-border">
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                <a
+                  href="mailto:databuksllc@gmail.com"
+                  className="flex items-center gap-4 p-4 rounded-xl bg-card border border-border hover:border-primary/30 transition-colors group"
+                >
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                     <Mail className="w-5 h-5 text-primary" />
                   </div>
                   <div>
                     <p className="font-medium text-foreground">Email</p>
-                    <p className="text-sm text-muted-foreground">hello@databuks.com</p>
+                    <p className="text-sm text-muted-foreground">databuksllc@gmail.com</p>
                   </div>
-                </div>
+                </a>
 
                 <div className="flex items-center gap-4 p-4 rounded-xl bg-card border border-border">
                   <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
@@ -87,7 +90,7 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <p className="font-medium text-foreground">Location</p>
-                    <p className="text-sm text-muted-foreground">India - Serving clients across India & worldwide</p>
+                    <p className="text-sm text-muted-foreground">Mahal, Nagpur, Maharashtra, India</p>
                   </div>
                 </div>
               </div>
