@@ -1,5 +1,6 @@
 import { Check, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const PricingSection = () => {
   const plans = [
@@ -20,7 +21,6 @@ const PricingSection = () => {
       title: "App / Software Development",
       description: "Custom dashboards, management tools, CRM systems",
       price: "Custom",
-      featured: true,
       features: [
         "Web applications",
         "Admin dashboards",
@@ -65,19 +65,8 @@ const PricingSection = () => {
           {plans.map((plan) => (
             <div
               key={plan.title}
-              className={`relative bg-card rounded-2xl p-6 border transition-all duration-300 hover:shadow-lg ${
-                plan.featured
-                  ? "border-primary shadow-lg scale-105 md:scale-110"
-                  : "border-border hover:border-primary/30"
-              }`}
+              className="relative bg-card rounded-2xl p-6 border border-border transition-all duration-300 hover:shadow-lg hover:border-primary/30"
             >
-              {plan.featured && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                  <span className="px-4 py-1 rounded-full gradient-primary text-primary-foreground text-xs font-semibold">
-                    Most Popular
-                  </span>
-                </div>
-              )}
 
               <div className="text-center mb-6">
                 <h3 className="font-heading font-bold text-xl text-foreground mb-2">
@@ -104,14 +93,14 @@ const PricingSection = () => {
               </ul>
 
               <Button
-                variant={plan.featured ? "hero" : "outline"}
+                variant="outline"
                 className="w-full"
                 asChild
               >
-                <a href="#contact">
+                <Link to="/contact">
                   Get Quote
                   <ArrowRight className="w-4 h-4 ml-2" />
-                </a>
+                </Link>
               </Button>
             </div>
           ))}
