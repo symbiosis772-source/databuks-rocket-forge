@@ -1,6 +1,7 @@
 "use client"
 
 import { ChevronRight } from "lucide-react"
+import { Link } from "react-router-dom"
 import { Button } from "@/components/ui/button"
 
 interface HeroProps {
@@ -91,7 +92,7 @@ export function Hero({
             size="lg"
             className="mt-[-20px] w-fit md:w-52 z-20 tracking-tight text-center text-lg"
           >
-            <a href={ctaHref}>{ctaLabel}</a>
+            <Link to={ctaHref}>{ctaLabel}</Link>
           </Button>
         </div>
       )}
