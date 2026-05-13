@@ -1,3 +1,4 @@
+import SEO from "@/components/SEO";
 import Header from "@/components/Header";
 import AboutSection from "@/components/AboutSection";
 import Footer from "@/components/Footer";
@@ -8,6 +9,7 @@ import databuksLogo from "@/assets/databuks-logo.jpg";
 const About = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEO title="About DataBuks | Technology Services Agency" description="Learn about DataBuks — a passionate team building custom websites, software, automations, and MVPs with quality, speed, and affordability." path="/about" />
       <Header />
       <main className="pt-20">
         <HeroSection

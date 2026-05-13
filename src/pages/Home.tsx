@@ -1,3 +1,4 @@
+import SEO from "@/components/SEO";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import CompanyOverview from "@/components/CompanyOverview";
@@ -13,6 +14,7 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 const Home = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEO title="DataBuks | Custom Websites, Apps & AI Automation Solutions" description="DataBuks is a modern tech agency delivering custom websites, apps, software, automations, and AI-powered solutions. Fast delivery, affordable pricing." path="/home" />
       <Header />
       <main>
         <HeroSection />
