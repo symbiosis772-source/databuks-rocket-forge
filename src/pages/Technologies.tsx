@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import SEO from "@/components/SEO";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -128,6 +129,7 @@ const Technologies = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO title="Technologies | DataBuks Tech Stack" description="Explore the modern technologies DataBuks uses — React, Node.js, Python, cloud platforms, AI, automations, and more." path="/technologies" />
       <Header />
       
       {/* Hero Section */}
