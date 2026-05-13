@@ -1,15 +1,19 @@
+import { lazy, Suspense } from "react";
 import SEO from "@/components/SEO";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import CompanyOverview from "@/components/CompanyOverview";
-import ServicesOverview from "@/components/ServicesOverview";
-import MVPSection from "@/components/MVPSection";
-import FastDeliverySection from "@/components/FastDeliverySection";
-import WhyChooseSection from "@/components/WhyChooseSection";
-import TestimonialsPreview from "@/components/TestimonialsPreview";
-import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+
+const ServicesOverview = lazy(() => import("@/components/ServicesOverview"));
+const MVPSection = lazy(() => import("@/components/MVPSection"));
+const FastDeliverySection = lazy(() => import("@/components/FastDeliverySection"));
+const WhyChooseSection = lazy(() => import("@/components/WhyChooseSection"));
+const TestimonialsPreview = lazy(() => import("@/components/TestimonialsPreview"));
+const CTASection = lazy(() => import("@/components/CTASection"));
+
+const SectionFallback = () => <div className="py-16" />;
 
 const Home = () => {
   return (
@@ -19,12 +23,14 @@ const Home = () => {
       <main>
         <HeroSection />
         <CompanyOverview />
-        <ServicesOverview />
-        <MVPSection />
-        <FastDeliverySection />
-        <WhyChooseSection />
-        <TestimonialsPreview />
-        <CTASection />
+        <Suspense fallback={<SectionFallback />}>
+          <ServicesOverview />
+          <MVPSection />
+          <FastDeliverySection />
+          <WhyChooseSection />
+          <TestimonialsPreview />
+          <CTASection />
+        </Suspense>
       </main>
       <Footer />
       <WhatsAppButton />
