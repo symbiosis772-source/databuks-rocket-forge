@@ -33,21 +33,19 @@ const Header = () => {
     label: "Contact",
     href: "/contact"
   }];
-  return <header className={`fixed top-0 left-0 right-0 z-50 bg-white transition-all ${isScrolled ? "py-3 border-b border-black" : "py-5"}`}>
-      <div className="container mx-auto px-6 flex items-center justify-between">
-        <Link to="/" className="text-caption tracking-tight">
-          DATA<span className="font-normal">BUKS</span>
-        </Link>
+  return <header className={`fixed top-0 left-0 right-0 z-50 bg-white ${isScrolled ? "border-b border-black" : ""}`}>
+      <div className="w-full px-6 py-4 flex items-center justify-between">
+        <Link to="/" className="font-mono-label">[DATABUKS]</Link>
 
-        <nav className="hidden md:flex items-center gap-[35px]">
-          {navLinks.map(link => <Link key={link.label} to={link.href} className={`text-caption hover:underline underline-offset-4 ${location.pathname === link.href ? "underline" : ""}`}>
-              {link.label.toUpperCase()}
+        <nav className="hidden md:flex items-center gap-6">
+          {navLinks.map(link => <Link key={link.label} to={link.href} className={`font-mono-label hover:opacity-60 ${location.pathname === link.href ? "underline underline-offset-4" : ""}`}>
+              {link.label.toUpperCase()}{location.pathname === link.href ? " ⊙" : ""}
             </Link>)}
         </nav>
 
         <div className="hidden md:flex items-center">
-          <Link to="/contact" className="text-caption hover:underline underline-offset-4">
-            GET QUOTE →
+          <Link to="/contact" className="font-mono-label bg-[#ebff00] text-[#080707] px-3 py-1.5" style={{ borderRadius: '84px' }}>
+            BOOK A CALL ↗
           </Link>
         </div>
 

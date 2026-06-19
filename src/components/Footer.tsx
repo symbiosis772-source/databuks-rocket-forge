@@ -1,32 +1,31 @@
 const Footer = () => {
   return (
-    <footer className="bg-white text-black">
-      <div className="hairline" />
-      <div className="container mx-auto px-6 py-[71px]">
+    <footer className="bg-[#080707] text-white">
+      <div className="w-full px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-          <div className="text-caption">
-            SUITE 507<br />
-            46 KIPPAX STREET<br />
-            SURRY HILLS NSW 2010
+          <div className="font-mono-label space-y-2">
+            <div className="opacity-60">[STUDIO]</div>
+            <div>DATABUKS LLC</div>
+            <div>EST. 2024</div>
           </div>
 
-          <div className="text-caption space-y-[10px]">
-            <a href="mailto:databuksllc@gmail.com" className="block hover:underline">EMAIL</a>
-            <a href="#" className="block hover:underline">INSTAGRAM</a>
-            <a href="#" className="block hover:underline">LINKEDIN</a>
-            <a href="https://wa.me/918788606608" target="_blank" rel="noopener noreferrer" className="block hover:underline">WHATSAPP</a>
+          <div className="font-mono-label space-y-2">
+            <div className="opacity-60">[CONNECT]</div>
+            <a href="mailto:databuksllc@gmail.com" className="block hover:text-[#ebff00]">EMAIL ↗</a>
+            <a href="https://wa.me/918788606608" target="_blank" rel="noopener noreferrer" className="block hover:text-[#ebff00]">WHATSAPP ↗</a>
+            <a href="#" className="block hover:text-[#ebff00]">LINKEDIN ↗</a>
+            <a href="#" className="block hover:text-[#ebff00]">INSTAGRAM ↗</a>
           </div>
 
-          <div className="text-caption md:text-right">
+          <div className="font-mono-label md:text-right space-y-2">
+            <div className="opacity-60">[INDEX]</div>
             <button
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-              className="hover:underline"
+              className="hover:text-[#ebff00]"
             >
               BACK TO TOP ↑
             </button>
-            <div className="mt-[35px] text-black/60">
-              © {new Date().getFullYear()} DATABUKS
-            </div>
+            <div className="opacity-60 pt-4">© {new Date().getFullYear()} — ALL RIGHTS RESERVED</div>
           </div>
         </div>
       </div>
