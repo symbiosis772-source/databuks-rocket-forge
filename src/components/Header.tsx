@@ -33,28 +33,22 @@ const Header = () => {
     label: "Contact",
     href: "/contact"
   }];
-  return <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-background/95 backdrop-blur-md shadow-md py-3" : "bg-transparent py-5"}`}>
-      <div className="container mx-auto px-4 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2">
-          <img src={databuksLogo} alt="DataBuks Logo" width={40} height={40} fetchPriority="high" decoding="async" className="w-10 h-10 rounded-xl object-cover" />
-          <span className="font-heading font-bold text-xl text-foreground">
-            Data<span className="text-primary">Buks</span>
-          </span>
+  return <header className={`fixed top-0 left-0 right-0 z-50 bg-white transition-all ${isScrolled ? "py-3 border-b border-black" : "py-5"}`}>
+      <div className="container mx-auto px-6 flex items-center justify-between">
+        <Link to="/" className="text-caption tracking-tight">
+          DATA<span className="font-normal">BUKS</span>
         </Link>
 
-        <nav className="hidden md:flex items-center gap-6">
-          {navLinks.map(link => <Link key={link.label} to={link.href} className={`transition-colors font-medium text-sm ${location.pathname === link.href ? "text-primary" : "text-muted-foreground hover:text-primary"}`}>
-              {link.label}
+        <nav className="hidden md:flex items-center gap-[35px]">
+          {navLinks.map(link => <Link key={link.label} to={link.href} className={`text-caption hover:underline underline-offset-4 ${location.pathname === link.href ? "underline" : ""}`}>
+              {link.label.toUpperCase()}
             </Link>)}
         </nav>
 
-        <div className="hidden md:flex items-center gap-3">
-          <Button variant="outline" size="sm" asChild>
-            <Link to="/contact">Get Quote</Link>
-          </Button>
-          <Button variant="whatsapp" size="sm" asChild>
-            
-          </Button>
+        <div className="hidden md:flex items-center">
+          <Link to="/contact" className="text-caption hover:underline underline-offset-4">
+            GET QUOTE →
+          </Link>
         </div>
 
         <button className="md:hidden p-2" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} aria-label="Toggle menu">
