@@ -2,97 +2,106 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ============================================================
-   ALEJANDRO MEJIAS — Acid-Lit Brutalist Atelier
-   Obsidian + Bone white canvases, single Acid Lime accent.
-   IBM Plex Mono labels, Archivo Black wide display, Be Vietnam Pro body.
-   ============================================================ */
+
 
 @layer base {
   :root {
-    --background: 0 0% 100%;          /* Bone White */
-    --foreground: 0 0% 3%;            /* Obsidian #080707 */
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 3%;
+    --card-foreground: 222 47% 11%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3%;
+    --popover-foreground: 222 47% 11%;
 
-    --primary: 65 100% 50%;           /* Acid Lime #ebff00 */
-    --primary-foreground: 0 0% 3%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 100%;
-    --secondary-foreground: 0 0% 3%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 9%;
 
-    --muted: 0 0% 78%;                /* Fog #c8c8c8 */
-    --muted-foreground: 0 0% 22%;     /* Slate #383838 */
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
 
-    --accent: 65 100% 50%;            /* Acid Lime */
-    --accent-foreground: 0 0% 3%;
+    --accent: 0 0% 9%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 0% 3%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 0%;                /* Pure black structural lines */
-    --input: 0 0% 0%;
-    --ring: 65 100% 50%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 0 0% 9%;
 
-    --radius: 4px;
+    --radius: 0.75rem;
 
-    /* Custom palette tokens */
-    --acid-lime: 65 100% 50%;
-    --obsidian: 0 0% 3%;
-    --bone: 0 0% 100%;
-    --fog: 0 0% 78%;
-    --slate: 0 0% 22%;
+    /* Custom tokens */
+    --gradient-primary: linear-gradient(135deg, hsl(0 0% 9%) 0%, hsl(0 0% 20%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 98%) 0%, hsl(0 0% 96%) 50%, hsl(0 0% 100%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(0 0% 99%) 100%);
+    
+    --shadow-sm: 0 1px 2px 0 hsl(0 0% 0% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(0 0% 0% / 0.1), 0 2px 4px -2px hsl(0 0% 0% / 0.1);
+    --shadow-lg: 0 10px 15px -3px hsl(0 0% 0% / 0.1), 0 4px 6px -4px hsl(0 0% 0% / 0.1);
+    --shadow-xl: 0 20px 25px -5px hsl(0 0% 0% / 0.1), 0 8px 10px -6px hsl(0 0% 0% / 0.1);
+    --shadow-glow: 0 0 40px hsl(0 0% 0% / 0.15);
 
-    /* Legacy compat — flatten all gradients/shadows */
-    --gradient-primary: none;
-    --gradient-hero: none;
-    --gradient-card: none;
-    --shadow-sm: none;
-    --shadow-md: none;
-    --shadow-lg: none;
-    --shadow-xl: none;
-    --shadow-glow: none;
+    --navy: 0 0% 9%;
+    --navy-light: 0 0% 20%;
+    --blue-50: 0 0% 98%;
+    --blue-100: 0 0% 96%;
+    --blue-500: 0 0% 9%;
+    --blue-600: 0 0% 15%;
+    --blue-700: 0 0% 20%;
 
-    --navy: 0 0% 3%;
-    --navy-light: 0 0% 22%;
-    --blue-50: 0 0% 100%;
-    --blue-100: 0 0% 78%;
-    --blue-500: 65 100% 50%;
-    --blue-600: 65 100% 45%;
-    --blue-700: 65 100% 40%;
-
-    --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 0 0% 3%;
-    --sidebar-primary: 0 0% 3%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 65 100% 50%;
-    --sidebar-accent-foreground: 0 0% 3%;
-    --sidebar-border: 0 0% 0%;
-    --sidebar-ring: 65 100% 50%;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
-    --background: 0 0% 3%;
-    --foreground: 0 0% 100%;
-    --card: 0 0% 22%;
-    --card-foreground: 0 0% 100%;
-    --popover: 0 0% 3%;
-    --popover-foreground: 0 0% 100%;
-    --primary: 65 100% 50%;
-    --primary-foreground: 0 0% 3%;
-    --secondary: 0 0% 22%;
-    --secondary-foreground: 0 0% 100%;
-    --muted: 0 0% 22%;
-    --muted-foreground: 0 0% 78%;
-    --accent: 65 100% 50%;
-    --accent-foreground: 0 0% 3%;
-    --border: 0 0% 100%;
-    --input: 0 0% 100%;
-    --ring: 65 100% 50%;
+    --background: 222 47% 6%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 8%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 8%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 9%;
+
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 0 0% 15%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 0 0% 100%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
 
@@ -101,99 +110,114 @@
     @apply border-border;
   }
 
-  html { background: #ffffff; }
-
   body {
-    @apply bg-background text-foreground antialiased;
-    font-family: 'Be Vietnam Pro', 'Inter', system-ui, sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.4;
+    @apply bg-background text-foreground font-sans antialiased;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Archivo Black', 'Inter', system-ui, sans-serif;
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 0.042em;
-    line-height: 1;
-    color: hsl(var(--foreground));
-    transform: scaleX(0.92);
-    transform-origin: left;
-  }
-
-  /* Enforce strict radius hierarchy: 4px UI, 24px images, pill 84px */
-  button, input, textarea, select, .rounded, .rounded-md, .rounded-sm, .rounded-lg {
-    border-radius: 4px !important;
-  }
-  img, .rounded-xl, .rounded-2xl, .rounded-3xl {
-    border-radius: 24px !important;
-  }
-  .rounded-full {
-    border-radius: 84px !important;
-  }
-
-  /* Kill shadows (except where opted-in via .elev-*) */
-  [class*="shadow-"]:not(.elev-cta):not(.elev-card) {
-    box-shadow: none !important;
+    @apply font-heading font-bold tracking-tight;
   }
 }
 
 @layer utilities {
-  .font-mono-label {
-    font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.109em;
-    font-size: 11px;
-    line-height: 1;
-  }
-  .font-display {
-    font-family: 'Archivo Black', system-ui, sans-serif;
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 0.042em;
-    line-height: 1;
-    transform: scaleX(0.92);
-    transform-origin: left;
-  }
-
-  .text-display { font-size: clamp(32px, 5vw, 48px); }
-  .text-heading-sm { font-size: 32px; line-height: 1; letter-spacing: 0.042em; }
-
-  .bg-acid { background-color: #ebff00; }
-  .text-acid { color: #ebff00; }
-  .bg-obsidian { background-color: #080707; }
-  .text-obsidian { color: #080707; }
-  .bg-bone { background-color: #ffffff; }
-  .bg-fog { background-color: #c8c8c8; }
-  .bg-slate-card { background-color: #383838; }
-
-  .elev-cta { box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
-  .elev-card { box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
-
-  .hairline { border-top: 1px solid #000; }
-
-  /* Legacy flatten */
   .gradient-text {
-    background: none !important;
-    color: hsl(var(--foreground)) !important;
-    -webkit-text-fill-color: hsl(var(--foreground)) !important;
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-primary);
   }
-  .gradient-bg, .gradient-primary { background: #ffffff !important; }
-  .shadow-glow { box-shadow: none !important; }
 
-  .animate-float { animation: float 6s ease-in-out infinite; }
-  .animate-fade-up { animation: fadeUp 0.6s ease-out forwards; }
-  .animate-fade-in { animation: fadeIn 0.5s ease-out forwards; }
-  .animate-scale-in { animation: scaleIn 0.5s ease-out forwards; }
-  .animate-slide-in-right { animation: slideInRight 0.5s ease-out forwards; }
+  .gradient-bg {
+    background: var(--gradient-hero);
+  }
+
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.5s ease-out forwards;
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 0.5s ease-out forwards;
+  }
 }
 
-@keyframes float { 0%,100% { transform: translateY(0);} 50% { transform: translateY(-20px);} }
-@keyframes fadeUp { from {opacity:0; transform: translateY(30px);} to {opacity:1; transform: translateY(0);} }
-@keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
-@keyframes scaleIn { from {opacity:0; transform: scale(0.98);} to {opacity:1; transform: scale(1);} }
-@keyframes slideInRight { from {opacity:0; transform: translateX(30px);} to {opacity:1; transform: translateX(0);} }
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
 
-.whatsapp-pulse { animation: none; }
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px hsl(142 76% 36% / 0.4);
+  }
+  50% {
+    box-shadow: 0 0 40px hsl(142 76% 36% / 0.6);
+  }
+}
+
+.whatsapp-pulse {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
