@@ -14,10 +14,10 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["Inter", "system-ui", "sans-serif"],
-        heading: ["Cormorant Garamond", "Times New Roman", "Georgia", "serif"],
-        serif: ["Cormorant Garamond", "Times New Roman", "Georgia", "serif"],
-        mono: ["Arial", "Helvetica", "sans-serif"],
+        sans: ["Be Vietnam Pro", "Inter", "system-ui", "sans-serif"],
+        heading: ["Archivo Black", "Inter", "system-ui", "sans-serif"],
+        serif: ["Archivo Black", "Inter", "system-ui", "sans-serif"],
+        mono: ["IBM Plex Mono", "ui-monospace", "monospace"],
       },
       colors: {
         border: "hsl(var(--border))",

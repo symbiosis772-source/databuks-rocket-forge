@@ -3,44 +3,51 @@
 @tailwind utilities;
 
 /* ============================================================
-   ACCOMPANY — Editorial Monochrome System
-   Bone white (#fff) canvas, obsidian ink (#000), no color, no
-   shadows, no rounded corners. Hierarchy via type + whitespace.
+   ALEJANDRO MEJIAS — Acid-Lit Brutalist Atelier
+   Obsidian + Bone white canvases, single Acid Lime accent.
+   IBM Plex Mono labels, Archivo Black wide display, Be Vietnam Pro body.
    ============================================================ */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;        /* Bone White  #ffffff */
-    --foreground: 0 0% 0%;          /* Obsidian Ink #000000 */
+    --background: 0 0% 100%;          /* Bone White */
+    --foreground: 0 0% 3%;            /* Obsidian #080707 */
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 0%;
+    --card-foreground: 0 0% 3%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 0%;
+    --popover-foreground: 0 0% 3%;
 
-    --primary: 0 0% 0%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 65 100% 50%;           /* Acid Lime #ebff00 */
+    --primary-foreground: 0 0% 3%;
 
     --secondary: 0 0% 100%;
-    --secondary-foreground: 0 0% 0%;
+    --secondary-foreground: 0 0% 3%;
 
-    --muted: 0 0% 100%;
-    --muted-foreground: 0 0% 0%;
+    --muted: 0 0% 78%;                /* Fog #c8c8c8 */
+    --muted-foreground: 0 0% 22%;     /* Slate #383838 */
 
-    --accent: 0 0% 100%;
-    --accent-foreground: 0 0% 0%;
+    --accent: 65 100% 50%;            /* Acid Lime */
+    --accent-foreground: 0 0% 3%;
 
-    --destructive: 0 0% 0%;
+    --destructive: 0 0% 3%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 0%;              /* Hairline rules are pure ink */
+    --border: 0 0% 0%;                /* Pure black structural lines */
     --input: 0 0% 0%;
-    --ring: 0 0% 0%;
+    --ring: 65 100% 50%;
 
-    --radius: 0px;
+    --radius: 4px;
 
-    /* Legacy tokens kept so existing components don't break */
+    /* Custom palette tokens */
+    --acid-lime: 65 100% 50%;
+    --obsidian: 0 0% 3%;
+    --bone: 0 0% 100%;
+    --fog: 0 0% 78%;
+    --slate: 0 0% 22%;
+
+    /* Legacy compat — flatten all gradients/shadows */
     --gradient-primary: none;
     --gradient-hero: none;
     --gradient-card: none;
@@ -50,43 +57,42 @@
     --shadow-xl: none;
     --shadow-glow: none;
 
-    --navy: 0 0% 0%;
-    --navy-light: 0 0% 0%;
+    --navy: 0 0% 3%;
+    --navy-light: 0 0% 22%;
     --blue-50: 0 0% 100%;
-    --blue-100: 0 0% 100%;
-    --blue-500: 0 0% 0%;
-    --blue-600: 0 0% 0%;
-    --blue-700: 0 0% 0%;
+    --blue-100: 0 0% 78%;
+    --blue-500: 65 100% 50%;
+    --blue-600: 65 100% 45%;
+    --blue-700: 65 100% 40%;
 
     --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 0 0% 0%;
-    --sidebar-primary: 0 0% 0%;
+    --sidebar-foreground: 0 0% 3%;
+    --sidebar-primary: 0 0% 3%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 0 0% 100%;
-    --sidebar-accent-foreground: 0 0% 0%;
+    --sidebar-accent: 65 100% 50%;
+    --sidebar-accent-foreground: 0 0% 3%;
     --sidebar-border: 0 0% 0%;
-    --sidebar-ring: 0 0% 0%;
+    --sidebar-ring: 65 100% 50%;
   }
 
   .dark {
-    /* Editorial system is single-mode by design; mirror light. */
-    --background: 0 0% 100%;
-    --foreground: 0 0% 0%;
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 0%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 0%;
-    --primary: 0 0% 0%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 0 0% 100%;
-    --secondary-foreground: 0 0% 0%;
-    --muted: 0 0% 100%;
-    --muted-foreground: 0 0% 0%;
-    --accent: 0 0% 100%;
-    --accent-foreground: 0 0% 0%;
-    --border: 0 0% 0%;
-    --input: 0 0% 0%;
-    --ring: 0 0% 0%;
+    --background: 0 0% 3%;
+    --foreground: 0 0% 100%;
+    --card: 0 0% 22%;
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 3%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 65 100% 50%;
+    --primary-foreground: 0 0% 3%;
+    --secondary: 0 0% 22%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 22%;
+    --muted-foreground: 0 0% 78%;
+    --accent: 65 100% 50%;
+    --accent-foreground: 0 0% 3%;
+    --border: 0 0% 100%;
+    --input: 0 0% 100%;
+    --ring: 65 100% 50%;
   }
 }
 
@@ -95,74 +101,86 @@
     @apply border-border;
   }
 
-  html {
-    background: #ffffff;
-  }
+  html { background: #ffffff; }
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
-    font-weight: 500;
-    letter-spacing: -0.03em;
+    font-family: 'Be Vietnam Pro', 'Inter', system-ui, sans-serif;
+    font-weight: 400;
     font-size: 16px;
-    line-height: 1.2;
+    line-height: 1.4;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Cormorant Garamond', 'Times New Roman', Georgia, serif;
-    font-weight: 300;
-    letter-spacing: -0.02em;
-    line-height: 0.9;
-    color: #000;
+    font-family: 'Archivo Black', 'Inter', system-ui, sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.042em;
+    line-height: 1;
+    color: hsl(var(--foreground));
+    transform: scaleX(0.92);
+    transform-origin: left;
   }
 
-  /* No rounded anything, anywhere. */
-  img, button, input, textarea, select, .rounded, [class*="rounded-"] {
-    border-radius: 0 !important;
+  /* Enforce strict radius hierarchy: 4px UI, 24px images, pill 84px */
+  button, input, textarea, select, .rounded, .rounded-md, .rounded-sm, .rounded-lg {
+    border-radius: 4px !important;
+  }
+  img, .rounded-xl, .rounded-2xl, .rounded-3xl {
+    border-radius: 24px !important;
+  }
+  .rounded-full {
+    border-radius: 84px !important;
   }
 
-  /* Kill shadows globally — editorial system has zero elevation. */
-  [class*="shadow-"] {
+  /* Kill shadows (except where opted-in via .elev-*) */
+  [class*="shadow-"]:not(.elev-cta):not(.elev-card) {
     box-shadow: none !important;
   }
 }
 
 @layer utilities {
-  /* Editorial type roles */
-  .text-display {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 300;
-    font-size: clamp(48px, 7vw, 80px);
-    line-height: 0.9;
-    letter-spacing: -0.02em;
-  }
-  .text-heading {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 300;
-    font-size: clamp(32px, 4vw, 44px);
-    line-height: 1.1;
-    letter-spacing: -0.03em;
-  }
-  .text-caption {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 13px;
-    line-height: 1.2;
+  .font-mono-label {
+    font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace;
+    font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0;
+    letter-spacing: 0.109em;
+    font-size: 11px;
+    line-height: 1;
   }
-  .hairline {
-    border-top: 1px solid #000;
+  .font-display {
+    font-family: 'Archivo Black', system-ui, sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.042em;
+    line-height: 1;
+    transform: scaleX(0.92);
+    transform-origin: left;
   }
 
-  /* Legacy utility classes — flatten to monochrome */
+  .text-display { font-size: clamp(32px, 5vw, 48px); }
+  .text-heading-sm { font-size: 32px; line-height: 1; letter-spacing: 0.042em; }
+
+  .bg-acid { background-color: #ebff00; }
+  .text-acid { color: #ebff00; }
+  .bg-obsidian { background-color: #080707; }
+  .text-obsidian { color: #080707; }
+  .bg-bone { background-color: #ffffff; }
+  .bg-fog { background-color: #c8c8c8; }
+  .bg-slate-card { background-color: #383838; }
+
+  .elev-cta { box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+  .elev-card { box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+  .hairline { border-top: 1px solid #000; }
+
+  /* Legacy flatten */
   .gradient-text {
     background: none !important;
-    color: #000 !important;
-    -webkit-text-fill-color: #000 !important;
+    color: hsl(var(--foreground)) !important;
+    -webkit-text-fill-color: hsl(var(--foreground)) !important;
   }
-  .gradient-bg, .gradient-primary {
-    background: #ffffff !important;
-  }
+  .gradient-bg, .gradient-primary { background: #ffffff !important; }
   .shadow-glow { box-shadow: none !important; }
 
   .animate-float { animation: float 6s ease-in-out infinite; }
@@ -172,8 +190,8 @@
   .animate-slide-in-right { animation: slideInRight 0.5s ease-out forwards; }
 }
 
-@keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
-@keyframes fadeUp { from { opacity:0; transform: translateY(30px);} to {opacity:1; transform: translateY(0);} }
+@keyframes float { 0%,100% { transform: translateY(0);} 50% { transform: translateY(-20px);} }
+@keyframes fadeUp { from {opacity:0; transform: translateY(30px);} to {opacity:1; transform: translateY(0);} }
 @keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
 @keyframes scaleIn { from {opacity:0; transform: scale(0.98);} to {opacity:1; transform: scale(1);} }
 @keyframes slideInRight { from {opacity:0; transform: translateX(30px);} to {opacity:1; transform: translateX(0);} }
