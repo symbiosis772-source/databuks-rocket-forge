@@ -61,15 +61,15 @@ export default {
         silver: "#c3c3cc",
         "pure-white": "#ffffff",
         navy: {
-          DEFAULT: "hsl(var(--navy))",
-          light: "hsl(var(--navy-light))",
+          DEFAULT: "#171721",
+          light: "#1e1e2a",
         },
         blue: {
-          50: "hsl(var(--blue-50))",
-          100: "hsl(var(--blue-100))",
-          500: "hsl(var(--blue-500))",
-          600: "hsl(var(--blue-600))",
-          700: "hsl(var(--blue-700))",
+          50: "#171721",
+          100: "#1e1e2a",
+          500: "#5266eb",
+          600: "#3b4dd1",
+          700: "#2d3ba8",
         },
         whatsapp: {
           DEFAULT: "hsl(142 76% 36%)",
