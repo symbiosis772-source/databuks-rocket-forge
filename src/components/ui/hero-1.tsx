@@ -13,97 +13,76 @@ interface HeroProps {
 }
 
 export function Hero({
-  eyebrow = "Innovate Without Limits",
+  eyebrow = "Technology Services Agency",
   title,
   subtitle,
-  ctaLabel = "Explore Now",
-  ctaHref = "#",
+  ctaLabel = "Start Your Project",
+  ctaHref = "/contact",
 }: HeroProps) {
   return (
     <section
       id="hero"
-      className="relative mx-auto w-full pt-40 px-6 text-center md:px-8 
-      min-h-[calc(100vh-40px)] overflow-hidden 
-      bg-[linear-gradient(to_bottom,hsl(var(--background)),hsl(var(--background))_50%,hsl(var(--muted))_88%)]  
-      dark:bg-[linear-gradient(to_bottom,hsl(var(--background)),transparent_30%,hsl(var(--muted))_78%,hsl(var(--background))_99%_50%)] 
-      rounded-b-xl"
+      className="relative mx-auto w-full min-h-screen flex flex-col items-center justify-center px-6 text-center md:px-8 pt-24 pb-16 overflow-hidden bg-gradient-to-b from-deep-space via-midnight-slate to-deep-space"
     >
-      {/* Grid BG */}
+      {/* Subtle grid background */}
       <div
-        className="absolute -z-10 inset-0 opacity-80 h-[600px] w-full 
-        bg-[linear-gradient(to_right,hsl(var(--border))_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border))_1px,transparent_1px)] 
-        dark:bg-[linear-gradient(to_right,hsl(var(--border))_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border))_1px,transparent_1px)]
-        bg-[size:6rem_5rem] 
-        [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]"
+        className="absolute inset-0 opacity-20"
+        style={{
+          backgroundImage: `linear-gradient(to right, rgba(112, 112, 125, 0.15) 1px, transparent 1px), linear-gradient(to bottom, rgba(112, 112, 125, 0.15) 1px, transparent 1px)`,
+          backgroundSize: '80px 80px',
+          maskImage: 'radial-gradient(ellipse 80% 50% at 50% 50%, #000 70%, transparent 100%)',
+        }}
       />
 
-      {/* Radial Accent */}
+      {/* Soft glow accent */}
       <div
-        className="absolute left-1/2 top-[calc(100%-90px)] lg:top-[calc(100%-150px)] 
-        h-[500px] w-[700px] md:h-[500px] md:w-[1100px] lg:h-[750px] lg:w-[140%] 
-        -translate-x-1/2 rounded-[100%] border-border bg-background 
-        bg-[radial-gradient(closest-side,hsl(var(--background))_82%,hsl(var(--foreground)))] 
-        dark:bg-[radial-gradient(closest-side,hsl(var(--background))_82%,hsl(var(--foreground)))] 
-        animate-fade-up"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] rounded-full opacity-30"
+        style={{
+          background: 'radial-gradient(closest-side, rgba(82, 102, 235, 0.15) 0%, transparent 80%)',
+        }}
       />
 
       {/* Eyebrow */}
       {eyebrow && (
-        <a href="#" className="group">
+        <div className="group relative z-10 mb-8">
           <span
-            className="text-sm text-muted-foreground font-sans mx-auto px-5 py-2 
-            bg-gradient-to-tr from-muted/5 via-muted/5 to-transparent  
-            border-[2px] border-border/20 dark:border-border/5 
-            rounded-3xl w-fit tracking-tight uppercase flex items-center justify-center"
+            className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-lead/40 text-body-sm text-starlight tracking-wide uppercase"
           >
             {eyebrow}
-            <ChevronRight className="inline w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
+            <ChevronRight className="inline w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
           </span>
-        </a>
+        </div>
       )}
 
       {/* Title */}
       <h1
-        className="animate-fade-in -translate-y-4 text-balance 
-        bg-gradient-to-br from-foreground from-30% to-foreground/40 
-        bg-clip-text py-6 text-5xl font-semibold leading-none tracking-tighter 
-        text-transparent opacity-0 sm:text-6xl md:text-7xl lg:text-8xl 
-        dark:from-foreground dark:to-foreground/40"
-        style={{ animationDelay: "0.2s", animationFillMode: "forwards" }}
+        className="relative z-10 max-w-5xl mx-auto text-balance text-display md:text-[80px] lg:text-[100px] font-light leading-[1.05] tracking-tight text-starlight mb-8"
       >
         {title}
       </h1>
 
       {/* Subtitle */}
       <p
-        className="animate-fade-in mb-12 -translate-y-4 text-balance 
-        text-lg tracking-tight text-muted-foreground 
-        opacity-0 md:text-xl max-w-3xl mx-auto"
-        style={{ animationDelay: "0.4s", animationFillMode: "forwards" }}
+        className="relative z-10 max-w-2xl mx-auto text-subheading md:text-heading-sm text-silver leading-relaxed mb-12"
       >
         {subtitle}
       </p>
 
       {/* CTA */}
       {ctaLabel && (
-        <div className="flex justify-center animate-fade-in opacity-0" style={{ animationDelay: "0.6s", animationFillMode: "forwards" }}>
+        <div className="relative z-10 flex justify-center">
           <Button
             asChild
-            size="lg"
-            className="mt-[-20px] w-fit md:w-52 z-20 tracking-tight text-center text-lg"
+            size="xl"
+            className="text-base tracking-wide"
           >
             <Link to={ctaHref}>{ctaLabel}</Link>
           </Button>
         </div>
       )}
 
-      {/* Bottom Fade */}
-      <div
-        className="animate-fade-up relative mt-32 opacity-0 [perspective:2000px] 
-        after:absolute after:inset-0 after:z-50 
-        after:[background:linear-gradient(to_top,hsl(var(--background))_10%,transparent)]"
-        style={{ animationDelay: "0.8s", animationFillMode: "forwards" }}
-      />
+      {/* Bottom fade to deep space */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-deep-space to-transparent" />
     </section>
   )
 }

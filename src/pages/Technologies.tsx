@@ -5,15 +5,14 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { Button } from "@/components/ui/button";
 import { CategoryList, Category } from "@/components/ui/category-list";
-import { 
-  Code2, 
-  Server, 
-  Database, 
-  Workflow, 
-  Plug, 
-  Cloud, 
-  Brain, 
-  
+import {
+  Code2,
+  Server,
+  Database,
+  Workflow,
+  Plug,
+  Cloud,
+  Brain,
   ArrowRight,
   MessageCircle,
   Layers
@@ -128,29 +127,28 @@ const Technologies = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-deep-space">
       <SEO title="Technologies | DataBuks Tech Stack" description="Explore the modern technologies DataBuks uses — React, Node.js, Python, cloud platforms, AI, automations, and more." path="/technologies" />
       <Header />
-      
+
       {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-to-b from-primary/5 to-background">
-        <div className="container mx-auto px-4 text-center">
-          <span className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+      <section className="pt-32 pb-16 bg-gradient-to-b from-midnight-slate to-deep-space">
+        <div className="container mx-auto px-4 max-w-[1200px] text-center">
+          <span className="inline-block px-5 py-2 rounded-full border border-lead/40 text-body-sm text-starlight uppercase tracking-wide mb-6">
             Our Tech Stack
           </span>
-          <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-            Frameworks & <span className="gradient-text">Technologies</span>
+          <h1 className="text-heading-lg md:text-display font-light text-starlight mb-6">
+            Frameworks & <span className="text-silver">Technologies</span>
           </h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-body text-silver max-w-2xl mx-auto">
             We use modern, reliable, and scalable technologies to build websites, apps, automations, and AI-powered solutions.
           </p>
         </div>
       </section>
 
       <main className="py-16">
-        <div className="container mx-auto px-4 space-y-20">
-          
-          {/* Category List with Expandable Tech Stacks */}
+        <div className="container mx-auto px-4 max-w-[1200px] space-y-20">
+
           <CategoryList
             title="Explore Our Tech Stack"
             subtitle="Click on any category to see the technologies we use"
@@ -160,22 +158,22 @@ const Technologies = () => {
 
           {/* CTA Section */}
           <section className="py-16">
-            <div className="bg-gradient-to-br from-primary/10 via-primary/5 to-transparent rounded-3xl p-8 md:p-12 text-center">
-              <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4">
+            <div className="border border-lead/20 p-8 md:p-12 text-center">
+              <h2 className="text-heading-lg md:text-display font-light text-starlight mb-4">
                 Want to Build Something with These Technologies?
               </h2>
-              <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
+              <p className="text-body text-silver mb-8 max-w-xl mx-auto">
                 Let's discuss your project and find the perfect tech stack for your needs.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button variant="hero" size="xl" asChild>
-                  <Link to="/#contact">
+                <Button variant="default" size="xl" asChild>
+                  <Link to="/contact">
                     Start Your Project
                     <ArrowRight className="w-5 h-5 ml-2" />
                   </Link>
                 </Button>
-                <Button variant="whatsapp" size="xl" asChild>
-                  <a href="https://wa.me/919999999999" target="_blank" rel="noopener noreferrer">
+                <Button variant="outline" size="xl" asChild>
+                  <a href="https://wa.me/918788606608" target="_blank" rel="noopener noreferrer">
                     <MessageCircle className="w-5 h-5 mr-2" />
                     Chat on WhatsApp
                   </a>

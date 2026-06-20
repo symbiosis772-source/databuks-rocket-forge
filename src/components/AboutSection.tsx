@@ -44,28 +44,28 @@ const AboutSection = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-background">
-      <div className="container mx-auto px-4">
+    <section id="about" className="py-24 bg-deep-space">
+      <div className="container mx-auto px-4 max-w-[1200px]">
         <div className="max-w-6xl mx-auto">
           {/* Main Description */}
           <div className="text-center max-w-4xl mx-auto mb-16">
-            <span className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+            <span className="inline-block px-5 py-2 rounded-full border border-lead/40 text-body-sm text-starlight uppercase tracking-wide mb-6">
               Who We Are
             </span>
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-6">
+            <h2 className="text-heading-lg md:text-display font-light text-starlight mb-6">
               Building the Future of{" "}
-              <span className="gradient-text">Digital Solutions</span>
+              <span className="text-silver">Digital Solutions</span>
             </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              DataBuks is a technology-focused agency specializing in delivering high-quality websites, 
-              custom software systems, intelligent automations, AI-powered solutions, and rapid MVP development. 
-              With a commitment to excellence and innovation, we help businesses transform their ideas into 
+            <p className="text-body md:text-subheading text-silver leading-relaxed mb-6">
+              DataBuks is a technology-focused agency specializing in delivering high-quality websites,
+              custom software systems, intelligent automations, AI-powered solutions, and rapid MVP development.
+              With a commitment to excellence and innovation, we help businesses transform their ideas into
               powerful digital products.
             </p>
-            <p className="text-muted-foreground leading-relaxed">
-              Our team brings together expertise in modern web technologies, automation workflows, and 
-              artificial intelligence to create solutions that drive real business results. Whether you're 
-              a startup looking to launch your first product or an established business seeking to modernize 
+            <p className="text-body text-silver leading-relaxed">
+              Our team brings together expertise in modern web technologies, automation workflows, and
+              artificial intelligence to create solutions that drive real business results. Whether you're
+              a startup looking to launch your first product or an established business seeking to modernize
               your operations, we deliver scalable, efficient, and cost-effective solutions.
             </p>
           </div>
@@ -75,15 +75,15 @@ const AboutSection = () => {
             {highlights.map((item) => (
               <div
                 key={item.title}
-                className="bg-card rounded-2xl p-6 border border-border hover:border-primary/30 transition-all duration-300 hover:shadow-lg"
+                className="p-6 border border-lead/20 hover:border-lead/40 transition-all duration-300"
               >
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-                  <item.icon className="w-6 h-6 text-primary" />
+                <div className="w-12 h-12 flex items-center justify-center mb-4 text-mercury-blue">
+                  <item.icon className="w-6 h-6" />
                 </div>
-                <h3 className="font-heading font-bold text-lg text-foreground mb-2">
+                <h3 className="text-heading-sm font-light text-starlight mb-2">
                   {item.title}
                 </h3>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-body-sm text-silver">
                   {item.description}
                 </p>
               </div>
@@ -91,15 +91,15 @@ const AboutSection = () => {
           </div>
 
           {/* Our Promise */}
-          <div className="bg-card rounded-2xl p-8 border border-border">
-            <h3 className="font-heading font-bold text-2xl text-foreground mb-6 text-center">
+          <div className="p-8 border border-lead/20">
+            <h3 className="text-heading-lg font-light text-starlight mb-6 text-center">
               Our Promise to You
             </h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
               {values.map((value) => (
                 <div key={value} className="flex items-center gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
-                  <span className="text-foreground">{value}</span>
+                  <CheckCircle2 className="w-5 h-5 text-mercury-blue flex-shrink-0" />
+                  <span className="text-body text-starlight">{value}</span>
                 </div>
               ))}
             </div>

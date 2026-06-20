@@ -31,34 +31,34 @@ const ServicesOverview = () => {
   ];
 
   return (
-    <section className="py-20 bg-background">
-      <div className="container mx-auto px-4">
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+    <section className="py-24 bg-deep-space">
+      <div className="container mx-auto px-4 max-w-[1200px]">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <span className="inline-block px-5 py-2 rounded-full border border-lead/40 text-body-sm text-starlight uppercase tracking-wide mb-6">
             Our Services
           </span>
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-heading-lg md:text-display font-light text-starlight mb-4">
             What We{" "}
-            <span className="gradient-text">Build For You</span>
+            <span className="text-silver">Build For You</span>
           </h2>
-          <p className="text-muted-foreground">
+          <p className="text-body text-silver">
             From websites to AI tools — we deliver complete digital solutions tailored to your needs.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mb-10">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mb-12">
           {services.map((service) => (
             <div
               key={service.title}
-              className="group p-6 rounded-2xl bg-card border border-border hover:border-primary/30 hover:shadow-lg transition-all duration-300"
+              className="group p-6 border border-lead/20 hover:border-lead/40 transition-all duration-300"
             >
-              <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/20 transition-colors">
-                <service.icon className="w-7 h-7 text-primary" />
+              <div className="w-12 h-12 flex items-center justify-center mb-5 text-mercury-blue">
+                <service.icon className="w-6 h-6" />
               </div>
-              <h3 className="font-heading text-lg font-semibold text-foreground mb-3">
+              <h3 className="text-heading-sm font-light text-starlight mb-3">
                 {service.title}
               </h3>
-              <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
+              <p className="text-body-sm text-silver mb-4 leading-relaxed">
                 {service.description}
               </p>
             </div>

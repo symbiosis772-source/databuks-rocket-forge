@@ -3,13 +3,11 @@ import React, { useState } from 'react';
 import { cn } from '@/lib/utils';
 import { ChevronDown } from 'lucide-react';
 
-// Define the type for a single technology item
 export interface Technology {
   name: string;
   description?: string;
 }
 
-// Define the type for a single category item
 export interface Category {
   id: string | number;
   title: string;
@@ -19,7 +17,6 @@ export interface Category {
   technologies?: Technology[];
 }
 
-// Define the props for the CategoryList component
 export interface CategoryListProps {
   title: string;
   subtitle?: string;
@@ -43,18 +40,18 @@ export const CategoryList = ({
   };
 
   return (
-    <div className={cn("w-full bg-background text-foreground p-8", className)}>
+    <div className={cn("w-full bg-deep-space text-starlight p-8", className)}>
       <div className="max-w-4xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-12 md:mb-16">
           {headerIcon && (
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-primary/80 to-primary mb-6 text-primary-foreground">
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full border border-lead/40 mb-6 text-mercury-blue">
               {headerIcon}
             </div>
           )}
-          <h2 className="text-3xl md:text-4xl font-bold mb-2 tracking-tight">{title}</h2>
+          <h2 className="text-heading-lg md:text-display font-light mb-2 tracking-tight text-starlight">{title}</h2>
           {subtitle && (
-            <p className="text-lg text-muted-foreground">{subtitle}</p>
+            <p className="text-body text-silver">{subtitle}</p>
           )}
         </div>
 
@@ -70,33 +67,19 @@ export const CategoryList = ({
                 onMouseEnter={() => setHoveredItem(category.id)}
                 onMouseLeave={() => setHoveredItem(null)}
                 className={cn(
-                  "relative overflow-hidden border bg-card transition-all duration-300 ease-in-out cursor-pointer",
+                  "relative overflow-hidden border bg-midnight-slate transition-all duration-300 ease-in-out cursor-pointer",
                   hoveredItem === category.id || expandedItem === category.id
-                    ? 'border-primary shadow-lg shadow-primary/20 bg-primary/5'
-                    : 'border-border hover:border-primary/50'
+                    ? 'border-lead/60 bg-midnight-slate'
+                    : 'border-lead/20 hover:border-lead/40'
                 )}
               >
-                {/* Corner brackets that appear on hover/expand */}
-                {(hoveredItem === category.id || expandedItem === category.id) && (
-                  <>
-                    <div className="absolute top-3 left-3 w-6 h-6">
-                      <div className="absolute top-0 left-0 w-4 h-0.5 bg-primary" />
-                      <div className="absolute top-0 left-0 w-0.5 h-4 bg-primary" />
-                    </div>
-                    <div className="absolute bottom-3 right-3 w-6 h-6">
-                      <div className="absolute bottom-0 right-0 w-4 h-0.5 bg-primary" />
-                      <div className="absolute bottom-0 right-0 w-0.5 h-4 bg-primary" />
-                    </div>
-                  </>
-                )}
-
                 {/* Content */}
                 <div className="flex items-center justify-between h-24 px-6 md:px-8">
                   <div className="flex items-center gap-4 flex-1">
                     {category.icon && (
                       <div className={cn(
                         "transition-colors duration-300",
-                        hoveredItem === category.id || expandedItem === category.id ? 'text-primary' : 'text-muted-foreground'
+                        hoveredItem === category.id || expandedItem === category.id ? 'text-mercury-blue' : 'text-silver'
                       )}>
                         {category.icon}
                       </div>
@@ -104,9 +87,9 @@ export const CategoryList = ({
                     <div>
                       <h3
                         className={cn(
-                          "font-bold transition-colors duration-300",
+                          "font-light transition-colors duration-300",
                           category.featured ? 'text-xl md:text-2xl' : 'text-lg md:text-xl',
-                          hoveredItem === category.id || expandedItem === category.id ? 'text-primary' : 'text-foreground'
+                          hoveredItem === category.id || expandedItem === category.id ? 'text-mercury-blue' : 'text-starlight'
                         )}
                       >
                         {category.title}
@@ -114,8 +97,8 @@ export const CategoryList = ({
                       {category.subtitle && (
                         <p
                           className={cn(
-                            "mt-1 transition-colors duration-300 text-sm",
-                            hoveredItem === category.id || expandedItem === category.id ? 'text-foreground/90' : 'text-muted-foreground'
+                            "mt-1 transition-colors duration-300 text-body-sm",
+                            hoveredItem === category.id || expandedItem === category.id ? 'text-starlight' : 'text-silver'
                           )}
                         >
                           {category.subtitle}
@@ -124,12 +107,11 @@ export const CategoryList = ({
                     </div>
                   </div>
 
-                  {/* Expand indicator */}
-                  <ChevronDown 
+                  <ChevronDown
                     className={cn(
                       "w-5 h-5 transition-all duration-300",
-                      expandedItem === category.id ? 'rotate-180 text-primary' : 'text-muted-foreground',
-                      hoveredItem === category.id && 'text-primary'
+                      expandedItem === category.id ? 'rotate-180 text-mercury-blue' : 'text-silver',
+                      hoveredItem === category.id && 'text-mercury-blue'
                     )}
                   />
                 </div>
@@ -142,16 +124,16 @@ export const CategoryList = ({
                   expandedItem === category.id ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
                 )}
               >
-                <div className="bg-card/50 border border-t-0 border-border p-6">
+                <div className="bg-midnight-slate/50 border border-t-0 border-lead/20 p-6">
                   <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
                     {category.technologies?.map((tech, index) => (
                       <div
                         key={index}
-                        className="bg-background border border-border rounded-lg p-4 hover:border-primary/50 hover:bg-primary/5 transition-all duration-200"
+                        className="bg-deep-space border border-lead/20 p-4 hover:border-lead/40 hover:bg-mercury-blue/5 transition-all duration-200"
                       >
-                        <p className="font-medium text-foreground text-sm">{tech.name}</p>
+                        <p className="font-medium text-starlight text-body-sm">{tech.name}</p>
                         {tech.description && (
-                          <p className="text-xs text-muted-foreground mt-1">{tech.description}</p>
+                          <p className="text-body-sm text-silver mt-1">{tech.description}</p>
                         )}
                       </div>
                     ))}
