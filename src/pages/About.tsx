@@ -8,7 +8,7 @@ import databuksLogo from "@/assets/databuks-logo.jpg";
 
 const About = () => {
   return (
-    <div className="min-h-screen bg-deep-space">
+    <div className="min-h-screen bg-background">
       <SEO title="About DataBuks | Technology Services Agency" description="Learn about DataBuks — a passionate team building custom websites, software, automations, and MVPs with quality, speed, and affordability." path="/about" />
       <Header />
       <main className="pt-20">
@@ -22,7 +22,7 @@ const About = () => {
           title={
             <>
               About <br />
-              DataBuks
+              <span className="text-primary">DataBuks</span>
             </>
           }
           subtitle="We are a passionate team dedicated to building custom websites, software systems, automations, and MVPs. Our mission is to turn your ideas into impactful products with quality, speed, and affordability."
