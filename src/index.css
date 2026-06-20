@@ -140,7 +140,6 @@
     color: var(--color-silver);
   }
 }
-}
 
 @layer utilities {
   .gradient-text {
