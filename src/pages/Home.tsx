@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
 const ServicesOverview = lazy(() => import("@/components/ServicesOverview"));
+const PortfolioSection = lazy(() => import("@/components/PortfolioSection"));
 const MVPSection = lazy(() => import("@/components/MVPSection"));
 const FastDeliverySection = lazy(() => import("@/components/FastDeliverySection"));
 const WhyChooseSection = lazy(() => import("@/components/WhyChooseSection"));
@@ -18,13 +19,18 @@ const SectionFallback = () => <div className="py-16" />;
 const Home = () => {
   return (
     <div className="min-h-screen bg-background">
-      <SEO title="DataBuks | Custom Websites, Apps & AI Automation Solutions" description="DataBuks is a modern tech agency delivering custom websites, apps, software, automations, and AI-powered solutions. Fast delivery, affordable pricing." path="/home" />
+      <SEO
+        title="DataBuks — Ideas, shipped as products"
+        description="A technology studio building custom websites, apps and AI workflows. Delivered in weeks, not months."
+        path="/home"
+      />
       <Header />
       <main>
         <HeroSection />
         <CompanyOverview />
         <Suspense fallback={<SectionFallback />}>
           <ServicesOverview />
+          <PortfolioSection />
           <MVPSection />
           <FastDeliverySection />
           <WhyChooseSection />
