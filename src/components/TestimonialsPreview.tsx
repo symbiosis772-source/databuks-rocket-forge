@@ -1,54 +1,25 @@
-import { Star, Quote } from "lucide-react";
-
 const TestimonialsPreview = () => {
   const testimonials = [
-    {
-      content: "Clean work, fast delivery, and great communication. Highly recommended.",
-      rating: 5,
-    },
-    {
-      content: "Our website + automation workflow was delivered smoothly. Amazing experience.",
-      rating: 5,
-    },
+    { quote: "Clean work, fast delivery, and great communication.", author: "Founder, SaaS startup" },
+    { quote: "Our website and automation workflow shipped smoothly. Amazing experience.", author: "Marketing lead, agency" },
   ];
 
   return (
-    <section className="py-20 bg-secondary/30">
-      <div className="container mx-auto px-4">
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-            Testimonials
-          </span>
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4">
-            What Our{" "}
-            <span className="gradient-text">Clients Say</span>
+    <section className="py-24 bg-muted/40">
+      <div className="container mx-auto px-4 max-w-5xl">
+        <div className="mb-12 max-w-2xl">
+          <p className="text-sm text-muted-foreground mb-3">In their words</p>
+          <h2 className="font-display text-4xl md:text-5xl text-foreground leading-[1.05]">
+            Teams that <em className="italic">trust us.</em>
           </h2>
-          <p className="text-muted-foreground">
-            Real feedback from real clients who trusted us with their projects.
-          </p>
         </div>
-
-        <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-          {testimonials.map((testimonial, index) => (
-            <div
-              key={index}
-              className="relative p-8 rounded-2xl bg-card border border-border hover:border-primary/30 hover:shadow-lg transition-all duration-300"
-            >
-              <Quote className="absolute top-6 right-6 w-10 h-10 text-primary/10" />
-              
-              <div className="flex gap-1 mb-4">
-                {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-primary text-primary" />
-                ))}
-              </div>
-              
-              <p className="text-foreground leading-relaxed mb-6 text-lg">
-                "{testimonial.content}"
+        <div className="grid md:grid-cols-2 gap-4">
+          {testimonials.map((t, i) => (
+            <div key={i} className="bg-card rounded-3xl p-8 shadow-floating">
+              <p className="font-display text-xl text-foreground leading-snug mb-6">
+                "{t.quote}"
               </p>
-              
-              <p className="text-sm text-muted-foreground font-medium">
-                — Client Review
-              </p>
+              <p className="text-sm text-muted-foreground">— {t.author}</p>
             </div>
           ))}
         </div>
