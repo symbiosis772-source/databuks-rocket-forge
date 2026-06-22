@@ -1,31 +1,29 @@
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import GlowCube from "@/components/GlowCube";
 
 const CTASection = () => {
   return (
-    <section className="py-24 bg-background">
-      <div className="container mx-auto px-4">
-        <div className="relative overflow-hidden rounded-[2rem] gradient-hero text-white p-12 md:p-20 text-center">
-          <div className="absolute inset-0 bg-dot-grid opacity-30 [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000,transparent)]" />
-          <div className="relative">
-            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-white leading-[1.05] mb-6 max-w-2xl mx-auto">
-              Ready to <em className="italic">ship?</em>
+    <section className="bg-void py-24 md:py-32 border-t border-fern">
+      <div className="container mx-auto px-5">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="flex justify-center md:justify-start">
+            <GlowCube size={260} />
+          </div>
+          <div>
+            <p className="eyebrow mb-4">// Get started</p>
+            <h2 className="text-3xl md:text-5xl text-phosphor tracking-tight leading-[1.1] mb-6 max-w-md">
+              Ship your first app in <span className="text-reactor">minutes.</span>
             </h2>
-            <p className="text-white/70 max-w-md mx-auto mb-8">
-              Tell us about your idea. We'll send a plan back within 24 hours.
+            <p className="text-lichen max-w-md mb-8">
+              Tell us your idea. We send a plan within 24 hours.
             </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-3">
-              <Button variant="default" size="lg" asChild>
-                <Link to="/contact">
-                  Start a project
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
+            <div className="flex flex-wrap gap-3">
+              <Button asChild>
+                <Link to="/contact">Start a project</Link>
               </Button>
-              <Button variant="ghost" size="lg" asChild>
-                <a href="https://wa.me/918788606608" target="_blank" rel="noopener noreferrer">
-                  WhatsApp us
-                </a>
+              <Button variant="outline" asChild>
+                <a href="https://wa.me/918788606608" target="_blank" rel="noopener noreferrer">WhatsApp us</a>
               </Button>
             </div>
           </div>

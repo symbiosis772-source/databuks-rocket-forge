@@ -1,39 +1,37 @@
 import * as React from "react";
 import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
-
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-reactor focus-visible:ring-offset-2 focus-visible:ring-offset-void disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 rounded",
   {
     variants: {
       variant: {
-        // Primary chartreuse pill — the Antimetal signature CTA
+        // Reactor primary — vivid neon green
         default:
-          "rounded-full bg-chartreuse text-chartreuse-foreground shadow-cta hover:brightness-95 active:scale-[0.98]",
-        // Deep navy pill
-        dark:
-          "rounded-full bg-navy-deep text-white shadow-md hover:bg-navy active:scale-[0.98]",
-        destructive: "rounded-full bg-destructive text-destructive-foreground hover:bg-destructive/90",
-        // Light ghost pill (on light surfaces)
+          "bg-reactor text-void hover:brightness-110 active:scale-[0.98] shadow-[0_0_24px_-6px_hsl(var(--reactor-green)/0.6)]",
+        // Ghost — bordered, transparent
         outline:
-          "rounded-full bg-transparent text-foreground shadow-ghost-light hover:bg-white/60",
-        secondary: "rounded-full bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        // Dark ghost pill (on dark hero)
+          "bg-transparent text-phosphor border border-fern hover:border-reactor hover:text-reactor",
         ghost:
-          "rounded-full bg-transparent text-white shadow-ghost-dark hover:bg-white/5",
-        link: "text-primary underline-offset-4 hover:underline rounded-none",
+          "bg-transparent text-phosphor hover:bg-carbon",
+        secondary:
+          "bg-carbon text-phosphor hover:bg-moss border border-fern",
+        dark:
+          "bg-carbon text-phosphor hover:bg-moss border border-fern",
+        destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
+        link: "text-reactor underline-offset-4 hover:underline",
         hero:
-          "rounded-full bg-chartreuse text-chartreuse-foreground shadow-cta hover:brightness-95 active:scale-[0.98]",
+          "bg-reactor text-void hover:brightness-110 active:scale-[0.98] shadow-[0_0_24px_-6px_hsl(var(--reactor-green)/0.6)]",
         whatsapp:
-          "rounded-full bg-whatsapp text-white shadow-md hover:bg-whatsapp-hover active:scale-[0.98]",
+          "bg-whatsapp text-white hover:bg-whatsapp-hover",
       },
       size: {
-        default: "h-10 px-6 text-sm",
-        sm: "h-9 px-4 text-xs",
-        lg: "h-12 px-8 text-base",
-        xl: "h-14 px-10 text-base",
+        default: "h-10 px-5 text-sm",
+        sm: "h-8 px-3 text-xs",
+        lg: "h-11 px-6 text-sm",
+        xl: "h-12 px-8 text-base",
         icon: "h-10 w-10",
       },
     },

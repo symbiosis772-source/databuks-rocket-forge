@@ -9,6 +9,7 @@ import spiceparadise from "@/assets/portfolio/spiceparadise.png";
 import stjohns from "@/assets/portfolio/stjohns.png";
 import edumanage from "@/assets/portfolio/edumanage.png";
 import centralbiotech from "@/assets/portfolio/centralbiotech.png";
+import lovewithtrade from "@/assets/portfolio/lovewithtrade.png";
 
 export interface PortfolioItem {
   name: string;
@@ -23,23 +24,23 @@ export const portfolio: PortfolioItem[] = [
   {
     name: "ReraProperty.com",
     tagline: "RERA-verified real estate marketplace",
-    description: "Property listing platform for verified RERA-registered residential, commercial and industrial projects across Maharashtra. Search by location, project name, or RERA number.",
+    description: "Property listings for verified RERA-registered projects across Maharashtra. Search by location, project, or RERA number.",
     category: "Real Estate",
     url: "https://reraproperty.com",
     image: reraproperty,
   },
   {
     name: "Agha Noor",
-    tagline: "Premium eastern fashion e-commerce",
-    description: "Multi-region storefront for a Pakistani luxury fashion label, with country-aware checkout for Pakistan, UK and rest of world.",
+    tagline: "Premium fashion e-commerce",
+    description: "Multi-region storefront for a Pakistani luxury label. Country-aware checkout for PK, UK and rest of world.",
     category: "E-commerce",
     url: "https://aghanoorofficial.com",
     image: aghanoor,
   },
   {
     name: "AudioTonic Trader",
-    tagline: "Distributor portal for audio retailers",
-    description: "Trader-facing dashboard for AudioTonic Nagpur — order management, account access and trader-only catalog.",
+    tagline: "Distributor portal & management system",
+    description: "Trader dashboard for AudioTonic Nagpur — total sales, bills, quotations, stock analytics, and inventory.",
     category: "B2B Portal",
     url: "https://app.audiotonicnagpur.com",
     image: audiotonic,
@@ -47,7 +48,7 @@ export const portfolio: PortfolioItem[] = [
   {
     name: "DnyanPath Publication",
     tagline: "Self-publishing for Indian authors",
-    description: "Leading book publication house in India. 12K+ books published, 10K+ authors, sell in 120+ countries.",
+    description: "Leading book publication house. 12K+ books, 10K+ authors, sold in 120+ countries.",
     category: "Publishing",
     url: "https://dnyanpath.com",
     image: dnyanpath,
@@ -55,7 +56,7 @@ export const portfolio: PortfolioItem[] = [
   {
     name: "Sioura Jewellery",
     tagline: "Demifine jewellery storefront",
-    description: "Elegant WooCommerce experience for a handcrafted jewellery brand — aesthetic combos, bracelets, login, shipment tracking.",
+    description: "Elegant WooCommerce experience for a handcrafted jewellery brand.",
     category: "E-commerce",
     url: "https://siourajewellery.com",
     image: sioura,
@@ -63,39 +64,39 @@ export const portfolio: PortfolioItem[] = [
   {
     name: "LottoBall",
     tagline: "Provably fair number draw games",
-    description: "Magic-link auth, gameplay portal and transparent draw mechanics for a skill-and-chance number game.",
+    description: "Wallet-driven gameplay portal with multiple game modes — Morning Ball 29, 36, and Golden — plus results, history, and admin.",
     category: "Web App",
     url: "https://lucky-picks-play.lovable.app",
     image: lottoball,
   },
   {
-    name: "BizFlow",
-    tagline: "Small business operations suite",
-    description: "Sign-in based business workflow app — built for SMB owners to centralise day-to-day operations.",
-    category: "SaaS",
+    name: "BizFlow ERP",
+    tagline: "Distribution & operations ERP",
+    description: "End-to-end ERP for sales, distributors, employees, schemes, file management, stock transfer, DMS and dynamic reports.",
+    category: "ERP",
     url: "https://bizflow-forge-76-1p53.vercel.app",
     image: bizflow,
   },
   {
     name: "Spice Paradise",
     tagline: "Restaurant menu & ordering",
-    description: "K-Star Dine restaurant experience — menu, reservations, billing, orders, profile and admin in one place.",
+    description: "K-Star Dine experience — menu, reservations, billing, orders, profile and admin in one place.",
     category: "Restaurant",
     url: "https://tasty-table-hub-70.vercel.app",
     image: spiceparadise,
   },
   {
-    name: "St. John Mission School",
-    tagline: "School management portal",
-    description: "End-to-end student management, attendance, fees, exams, reports and SMS/email notifications for an English-medium school.",
+    name: "St. John Mission High School",
+    tagline: "Digital school management portal",
+    description: "Complete school management — students, teachers, classes, attendance, fees, exams, reports, SMS & email notifications.",
     category: "Education",
-    url: "https://saint-johns-portal.vercel.app",
+    url: "https://www.stjohnssaoner.in/",
     image: stjohns,
   },
   {
     name: "EduManage",
     tagline: "Tuition & coaching institute platform",
-    description: "Role-based portal (Admin, Student, Parent) for institutes to manage students, attendance, notes, schedules and progress.",
+    description: "Role-based portal for Admin, Student and Parent — students, attendance, notes, materials, schedules and notifications.",
     category: "Education",
     url: "https://class-connect-hub-ten.vercel.app",
     image: edumanage,
@@ -109,11 +110,11 @@ export const portfolio: PortfolioItem[] = [
     image: centralbiotech,
   },
   {
-    name: "K-Star Technology",
-    tagline: "Tech consulting & services",
-    description: "Marketing site for a technology services brand showcasing capabilities and offerings.",
-    category: "Agency",
-    url: "https://k-star-technology.vercel.app",
-    image: spiceparadise, // placeholder reused; site is currently offline
+    name: "LoveWithTrade",
+    tagline: "Crypto trading automation platform",
+    description: "Automated crypto trading with bots, strategy marketplace, smart trailing and portfolio management across Binance, Bybit, Bitget, KuCoin, MEXC, BingX and BitMart.",
+    category: "Fintech",
+    url: "https://lovewithtrade.com/",
+    image: lovewithtrade,
   },
 ];
