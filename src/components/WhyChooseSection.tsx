@@ -2,27 +2,25 @@ import { Zap, Palette, Settings, Headphones } from "lucide-react";
 
 const WhyChooseSection = () => {
   const reasons = [
-    { icon: Zap, title: "Fast delivery", description: "1–1.5 weeks. No bloat." },
-    { icon: Palette, title: "Modern design", description: "Crafted, not templated." },
-    { icon: Settings, title: "Custom-built", description: "Zero theme code. Yours." },
-    { icon: Headphones, title: "End-to-end", description: "Plan → ship → support." },
+    { icon: Zap, title: "Fast", desc: "1–1.5 weeks. No bloat." },
+    { icon: Palette, title: "Crafted", desc: "Designed, not templated." },
+    { icon: Settings, title: "Custom", desc: "Zero theme code. Yours." },
+    { icon: Headphones, title: "End-to-end", desc: "Plan → ship → support." },
   ];
 
   return (
-    <section className="py-24 bg-background">
-      <div className="container mx-auto px-4">
-        <div className="max-w-2xl mb-12">
-          <p className="text-sm text-muted-foreground mb-3">Why teams choose us</p>
-          <h2 className="font-display text-4xl md:text-5xl text-foreground leading-[1.05]">
-            Built on trust, <em className="italic">delivered with care.</em>
-          </h2>
-        </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+    <section className="bg-void py-24 border-t border-fern">
+      <div className="container mx-auto px-5">
+        <p className="eyebrow mb-4">// Why teams choose us</p>
+        <h2 className="text-3xl md:text-5xl text-phosphor tracking-tight mb-12 max-w-xl">
+          Built on trust.
+        </h2>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-fern border border-fern">
           {reasons.map((r) => (
-            <div key={r.title} className="bg-card rounded-2xl p-6 shadow-floating">
-              <r.icon className="w-5 h-5 text-foreground/70 mb-4" />
-              <h3 className="font-display text-lg text-foreground mb-1">{r.title}</h3>
-              <p className="text-sm text-muted-foreground">{r.description}</p>
+            <div key={r.title} className="bg-void p-6">
+              <r.icon className="w-5 h-5 text-reactor mb-4" strokeWidth={1.5} />
+              <h3 className="text-lg text-phosphor mb-1">{r.title}</h3>
+              <p className="text-sm text-lichen">{r.desc}</p>
             </div>
           ))}
         </div>

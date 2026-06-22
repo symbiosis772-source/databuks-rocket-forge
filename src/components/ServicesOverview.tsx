@@ -3,39 +3,33 @@ import { Globe, Smartphone, Workflow, Bot, ArrowUpRight } from "lucide-react";
 
 const ServicesOverview = () => {
   const services = [
-    { icon: Globe, title: "Websites", description: "Fast, modern, conversion-ready." },
-    { icon: Smartphone, title: "Apps & Software", description: "Dashboards, CRMs, custom tools." },
-    { icon: Workflow, title: "Automations", description: "WhatsApp, CRM, lead, payment flows." },
-    { icon: Bot, title: "AI Tools", description: "Chatbots, agents, RAG workflows." },
+    { icon: Globe, title: "Websites", desc: "Fast, modern, conversion-ready." },
+    { icon: Smartphone, title: "Apps", desc: "Dashboards, CRMs, portals." },
+    { icon: Workflow, title: "Automations", desc: "WhatsApp, CRM, lead flows." },
+    { icon: Bot, title: "AI Tools", desc: "Chatbots, agents, RAG." },
   ];
 
   return (
-    <section className="py-24 bg-muted/40">
-      <div className="container mx-auto px-4">
-        <div className="max-w-2xl mb-12">
-          <p className="text-sm text-muted-foreground mb-3" style={{ letterSpacing: "-0.015em" }}>
-            What we build
-          </p>
-          <h2 className="font-display text-4xl md:text-5xl text-foreground leading-[1.05]">
-            Four practices, <em className="italic">one team.</em>
-          </h2>
-        </div>
+    <section className="bg-void py-24 border-t border-fern">
+      <div className="container mx-auto px-5">
+        <p className="eyebrow mb-4">// Why DataBuks</p>
+        <h2 className="text-3xl md:text-5xl text-phosphor tracking-tight max-w-2xl mb-12">
+          Four practices, one team.
+        </h2>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-fern border border-fern">
           {services.map((s) => (
             <Link
               key={s.title}
               to="/services"
-              className="group bg-card rounded-3xl p-6 shadow-floating hover:shadow-elevated transition-all duration-300"
+              className="group bg-void hover:bg-carbon p-6 transition-colors"
             >
               <div className="flex items-start justify-between mb-12">
-                <div className="w-10 h-10 rounded-full bg-muted flex items-center justify-center">
-                  <s.icon className="w-5 h-5 text-foreground" />
-                </div>
-                <ArrowUpRight className="w-5 h-5 text-muted-foreground group-hover:text-foreground group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform" />
+                <s.icon className="w-5 h-5 text-reactor" strokeWidth={1.5} />
+                <ArrowUpRight className="w-4 h-4 text-lichen group-hover:text-reactor transition-colors" />
               </div>
-              <h3 className="font-display text-2xl text-foreground mb-2">{s.title}</h3>
-              <p className="text-sm text-muted-foreground">{s.description}</p>
+              <h3 className="text-xl text-phosphor mb-1 tracking-tight">{s.title}</h3>
+              <p className="text-sm text-lichen">{s.desc}</p>
             </Link>
           ))}
         </div>

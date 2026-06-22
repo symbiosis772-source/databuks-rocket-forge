@@ -2,26 +2,24 @@ import { Zap, Workflow, Code2, MessageCircle } from "lucide-react";
 
 const FastDeliverySection = () => {
   const items = [
-    { icon: Zap, label: "Sprint-based delivery" },
-    { icon: Workflow, label: "Automation-backed flow" },
+    { icon: Zap, label: "Sprint delivery" },
+    { icon: Workflow, label: "Automated flow" },
     { icon: Code2, label: "Modern stack" },
     { icon: MessageCircle, label: "Direct comms" },
   ];
 
   return (
-    <section className="py-24 bg-muted/40">
-      <div className="container mx-auto px-4">
-        <div className="max-w-3xl mx-auto text-center mb-12">
-          <p className="text-sm text-muted-foreground mb-3">How we ship fast</p>
-          <h2 className="font-display text-4xl md:text-5xl text-foreground leading-[1.05]">
-            Speed without the <em className="italic">shortcuts.</em>
-          </h2>
-        </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+    <section className="bg-void py-24 border-t border-fern">
+      <div className="container mx-auto px-5">
+        <p className="eyebrow mb-4">// How we ship fast</p>
+        <h2 className="text-3xl md:text-5xl text-phosphor tracking-tight mb-12 max-w-xl">
+          Speed without the shortcuts.
+        </h2>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-fern border border-fern">
           {items.map((i) => (
-            <div key={i.label} className="bg-card rounded-2xl p-6 shadow-floating">
-              <i.icon className="w-5 h-5 text-foreground/70 mb-4" />
-              <p className="text-sm text-foreground font-medium">{i.label}</p>
+            <div key={i.label} className="bg-void p-6">
+              <i.icon className="w-5 h-5 text-reactor mb-4" strokeWidth={1.5} />
+              <p className="text-sm text-phosphor">{i.label}</p>
             </div>
           ))}
         </div>

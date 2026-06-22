@@ -13,28 +13,40 @@ const Portfolio = () => {
   }, []);
 
   const [active, setActive] = useState("All");
-
   const filtered = active === "All" ? portfolio : portfolio.filter((p) => p.category === active);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-void">
       <SEO
         title="Portfolio | DataBuks — Custom websites, apps & MVPs"
-        description="Selected work from DataBuks: real estate marketplaces, e-commerce, school portals, ERPs, SaaS dashboards and MVPs shipped in weeks."
+        description="Selected DataBuks work: real estate marketplaces, e-commerce, school portals, ERPs, SaaS dashboards and MVPs shipped in weeks."
         path="/portfolio"
       />
       <Header />
 
-      <main className="pt-32 pb-24">
-        <div className="container mx-auto px-4">
-          {/* Header */}
+      <main className="pt-28 pb-24">
+        <div className="container mx-auto px-5">
           <div className="max-w-3xl mb-12">
-            <p className="text-sm text-muted-foreground mb-4">Portfolio</p>
-            <h1 className="font-display text-5xl md:text-6xl lg:text-7xl text-foreground leading-[1.04] mb-6">
-              Real products. <em className="italic">Real teams.</em>
+            <p className="eyebrow mb-4">// Portfolio</p>
+            <h1 className="text-4xl md:text-6xl text-phosphor tracking-tight leading-[1.05] mb-6">
+              Real products. <span className="text-reactor">Real teams.</span>
             </h1>
-            <p className="text-lg text-muted-foreground max-w-xl">
-              A selection of websites, apps, portals and ERPs we've designed and shipped for clients across industries.
+            <p className="text-base text-lichen max-w-xl">
+              A selection of websites, apps, portals and ERPs we've designed and shipped.
+            </p>
+          </div>
+
+          {/* Confidential disclaimer */}
+          <div className="mb-10 p-4 border border-fern bg-carbon/50 rounded">
+            <p className="text-sm text-phosphor">
+              <span className="text-reactor mr-2">●</span>
+              <span className="font-medium">Confidentiality note:</span>{" "}
+              <span className="text-lichen">
+                What you see here is only a small subset of our older, publicly shareable work.
+                The majority of our projects — enterprise dashboards, internal tools, fintech and
+                client-specific platforms — are under NDA and cannot be displayed. We've shipped
+                far more than what's visible below.
+              </span>
             </p>
           </div>
 
@@ -44,10 +56,10 @@ const Portfolio = () => {
               <button
                 key={c}
                 onClick={() => setActive(c)}
-                className={`px-4 py-2 rounded-full text-sm transition-all ${
+                className={`px-3 py-1.5 text-xs uppercase tracking-wider transition-all border ${
                   active === c
-                    ? "bg-navy-deep text-white shadow-md"
-                    : "bg-card text-foreground/70 hover:text-foreground shadow-floating"
+                    ? "bg-reactor text-void border-reactor"
+                    : "bg-transparent text-lichen border-fern hover:text-phosphor hover:border-phosphor"
                 }`}
               >
                 {c}
@@ -56,35 +68,33 @@ const Portfolio = () => {
           </div>
 
           {/* Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-fern border border-fern">
             {filtered.map((p) => (
               <a
                 key={p.name}
                 href={p.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group bg-card rounded-3xl overflow-hidden shadow-floating hover:shadow-elevated transition-all duration-300"
+                className="group bg-void hover:bg-carbon transition-colors p-4"
               >
-                <div className="aspect-[16/10] overflow-hidden bg-muted">
+                <div className="aspect-[16/10] overflow-hidden bg-carbon border border-fern mb-4">
                   <img
                     src={p.image}
                     alt={`${p.name} screenshot`}
                     loading="lazy"
                     decoding="async"
-                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                    className="w-full h-full object-cover object-top group-hover:scale-[1.03] transition-transform duration-700"
                   />
                 </div>
-                <div className="p-6">
-                  <div className="flex items-start justify-between gap-3 mb-3">
-                    <div>
-                      <p className="text-xs text-muted-foreground mb-1">{p.category}</p>
-                      <h3 className="font-display text-xl text-foreground">{p.name}</h3>
-                      <p className="text-sm text-muted-foreground mt-1">{p.tagline}</p>
-                    </div>
-                    <ArrowUpRight className="w-5 h-5 text-muted-foreground group-hover:text-foreground group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform shrink-0" />
+                <div className="flex items-start justify-between gap-3 mb-3">
+                  <div>
+                    <p className="eyebrow mb-1">{p.category}</p>
+                    <h3 className="text-lg text-phosphor tracking-tight">{p.name}</h3>
+                    <p className="text-sm text-lichen mt-1">{p.tagline}</p>
                   </div>
-                  <p className="text-sm text-foreground/70 leading-relaxed">{p.description}</p>
+                  <ArrowUpRight className="w-4 h-4 text-lichen group-hover:text-reactor group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all shrink-0" />
                 </div>
+                <p className="text-sm text-lichen leading-relaxed">{p.description}</p>
               </a>
             ))}
           </div>
