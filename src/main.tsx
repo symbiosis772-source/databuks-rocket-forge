@@ -1,6 +1,6 @@
 import { createRoot } from "react-dom/client";
 import { HelmetProvider } from "react-helmet-async";
-import "@fontsource-variable/inter";
+import "@fontsource-variable/inter/index.css";
 import App from "./App.tsx";
 import "./index.css";
 
