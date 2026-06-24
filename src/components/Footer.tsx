@@ -10,14 +10,14 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-void text-lichen pt-16 pb-8 border-t border-fern">
-      <div className="container mx-auto px-5">
-        <div className="grid md:grid-cols-3 gap-10 mb-12">
+    <footer className="bg-obsidian text-frost pt-20 pb-10 border-t border-[#2e2e2e]">
+      <div className="max-w-[1200px] mx-auto px-6">
+        <div className="grid md:grid-cols-3 gap-12 mb-14">
           <div>
-            <Link to="/" className="inline-flex items-center mb-4">
+            <Link to="/" className="inline-flex items-center mb-5">
               <img src={logo} alt="DataBuks" className="h-12 w-auto object-contain" style={{ filter: "brightness(0) invert(1)" }} />
             </Link>
-            <p className="text-sm text-lichen max-w-xs">
+            <p className="text-[14px] leading-[1.6] text-frost max-w-xs">
               A technology studio shipping custom products in weeks, not months.
             </p>
           </div>

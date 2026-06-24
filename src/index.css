@@ -2,65 +2,77 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Vivid+Co — darkroom editorial spread
-   Slate Veil canvas, Bone White type, Gunmetal Blue accent. */
+/* Origin Financial — editorial finance at horizon altitude
+   Obsidian canvas, Lyon Display serif, white pill CTA. */
+
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap');
 
 @layer base {
   :root {
-    --background: 211 17% 34%;            /* Slate Veil #495764 */
-    --foreground: 40 100% 98%;            /* Bone White #fffdf9 */
+    --background: 220 7% 7%;              /* Obsidian #0f1011 */
+    --foreground: 0 0% 100%;              /* Paper White */
 
-    --card: 0 0% 6%;                      /* Carbon */
-    --card-foreground: 40 100% 98%;
+    --card: 0 0% 4%;                      /* Carbon #090a0b */
+    --card-foreground: 0 0% 100%;
 
-    --popover: 0 0% 6%;
-    --popover-foreground: 40 100% 98%;
+    --popover: 0 0% 4%;
+    --popover-foreground: 0 0% 100%;
 
-    --primary: 209 18% 53%;               /* Gunmetal Blue #6f879c */
-    --primary-foreground: 40 100% 98%;
+    --primary: 0 0% 100%;                 /* White pill is the only CTA */
+    --primary-foreground: 0 0% 4%;
 
-    --secondary: 211 17% 28%;
-    --secondary-foreground: 40 100% 98%;
+    --secondary: 0 0% 25%;                /* Slate #3f4041 */
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 211 17% 28%;
-    --muted-foreground: 209 12% 72%;
+    --muted: 0 0% 18%;
+    --muted-foreground: 240 1% 63%;       /* Frost */
 
-    --accent: 209 18% 53%;
-    --accent-foreground: 40 100% 98%;
+    --accent: 244 100% 74%;               /* Amethyst */
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 1% 25%;                   /* Graphite hairline */
-    --input: 0 1% 25%;
-    --ring: 209 18% 53%;
+    --border: 0 0% 18%;                   /* Graphite hairline */
+    --input: 0 0% 18%;
+    --ring: 0 0% 100%;
 
-    --radius: 0px;                        /* Buttons are perfect rectangles */
+    --radius: 16px;                       /* Cards: 16px; buttons override to full pill */
 
-    /* Vivid+Co brand tokens */
-    --bone-white: 40 100% 98%;
-    --slate-veil: 211 17% 34%;
-    --carbon: 0 0% 6%;
-    --obsidian: 0 0% 0%;
-    --graphite: 0 1% 25%;
-    --gunmetal-blue: 209 18% 53%;
+    /* Origin brand tokens */
+    --obsidian: 220 7% 7%;                /* #0f1011 */
+    --void-black: 0 0% 0%;
+    --carbon: 240 5% 4%;                  /* #090a0b */
+    --graphite: 0 0% 18%;                 /* #2e2e2e */
+    --slate: 0 0% 25%;                    /* #3f4041 */
+    --mist: 0 1% 42%;                     /* #6a6b6b */
+    --frost: 240 1% 63%;                  /* #9f9fa0 */
+    --pearl: 0 0% 79%;
+    --bone: 240 9% 96%;                   /* #f5f5f7 */
+    --paper-white: 0 0% 100%;
 
-    /* Legacy token aliases (kept so existing classes keep working) */
-    --phosphor-mint: 40 100% 98%;         /* → bone */
-    --reactor-green: 209 18% 53%;         /* → gunmetal */
-    --soft-glow: 40 100% 98%;
-    --pale-mist: 211 17% 34%;             /* keep dark; one canvas only */
-    --sage-tint: 209 18% 53%;
-    --void: 211 17% 34%;
-    --moss: 211 17% 28%;
-    --fern: 0 1% 25%;
-    --lichen: 209 12% 72%;
-    --slate: 209 12% 60%;
-    --stone: 209 12% 70%;
-    --bone: 40 100% 98%;
+    --amethyst: 244 100% 74%;             /* #847dff */
+    --lavender-mist: 248 100% 89%;
+    --deep-iris: 241 41% 48%;
+    --orchid: 304 60% 71%;
+    --cyan-spark: 192 100% 43%;
+    --sky-wash: 215 76% 75%;
+    --twilight-navy: 207 72% 35%;
 
-    --shadow-nav: none;
-    --shadow-glow: none;
+    /* Legacy aliases — keep existing classes working */
+    --phosphor-mint: 0 0% 100%;           /* → paper white */
+    --reactor-green: 244 100% 74%;        /* → amethyst (for product highlights) */
+    --soft-glow: 240 9% 96%;
+    --pale-mist: 220 7% 7%;
+    --sage-tint: 244 100% 74%;
+    --void: 220 7% 7%;
+    --moss: 0 0% 4%;
+    --fern: 0 0% 18%;
+    --lichen: 240 1% 63%;
+    --stone: 0 0% 79%;
+
+    --shadow-pill: 0 18px 20px 0 rgba(0, 0, 0, 0.2);
+    --gradient-dusk: linear-gradient(180deg, #0f1011 0%, #131d27 18%, #1a4788 37%, #408ac1 69%, #408ac1 100%);
   }
 }
 
@@ -69,90 +81,110 @@
 
   html, body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Neue Montreal', 'Inter Variable', ui-sans-serif, system-ui, -apple-system, sans-serif;
-    letter-spacing: -0.01em;
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    font-weight: 400;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Neue Montreal', 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
+    font-family: 'Instrument Serif', 'Lyon Display', Georgia, serif;
     font-weight: 400;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.01em;
   }
 
   ::selection {
-    background: hsl(var(--bone-white));
-    color: hsl(var(--slate-veil));
+    background: hsl(var(--paper-white));
+    color: hsl(var(--obsidian));
   }
 }
 
 @layer utilities {
-  .text-phosphor { color: hsl(var(--bone-white)); }
-  .text-bone     { color: hsl(var(--bone-white)); }
-  .text-reactor  { color: hsl(var(--gunmetal-blue)); }
-  .text-gunmetal { color: hsl(var(--gunmetal-blue)); }
-  .text-lichen   { color: hsl(var(--lichen)); }
-  .bg-void       { background-color: hsl(var(--slate-veil)); }
-  .bg-slate-veil { background-color: hsl(var(--slate-veil)); }
+  /* Colour utilities */
+  .text-phosphor { color: hsl(var(--paper-white)); }
+  .text-bone     { color: hsl(var(--bone)); }
+  .text-frost    { color: hsl(var(--frost)); }
+  .text-reactor  { color: hsl(var(--amethyst)); }
+  .text-amethyst { color: hsl(var(--amethyst)); }
+  .text-lichen   { color: hsl(var(--frost)); }
+
+  .bg-void       { background-color: hsl(var(--obsidian)); }
+  .bg-obsidian   { background-color: hsl(var(--obsidian)); }
   .bg-carbon     { background-color: hsl(var(--carbon)); }
-  .bg-moss       { background-color: hsl(var(--moss)); }
+  .bg-graphite   { background-color: hsl(var(--graphite)); }
+  .bg-slate-cap  { background-color: hsl(var(--slate)); }
+  .bg-moss       { background-color: hsl(var(--carbon)); }
   .bg-fern       { background-color: hsl(var(--graphite)); }
-  .bg-reactor    { background-color: hsl(var(--gunmetal-blue)); }
-  .bg-pale-mist  { background-color: hsl(var(--slate-veil)); }
-  .border-fern   { border-color: hsl(var(--graphite)); }
-  .border-bone   { border-color: hsl(var(--bone-white)); }
-  .border-gunmetal { border-color: hsl(var(--gunmetal-blue)); }
+  .bg-reactor    { background-color: hsl(var(--amethyst)); }
+  .bg-pale-mist  { background-color: hsl(var(--obsidian)); }
+  .bg-amethyst   { background-color: hsl(var(--amethyst)); }
+  .bg-orchid     { background-color: hsl(var(--orchid)); }
+  .bg-cyan-spark { background-color: hsl(var(--cyan-spark)); }
+  .bg-sky-wash   { background-color: hsl(var(--sky-wash)); }
+  .bg-deep-iris  { background-color: hsl(var(--deep-iris)); }
 
-  .shadow-glow   { box-shadow: none; }
+  .border-fern     { border-color: hsl(var(--graphite)); }
+  .border-bone     { border-color: hsl(var(--bone)); }
+  .border-gunmetal { border-color: hsl(var(--frost)); }
 
-  /* Editorial eyebrow label */
-  .eyebrow {
-    @apply text-xs uppercase;
-    letter-spacing: 0.12em;
-    color: hsl(var(--bone-white) / 0.7);
-    font-weight: 400;
-  }
+  .bg-dusk-sky { background: var(--gradient-dusk); }
+  .shadow-pill { box-shadow: var(--shadow-pill); }
+  .shadow-glow { box-shadow: none; }
 
-  /* Display type — Vivid+Co signature */
+  /* Serif display classes — Origin's signature voice */
+  .font-display { font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; letter-spacing: -0.01em; }
+  .font-mono    { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+
   .text-display-xl {
-    font-size: clamp(64px, 11vw, 136px);
-    line-height: 1;
-    letter-spacing: -0.02em;
+    font-family: 'Instrument Serif', Georgia, serif;
     font-weight: 400;
+    font-size: clamp(56px, 9vw, 96px);
+    line-height: 0.95;
+    letter-spacing: -0.02em;
   }
   .text-display {
-    font-size: clamp(48px, 8vw, 105px);
-    line-height: 1;
-    letter-spacing: -0.02em;
+    font-family: 'Instrument Serif', Georgia, serif;
     font-weight: 400;
+    font-size: clamp(44px, 7vw, 80px);
+    line-height: 0.95;
+    letter-spacing: -0.01em;
   }
   .text-heading-vivid {
-    font-size: clamp(36px, 5vw, 56px);
-    line-height: 1.13;
-    letter-spacing: -0.02em;
+    font-family: 'Instrument Serif', Georgia, serif;
     font-weight: 400;
+    font-size: clamp(32px, 4vw, 48px);
+    line-height: 1.05;
+    letter-spacing: -0.01em;
   }
 
-  .animate-fade-up { animation: fadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) both; }
-  .animate-fade-in { animation: fadeIn 0.7s ease-out both; }
+  /* Eyebrow — stamped UI label */
+  .eyebrow {
+    font-family: 'Inter', sans-serif;
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.182em;
+    color: hsl(var(--frost));
+  }
+
+  .animate-fade-up { animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both; }
+  .animate-fade-in { animation: fadeIn 0.8s ease-out both; }
 
   .pulse-dot::before {
     content: "";
     display: inline-block;
     width: 6px; height: 6px; border-radius: 9999px;
-    background: hsl(var(--gunmetal-blue));
-    margin-right: 8px;
-    animation: pulseDot 2s ease-in-out infinite;
+    background: hsl(var(--paper-white));
+    margin-right: 10px;
+    animation: pulseDot 2.2s ease-in-out infinite;
   }
 
-  /* Mask fade for prism imagery */
-  .mask-fade-radial {
-    -webkit-mask-image: radial-gradient(ellipse 70% 70% at center, #000 30%, transparent 80%);
-            mask-image: radial-gradient(ellipse 70% 70% at center, #000 30%, transparent 80%);
+  .mask-fade-bottom {
+    -webkit-mask-image: linear-gradient(180deg, #000 60%, transparent 100%);
+            mask-image: linear-gradient(180deg, #000 60%, transparent 100%);
   }
 }
 
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(20px); }
+  from { opacity: 0; transform: translateY(24px); }
   to { opacity: 1; transform: translateY(0); }
 }
 @keyframes fadeIn {
