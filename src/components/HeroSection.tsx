@@ -1,45 +1,51 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import GlowCube from "@/components/GlowCube";
+import prism from "@/assets/prism-hero.png";
 
 const HeroSection = () => {
   return (
-    <section className="relative overflow-hidden bg-void text-phosphor">
-      <div className="absolute inset-0 bg-terminal-grid opacity-60 [mask-image:radial-gradient(ellipse_70%_60%_at_50%_50%,#000,transparent)]" />
+    <section className="relative overflow-hidden bg-slate-veil text-phosphor min-h-screen flex items-center">
+      {/* Glass prism — sole decorative element */}
+      <img
+        src={prism}
+        alt=""
+        aria-hidden="true"
+        width={1280}
+        height={1280}
+        className="pointer-events-none select-none absolute right-[-8%] top-1/2 -translate-y-1/2 w-[55vw] max-w-[820px] opacity-90 mask-fade-radial"
+      />
 
-      <div className="relative container mx-auto px-5 pt-36 pb-24 md:pt-44 md:pb-28">
-        <div className="max-w-3xl mx-auto text-center">
-          <p className="eyebrow mb-6 inline-flex items-center pulse-dot">
-            Programmable Studio · v2026
+      <div className="relative container mx-auto px-6 pt-40 pb-24 md:pt-44 md:pb-32 w-full">
+        <div className="max-w-[1100px]">
+          <p className="eyebrow mb-10 inline-flex items-center pulse-dot">
+            Programmable Studio — Est. 2026
           </p>
 
-          <h1 className="text-[44px] md:text-[64px] leading-[1.05] tracking-[-0.03em] text-phosphor font-medium animate-fade-up">
-            Ship software.<br/>
-            <span className="text-reactor">In weeks.</span>
+          <h1 className="text-display-xl text-phosphor animate-fade-up">
+            Ideas,<br />
+            shipped as <span className="font-bold">products.</span>
           </h1>
 
-          <p
-            className="mt-6 text-base md:text-[17px] text-lichen max-w-md mx-auto animate-fade-up"
-            style={{ animationDelay: "0.1s" }}
-          >
-            Custom web, apps, and AI infrastructure for teams that need to move now.
-          </p>
+          <div className="mt-16 grid md:grid-cols-2 gap-10 items-end">
+            <p
+              className="text-[18px] md:text-[20px] leading-[1.5] text-phosphor/85 max-w-md animate-fade-up"
+              style={{ animationDelay: "0.1s" }}
+            >
+              A technology studio crafting custom web, apps, and AI infrastructure for teams that need to move now.
+            </p>
 
-          <div
-            className="mt-8 flex items-center justify-center gap-3 animate-fade-up"
-            style={{ animationDelay: "0.2s" }}
-          >
-            <Button asChild>
-              <Link to="/contact">Get Started</Link>
-            </Button>
-            <Button variant="outline" asChild>
-              <Link to="/portfolio">See work</Link>
-            </Button>
+            <div
+              className="flex flex-wrap items-center gap-4 md:justify-end animate-fade-up"
+              style={{ animationDelay: "0.2s" }}
+            >
+              <Button asChild>
+                <Link to="/contact">START A PROJECT</Link>
+              </Button>
+              <Button variant="outline" asChild>
+                <Link to="/portfolio">SEE WORK</Link>
+              </Button>
+            </div>
           </div>
-        </div>
-
-        <div className="mt-16 flex justify-center animate-fade-in" style={{ animationDelay: "0.3s" }}>
-          <GlowCube size={320} />
         </div>
       </div>
     </section>

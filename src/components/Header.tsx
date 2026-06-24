@@ -16,55 +16,51 @@ const Header = () => {
   }, []);
 
   const navLinks = [
-    { label: "Product", href: "/services" },
-    { label: "Portfolio", href: "/portfolio" },
-    { label: "Stack", href: "/technologies" },
-    { label: "Pricing", href: "/pricing" },
-    { label: "Contact", href: "/contact" },
+    { label: "EXPERTISE", href: "/services" },
+    { label: "WORK", href: "/portfolio" },
+    { label: "STACK", href: "/technologies" },
+    { label: "PRICING", href: "/pricing" },
   ];
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${
         isScrolled
-          ? "bg-carbon/90 backdrop-blur-xl border-b border-fern"
-          : "bg-void/60 backdrop-blur-sm border-b border-transparent"
+          ? "bg-slate-veil/85 backdrop-blur-md border-b border-graphite"
+          : "bg-transparent border-b border-transparent"
       }`}
+      style={isScrolled ? undefined : { borderColor: "transparent" }}
     >
-      <div className="container mx-auto px-5 h-14 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2.5">
+      <div className="container mx-auto px-6 h-20 flex items-center justify-between">
+        <Link to="/" className="flex items-center" aria-label="DataBuks home">
           <img
             src={logo}
             alt="DataBuks"
-            className="h-7 w-auto invert brightness-0 contrast-200"
-            style={{ filter: "invert(1) brightness(2)" }}
+            className="h-12 md:h-14 w-auto object-contain"
+            style={{ filter: "brightness(0) invert(1)" }}
           />
         </Link>
 
-        <nav className="hidden md:flex items-center gap-6">
+        <nav className="hidden md:flex items-center gap-[22px]">
           {navLinks.map((link) => {
             const active = location.pathname === link.href;
             return (
               <Link
                 key={link.label}
                 to={link.href}
-                className={`text-sm transition-colors relative py-1 ${
-                  active ? "text-phosphor" : "text-lichen hover:text-phosphor"
+                className={`text-[14px] tracking-[0.04em] transition-colors ${
+                  active ? "text-phosphor" : "text-phosphor/80 hover:text-phosphor"
                 }`}
               >
                 {link.label}
-                {active && <span className="absolute -bottom-px left-0 right-0 h-px bg-reactor" />}
               </Link>
             );
           })}
         </nav>
 
-        <div className="hidden md:flex items-center gap-3">
-          <Link to="/contact" className="text-sm text-lichen hover:text-phosphor transition-colors">
-            Log in
-          </Link>
-          <Button size="sm" asChild>
-            <Link to="/contact">Get Started</Link>
+        <div className="hidden md:flex items-center">
+          <Button asChild>
+            <Link to="/contact">CONTACT</Link>
           </Button>
         </div>
 
@@ -78,26 +74,21 @@ const Header = () => {
       </div>
 
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-carbon border-b border-fern animate-fade-in">
-          <nav className="container mx-auto px-5 py-4 flex flex-col gap-1">
+        <div className="md:hidden absolute top-full left-0 right-0 bg-slate-veil border-b border-graphite animate-fade-in">
+          <nav className="container mx-auto px-6 py-6 flex flex-col gap-3">
             {navLinks.map((link) => (
               <Link
                 key={link.label}
                 to={link.href}
-                className={`px-3 py-2 text-sm rounded ${
-                  location.pathname === link.href ? "text-phosphor bg-moss" : "text-lichen"
-                }`}
+                className="px-1 py-2 text-[15px] tracking-[0.04em] text-phosphor"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.label}
               </Link>
             ))}
-            <div className="flex flex-col gap-2 pt-3 mt-2 border-t border-fern">
-              <Button variant="outline" asChild>
-                <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>Log in</Link>
-              </Button>
+            <div className="pt-3 mt-2 border-t border-graphite">
               <Button asChild>
-                <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>Get Started</Link>
+                <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>CONTACT</Link>
               </Button>
             </div>
           </nav>
