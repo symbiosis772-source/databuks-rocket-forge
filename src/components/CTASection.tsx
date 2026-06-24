@@ -11,19 +11,19 @@ const CTASection = () => {
             <GlowCube size={260} />
           </div>
           <div>
-            <p className="eyebrow mb-4">// Get started</p>
-            <h2 className="text-3xl md:text-5xl text-phosphor tracking-tight leading-[1.1] mb-6 max-w-md">
-              Ship your first app in <span className="text-reactor">minutes.</span>
+            <p className="eyebrow mb-10">Get started</p>
+            <h2 className="text-display text-phosphor mb-8 max-w-xl">
+              Ship your first app in <span className="font-bold">minutes.</span>
             </h2>
-            <p className="text-lichen max-w-md mb-8">
+            <p className="text-[18px] leading-[1.5] text-phosphor/80 max-w-md mb-10">
               Tell us your idea. We send a plan within 24 hours.
             </p>
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-4">
               <Button asChild>
-                <Link to="/contact">Start a project</Link>
+                <Link to="/contact">START A PROJECT</Link>
               </Button>
               <Button variant="outline" asChild>
-                <a href="https://wa.me/918788606608" target="_blank" rel="noopener noreferrer">WhatsApp us</a>
+                <a href="https://wa.me/918788606608" target="_blank" rel="noopener noreferrer">WHATSAPP US</a>
               </Button>
             </div>
           </div>

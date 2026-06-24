@@ -3,35 +3,37 @@ import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
+/* Vivid+Co — outlined ghost is the only interactive shape.
+   0px radius, 1px border, transparent background, all-caps label. */
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-reactor focus-visible:ring-offset-2 focus-visible:ring-offset-void disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 rounded",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap font-normal uppercase tracking-[0.04em] transition-colors duration-200 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-bone disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 rounded-none border",
   {
     variants: {
       variant: {
-        // Reactor primary — vivid neon green
         default:
-          "bg-reactor text-void hover:brightness-110 active:scale-[0.98] shadow-[0_0_24px_-6px_hsl(var(--reactor-green)/0.6)]",
-        // Ghost — bordered, transparent
+          "bg-transparent text-phosphor border-bone hover:border-gunmetal hover:text-gunmetal",
         outline:
-          "bg-transparent text-phosphor border border-fern hover:border-reactor hover:text-reactor",
+          "bg-transparent text-gunmetal border-gunmetal hover:text-phosphor hover:border-bone",
         ghost:
-          "bg-transparent text-phosphor hover:bg-carbon",
+          "bg-transparent text-phosphor border-transparent hover:text-gunmetal",
         secondary:
-          "bg-carbon text-phosphor hover:bg-moss border border-fern",
+          "bg-transparent text-phosphor border-bone hover:border-gunmetal hover:text-gunmetal",
         dark:
-          "bg-carbon text-phosphor hover:bg-moss border border-fern",
-        destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-        link: "text-reactor underline-offset-4 hover:underline",
+          "bg-transparent text-phosphor border-bone hover:border-gunmetal hover:text-gunmetal",
+        destructive:
+          "bg-transparent text-destructive border-destructive hover:opacity-80",
+        link:
+          "bg-transparent text-phosphor border-transparent underline-offset-4 hover:underline",
         hero:
-          "bg-reactor text-void hover:brightness-110 active:scale-[0.98] shadow-[0_0_24px_-6px_hsl(var(--reactor-green)/0.6)]",
+          "bg-transparent text-phosphor border-bone hover:border-gunmetal hover:text-gunmetal",
         whatsapp:
-          "bg-whatsapp text-white hover:bg-whatsapp-hover",
+          "bg-transparent text-phosphor border-bone hover:border-gunmetal hover:text-gunmetal",
       },
       size: {
-        default: "h-10 px-5 text-sm",
-        sm: "h-8 px-3 text-xs",
-        lg: "h-11 px-6 text-sm",
-        xl: "h-12 px-8 text-base",
+        default: "h-[38px] px-[15px] py-[9px] text-[14px]",
+        sm: "h-8 px-3 text-[13px]",
+        lg: "h-11 px-6 text-[15px]",
+        xl: "h-12 px-8 text-[15px]",
         icon: "h-10 w-10",
       },
     },

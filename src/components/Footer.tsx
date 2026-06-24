@@ -15,7 +15,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-10 mb-12">
           <div>
             <Link to="/" className="inline-flex items-center mb-4">
-              <img src={logo} alt="DataBuks" className="h-8 w-auto" style={{ filter: "invert(1) brightness(2)" }} />
+              <img src={logo} alt="DataBuks" className="h-12 w-auto object-contain" style={{ filter: "brightness(0) invert(1)" }} />
             </Link>
             <p className="text-sm text-lichen max-w-xs">
               A technology studio shipping custom products in weeks, not months.

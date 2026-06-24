@@ -2,56 +2,65 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Vivid+Co — darkroom editorial spread
+   Slate Veil canvas, Bone White type, Gunmetal Blue accent. */
+
 @layer base {
   :root {
-    /* Modal phosphor palette — dark by default */
-    --background: 0 0% 0%;                /* Void #000 */
-    --foreground: 119 100% 93%;           /* Phosphor Mint #ddffdc */
+    --background: 211 17% 34%;            /* Slate Veil #495764 */
+    --foreground: 40 100% 98%;            /* Bone White #fffdf9 */
 
-    --card: 180 6% 14%;                   /* Carbon #212525 */
-    --card-foreground: 119 100% 93%;
+    --card: 0 0% 6%;                      /* Carbon */
+    --card-foreground: 40 100% 98%;
 
-    --popover: 180 6% 14%;
-    --popover-foreground: 119 100% 93%;
+    --popover: 0 0% 6%;
+    --popover-foreground: 40 100% 98%;
 
-    --primary: 110 82% 66%;               /* Reactor Green #7fee64 */
-    --primary-foreground: 0 0% 0%;
+    --primary: 209 18% 53%;               /* Gunmetal Blue #6f879c */
+    --primary-foreground: 40 100% 98%;
 
-    --secondary: 116 21% 26%;             /* Moss #3e4a3c */
-    --secondary-foreground: 119 100% 93%;
+    --secondary: 211 17% 28%;
+    --secondary-foreground: 40 100% 98%;
 
-    --muted: 180 6% 14%;                  /* Carbon */
-    --muted-foreground: 116 11% 44%;      /* Lichen #677d64 */
+    --muted: 211 17% 28%;
+    --muted-foreground: 209 12% 72%;
 
-    --accent: 102 76% 84%;                /* Soft Glow #c8f9b6 */
-    --accent-foreground: 0 0% 0%;
+    --accent: 209 18% 53%;
+    --accent-foreground: 40 100% 98%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 117 8% 30%;                 /* Fern #485346 */
-    --input: 117 8% 30%;
-    --ring: 110 82% 66%;
+    --border: 0 1% 25%;                   /* Graphite hairline */
+    --input: 0 1% 25%;
+    --ring: 209 18% 53%;
 
-    --radius: 0.25rem;                    /* 4px buttons signature */
+    --radius: 0px;                        /* Buttons are perfect rectangles */
 
-    /* Modal brand tokens */
-    --phosphor-mint: 119 100% 93%;        /* #ddffdc */
-    --reactor-green: 110 82% 66%;         /* #7fee64 */
-    --soft-glow: 102 76% 84%;             /* #c8f9b6 */
-    --pale-mist: 119 41% 90%;             /* #def0dd */
-    --sage-tint: 110 27% 73%;             /* #aed2a4 */
-    --void: 0 0% 0%;
-    --carbon: 180 6% 14%;                 /* #212525 */
-    --moss: 116 21% 26%;                  /* #3e4a3c */
-    --fern: 117 8% 30%;                   /* #485346 */
-    --lichen: 116 11% 44%;                /* #677d64 */
-    --slate: 120 4% 43%;                  /* #697368 */
-    --stone: 120 4% 54%;                  /* #859085 */
-    --bone: 0 0% 100%;
+    /* Vivid+Co brand tokens */
+    --bone-white: 40 100% 98%;
+    --slate-veil: 211 17% 34%;
+    --carbon: 0 0% 6%;
+    --obsidian: 0 0% 0%;
+    --graphite: 0 1% 25%;
+    --gunmetal-blue: 209 18% 53%;
 
-    --shadow-nav: rgba(0, 0, 0, 0.4) 0px 10px 15px -3px, rgba(0, 0, 0, 0.3) 0px 4px 6px -4px;
-    --shadow-glow: 0 0 60px hsl(110 82% 66% / 0.25);
+    /* Legacy token aliases (kept so existing classes keep working) */
+    --phosphor-mint: 40 100% 98%;         /* → bone */
+    --reactor-green: 209 18% 53%;         /* → gunmetal */
+    --soft-glow: 40 100% 98%;
+    --pale-mist: 211 17% 34%;             /* keep dark; one canvas only */
+    --sage-tint: 209 18% 53%;
+    --void: 211 17% 34%;
+    --moss: 211 17% 28%;
+    --fern: 0 1% 25%;
+    --lichen: 209 12% 72%;
+    --slate: 209 12% 60%;
+    --stone: 209 12% 70%;
+    --bone: 40 100% 98%;
+
+    --shadow-nav: none;
+    --shadow-glow: none;
   }
 }
 
@@ -60,51 +69,67 @@
 
   html, body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Inter Variable', ui-sans-serif, system-ui, -apple-system, sans-serif;
-    font-feature-settings: "cv11" on, "ss01" on;
+    font-family: 'Neue Montreal', 'Inter Variable', ui-sans-serif, system-ui, -apple-system, sans-serif;
     letter-spacing: -0.01em;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
-    font-feature-settings: "ss01" on, "cv11" on;
-    font-weight: 500;
+    font-family: 'Neue Montreal', 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
+    font-weight: 400;
     letter-spacing: -0.02em;
   }
 
   ::selection {
-    background: hsl(var(--reactor-green));
-    color: #000;
+    background: hsl(var(--bone-white));
+    color: hsl(var(--slate-veil));
   }
 }
 
 @layer utilities {
-  .text-phosphor { color: hsl(var(--phosphor-mint)); }
-  .text-reactor  { color: hsl(var(--reactor-green)); }
+  .text-phosphor { color: hsl(var(--bone-white)); }
+  .text-bone     { color: hsl(var(--bone-white)); }
+  .text-reactor  { color: hsl(var(--gunmetal-blue)); }
+  .text-gunmetal { color: hsl(var(--gunmetal-blue)); }
   .text-lichen   { color: hsl(var(--lichen)); }
-  .bg-void       { background-color: hsl(var(--void)); }
+  .bg-void       { background-color: hsl(var(--slate-veil)); }
+  .bg-slate-veil { background-color: hsl(var(--slate-veil)); }
   .bg-carbon     { background-color: hsl(var(--carbon)); }
   .bg-moss       { background-color: hsl(var(--moss)); }
-  .bg-fern       { background-color: hsl(var(--fern)); }
-  .bg-reactor    { background-color: hsl(var(--reactor-green)); }
-  .bg-pale-mist  { background-color: hsl(var(--pale-mist)); }
-  .border-fern   { border-color: hsl(var(--fern)); }
+  .bg-fern       { background-color: hsl(var(--graphite)); }
+  .bg-reactor    { background-color: hsl(var(--gunmetal-blue)); }
+  .bg-pale-mist  { background-color: hsl(var(--slate-veil)); }
+  .border-fern   { border-color: hsl(var(--graphite)); }
+  .border-bone   { border-color: hsl(var(--bone-white)); }
+  .border-gunmetal { border-color: hsl(var(--gunmetal-blue)); }
 
-  .shadow-glow   { box-shadow: var(--shadow-glow); }
+  .shadow-glow   { box-shadow: none; }
 
-  /* Eyebrow label */
+  /* Editorial eyebrow label */
   .eyebrow {
     @apply text-xs uppercase;
-    letter-spacing: 0.1em;
-    color: hsl(var(--lichen));
-    font-weight: 500;
+    letter-spacing: 0.12em;
+    color: hsl(var(--bone-white) / 0.7);
+    font-weight: 400;
   }
 
-  /* Terminal dot grid */
-  .bg-terminal-grid {
-    background-image:
-      radial-gradient(rgba(127, 238, 100, 0.08) 1px, transparent 1px);
-    background-size: 24px 24px;
+  /* Display type — Vivid+Co signature */
+  .text-display-xl {
+    font-size: clamp(64px, 11vw, 136px);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    font-weight: 400;
+  }
+  .text-display {
+    font-size: clamp(48px, 8vw, 105px);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    font-weight: 400;
+  }
+  .text-heading-vivid {
+    font-size: clamp(36px, 5vw, 56px);
+    line-height: 1.13;
+    letter-spacing: -0.02em;
+    font-weight: 400;
   }
 
   .animate-fade-up { animation: fadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) both; }
@@ -114,10 +139,15 @@
     content: "";
     display: inline-block;
     width: 6px; height: 6px; border-radius: 9999px;
-    background: hsl(var(--reactor-green));
+    background: hsl(var(--gunmetal-blue));
     margin-right: 8px;
-    box-shadow: 0 0 8px hsl(var(--reactor-green));
     animation: pulseDot 2s ease-in-out infinite;
+  }
+
+  /* Mask fade for prism imagery */
+  .mask-fade-radial {
+    -webkit-mask-image: radial-gradient(ellipse 70% 70% at center, #000 30%, transparent 80%);
+            mask-image: radial-gradient(ellipse 70% 70% at center, #000 30%, transparent 80%);
   }
 }
 
@@ -130,6 +160,6 @@
   to { opacity: 1; }
 }
 @keyframes pulseDot {
-  0%, 100% { opacity: 1; box-shadow: 0 0 8px hsl(var(--reactor-green)); }
-  50% { opacity: 0.5; box-shadow: 0 0 14px hsl(var(--reactor-green)); }
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
 }
