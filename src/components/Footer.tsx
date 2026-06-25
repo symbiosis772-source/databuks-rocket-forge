@@ -4,49 +4,26 @@ import logo from "@/assets/brand/databuks-logo.png";
 const Footer = () => {
   const links = [
     { label: "Services", href: "/services" },
-    { label: "Portfolio", href: "/portfolio" },
+    { label: "Work", href: "/portfolio" },
     { label: "Pricing", href: "/pricing" },
     { label: "Contact", href: "/contact" },
   ];
-
   return (
-    <footer className="bg-obsidian text-frost pt-20 pb-10 border-t border-[#2e2e2e]">
-      <div className="max-w-[1200px] mx-auto px-6">
-        <div className="grid md:grid-cols-3 gap-12 mb-14">
-          <div>
-            <Link to="/" className="inline-flex items-center mb-5">
-              <img src={logo} alt="DataBuks" className="h-12 w-auto object-contain" style={{ filter: "brightness(0) invert(1)" }} />
+    <footer className="bg-snow border-t border-fog">
+      <div className="max-w-[1200px] mx-auto px-6 py-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <Link to="/" className="flex items-center gap-2">
+          <img src={logo} alt="DataBuks" className="h-7 w-auto object-contain" />
+          <span className="text-[15px] font-semibold tracking-[-0.015em] text-ink">DataBuks</span>
+        </Link>
+        <nav className="flex flex-wrap gap-1">
+          {links.map((l) => (
+            <Link key={l.label} to={l.href} className="px-3 py-1.5 text-[14px] text-ink rounded-[10px] hover:bg-fog">
+              {l.label}
             </Link>
-            <p className="text-[14px] leading-[1.6] text-frost max-w-xs">
-              A technology studio shipping custom products in weeks, not months.
-            </p>
-          </div>
-
-          <div>
-            <p className="eyebrow mb-4">Navigate</p>
-            <ul className="space-y-2">
-              {links.map((l) => (
-                <li key={l.label}>
-                  <Link to={l.href} className="text-sm text-phosphor hover:text-reactor transition-colors">
-                    {l.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <p className="eyebrow mb-4">Contact</p>
-            <ul className="space-y-2 text-sm">
-              <li><a href="mailto:databuksllc@gmail.com" className="text-phosphor hover:text-reactor transition-colors">databuksllc@gmail.com</a></li>
-              <li><a href="https://wa.me/918788606608" target="_blank" rel="noopener noreferrer" className="text-phosphor hover:text-reactor transition-colors">+91 87886 06608</a></li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="border-t border-fern pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-lichen">© {new Date().getFullYear()} DataBuks. All rights reserved.</p>
-          <p className="text-xs text-lichen">Made with care in India.</p>
+          ))}
+        </nav>
+        <div className="text-[13px] text-ash">
+          © {new Date().getFullYear()} DataBuks · Made in India
         </div>
       </div>
     </footer>

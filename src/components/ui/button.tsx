@@ -3,39 +3,28 @@ import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
-/* Origin Financial — white pill is the only true CTA.
-   Full-pill radius, tracked uppercase label, subtle shadow. */
+/* ChatGPT — 10px radius, ink-black filled control, no chromatic CTA */
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap font-normal uppercase transition-all duration-200 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-offset-2 focus-visible:ring-offset-obsidian focus-visible:ring-white disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 rounded-full",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink-black focus-visible:ring-offset-2 focus-visible:ring-offset-snow disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 rounded-[10px]",
   {
     variants: {
       variant: {
-        // White pill — the signature CTA
-        default:
-          "bg-white text-[#090a0b] hover:bg-[#f5f5f7] shadow-pill",
-        outline:
-          "bg-transparent text-white border border-white/40 hover:border-white hover:bg-white/5",
-        ghost:
-          "bg-transparent text-white hover:text-white/70",
-        secondary:
-          "bg-[#3f4041] text-white hover:bg-[#4a4b4c]",
-        dark:
-          "bg-[#090a0b] text-white border border-[#2e2e2e] hover:border-white/50",
-        destructive:
-          "bg-destructive text-destructive-foreground hover:opacity-90",
-        link:
-          "bg-transparent text-white underline-offset-4 hover:underline rounded-none",
-        hero:
-          "bg-white text-[#090a0b] hover:bg-[#f5f5f7] shadow-pill",
-        whatsapp:
-          "bg-white text-[#090a0b] hover:bg-[#f5f5f7] shadow-pill",
+        default: "bg-[#0d0d0d] text-white hover:bg-[#1f1f1f]",
+        outline: "bg-transparent text-[#0d0d0d] border border-[#0d0d0d] hover:bg-[#ececec]",
+        ghost:   "bg-transparent text-[#0d0d0d] hover:bg-[#ececec]",
+        secondary: "bg-[#ececec] text-[#0d0d0d] hover:bg-[#e2e2e2]",
+        dark:    "bg-[#0d0d0d] text-white hover:bg-[#1f1f1f]",
+        destructive: "bg-destructive text-destructive-foreground hover:opacity-90",
+        link:    "bg-transparent text-[#0d0d0d] underline-offset-4 hover:underline rounded-none",
+        hero:    "bg-[#0d0d0d] text-white hover:bg-[#1f1f1f]",
+        whatsapp:"bg-[#0d0d0d] text-white hover:bg-[#1f1f1f]",
       },
       size: {
-        default: "h-[38px] px-[18px] py-[12px] text-[11px] tracking-[0.182em]",
-        sm: "h-8 px-4 text-[11px] tracking-[0.182em]",
-        lg: "h-11 px-6 text-[12px] tracking-[0.182em]",
-        xl: "h-12 px-8 text-[13px] tracking-[0.182em]",
-        icon: "h-10 w-10",
+        default: "h-9 px-4 text-[14px]",
+        sm: "h-8 px-3 text-[13px]",
+        lg: "h-10 px-5 text-[15px]",
+        xl: "h-11 px-6 text-[16px]",
+        icon: "h-9 w-9",
       },
     },
     defaultVariants: { variant: "default", size: "default" },
