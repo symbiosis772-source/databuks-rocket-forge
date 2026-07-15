@@ -1,0 +1,260 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Gleap — warm cream-paper workspace with graphite accents.
+   Linen canvas, weight-400 headlines, pill buttons, one lime accent.
+   Video background stays visible through glass-overlay surfaces. */
+
+@import url("https://api.fontshare.com/v2/css?f[]=switzer@400,500,600&display=swap");
+
+@layer base {
+  :root {
+    /* Antimetal-inspired palette (HSL) */
+    --background: 220 33% 98%;        /* #f8f9fc ghost canvas */
+    --foreground: 222 40% 18%;        /* #1b2540 midnight navy */
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 40% 18%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 40% 18%;
+
+    --primary: 0 0% 8%;               /* black CTA — user asked buttons black */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 20% 94%;
+    --secondary-foreground: 222 40% 18%;
+
+    --muted: 220 20% 96%;
+    --muted-foreground: 224 10% 47%;  /* #6b7184 slate ink */
+
+    --accent: 0 0% 8%;                /* black — no green accents */
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 222 40% 18% / 0.10;
+    --input: 220 20% 90%;
+    --ring: 222 40% 18%;
+
+    --radius: 20px;
+
+    /* Named tokens (Antimetal-mapped) */
+    --linen:    220 33% 98%;
+    --frost:    0 0% 100%;
+    --stone:    220 20% 94%;
+    --pebble:   220 12% 75%;
+    --graphite: 0 0% 8%;        /* black — buttons */
+    --charcoal: 222 40% 18%;    /* midnight navy body */
+    --slate-c:  224 10% 47%;
+    --ash:      222 10% 56%;
+    --iron:     222 40% 18%;
+    --quartz:   220 20% 92%;
+    --lime:     0 0% 8%;        /* remap to black — kills green pulse */
+
+    /* Legacy aliases so untouched components keep rendering */
+    --obsidian: var(--graphite);
+    --ink-black: var(--charcoal);
+    --smoke: var(--slate-c);
+    --paper: var(--linen);
+    --snow: var(--frost);
+    --fog: var(--stone);
+    --cloud: 0 0% 0% / 0.12;
+    --mist: var(--quartz);
+    --ember: var(--graphite);
+    --void: var(--linen);
+    --moss: var(--linen);
+    --fern: var(--stone);
+    --lichen: var(--ash);
+    --bone: var(--frost);
+    --paper-white: var(--frost);
+    --phosphor-mint: var(--charcoal);
+    --reactor-green: var(--charcoal);
+    --amethyst: var(--graphite);
+    --orchid: var(--stone);
+    --cyan-spark: var(--graphite);
+    --sky-wash: var(--stone);
+    --deep-iris: var(--graphite);
+    --carbon: var(--linen);
+    --fog-a: var(--slate-c);
+    --steel: var(--slate-c);
+
+    --shadow-xl: 0 32px 68px 0 rgba(0,0,0,0.30);
+    --shadow-xl-2: 0 18px 55px 0 rgba(16,24,40,0.12);
+    --shadow-pill: 0 1px 0 0 rgba(0,0,0,0.04);
+    --gradient-hero: radial-gradient(1200px 600px at 20% 20%, #e6d5f5 0%, transparent 55%),
+                     radial-gradient(900px 500px at 80% 30%, #b6e6dd 0%, transparent 55%),
+                     radial-gradient(900px 700px at 60% 90%, #ffd7bd 0%, transparent 55%);
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  html, body, #root {
+    @apply text-foreground antialiased;
+    font-family: "Switzer", "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+    background: transparent;
+    font-weight: 400;
+    letter-spacing: -0.005em;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Switzer", "Inter", ui-sans-serif, system-ui, sans-serif;
+    font-weight: 400;                 /* Gleap headlines whisper */
+    letter-spacing: -0.01em;
+  }
+  ::selection { background: hsl(var(--graphite)); color: hsl(var(--frost)); }
+}
+
+@layer utilities {
+  /* Semantic colour helpers */
+  .text-graphite  { color: hsl(var(--graphite)); }
+  .text-charcoal  { color: hsl(var(--charcoal)); }
+  .text-iron      { color: hsl(var(--iron)); }
+  .text-slate-c   { color: hsl(var(--slate-c)); }
+  .text-ash       { color: hsl(var(--ash)); }
+  .text-lime      { color: hsl(var(--lime)); }
+  .text-ink       { color: hsl(var(--charcoal)); }
+  .text-smoke     { color: hsl(var(--slate-c)); }
+  .text-obsidian  { color: hsl(var(--graphite)); }
+  .bg-linen       { background-color: hsl(var(--linen)); }
+  .bg-stone-w     { background-color: hsl(var(--stone)); }
+  .bg-graphite    { background-color: hsl(var(--graphite)); }
+  .bg-lime        { background-color: hsl(var(--lime)); }
+  .bg-frost       { background-color: hsl(var(--frost)); }
+  .bg-pebble      { background-color: hsl(var(--pebble)); }
+  .border-hairline { border-color: rgba(0,0,0,0.12); }
+  .border-cloud    { border-color: rgba(0,0,0,0.12); }
+  .border-fog      { border-color: rgba(0,0,0,0.12); }
+
+  /* Glass overlays — frosted paper floating over the video */
+  .glass {
+    background-color: rgba(255,255,255,0.28);
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+    border: 1px solid rgba(255,255,255,0.4);
+  }
+  .glass-strong {
+    background-color: rgba(255,255,255,0.45);
+    backdrop-filter: blur(24px) saturate(170%);
+    -webkit-backdrop-filter: blur(24px) saturate(170%);
+    border: 1px solid rgba(255,255,255,0.45);
+  }
+  .glass-stone {
+    background-color: rgba(219,219,210,0.28);
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+    border: 1px solid rgba(255,255,255,0.3);
+  }
+  .glass-dark {
+    background-color: rgba(20,20,20,0.5);
+    backdrop-filter: blur(22px) saturate(160%);
+    -webkit-backdrop-filter: blur(22px) saturate(160%);
+    color: hsl(var(--frost));
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+
+  /* Section wrappers stay fully transparent — video reads through cleanly.
+     Inner cards/containers should use .glass utilities for the frosted look. */
+  .bg-snow, .bg-paper, .bg-fog, .bg-carbon, .bg-moss, .bg-fern,
+  .bg-pale-mist, .bg-void, .bg-obsidian, .bg-background,
+  .bg-secondary, .bg-secondary\/30, .bg-secondary\/50,
+  .bg-muted, .bg-muted\/30, .bg-muted\/50 {
+    background-color: transparent !important;
+  }
+  .bg-card, .bg-popover {
+    background-color: rgba(255,255,255,0.38) !important;
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+  }
+  .bg-slate-cap, .bg-amethyst, .bg-cyan-spark, .bg-deep-iris, .bg-reactor {
+    background-color: rgba(20,20,20,0.5) !important;
+    backdrop-filter: blur(22px) saturate(160%);
+    -webkit-backdrop-filter: blur(22px) saturate(160%);
+    color: hsl(var(--frost));
+  }
+  .bg-orchid, .bg-sky-wash {
+    background-color: rgba(219,219,210,0.28) !important;
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+  }
+  main, section, footer { background-color: transparent !important; }
+
+  /* Legacy text helpers */
+  .text-phosphor { color: hsl(var(--charcoal)); }
+  .text-bone     { color: hsl(var(--charcoal)); }
+  .text-reactor  { color: hsl(var(--graphite)); }
+  .text-amethyst { color: hsl(var(--graphite)); }
+  .text-lichen   { color: hsl(var(--ash)); }
+  .text-ember    { color: hsl(var(--graphite)); }
+  .text-steel    { color: hsl(var(--slate-c)); }
+  .text-fog      { color: hsl(var(--ash)); }
+  .border-fern     { border-color: rgba(0,0,0,0.12); }
+  .border-bone     { border-color: rgba(0,0,0,0.12); }
+  .border-gunmetal { border-color: rgba(0,0,0,0.12); }
+  .bg-dusk-sky   { background: var(--gradient-hero); }
+  .header-video-canvas {
+    background: transparent;
+  }
+  .shadow-pill   { box-shadow: var(--shadow-pill); }
+  .shadow-glow   { box-shadow: var(--shadow-xl-2); }
+  .shadow-float  { box-shadow: var(--shadow-xl); }
+
+  /* Gleap typography scale */
+  .font-display { font-family: "Switzer", "Inter", ui-sans-serif, sans-serif; font-weight: 400; letter-spacing: -0.02em; }
+  .font-mono    { font-family: ui-monospace, "JetBrains Mono", monospace; }
+
+  .text-display-xl {
+    font-family: "Switzer", "Inter", ui-sans-serif, sans-serif;
+    font-weight: 400;
+    font-size: clamp(34px, 7vw, 80px);
+    line-height: 1.0;
+    letter-spacing: -0.02em;
+    color: hsl(var(--charcoal));
+  }
+  .text-display {
+    font-family: "Switzer", "Inter", ui-sans-serif, sans-serif;
+    font-weight: 400;
+    font-size: clamp(36px, 5.5vw, 64px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: hsl(var(--charcoal));
+  }
+  .text-heading-vivid {
+    font-family: "Switzer", "Inter", ui-sans-serif, sans-serif;
+    font-weight: 400;
+    font-size: clamp(24px, 3vw, 45px);
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    color: hsl(var(--charcoal));
+  }
+  .eyebrow {
+    font-family: "Switzer", "Inter", ui-sans-serif, sans-serif;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    color: hsl(var(--slate-c));
+  }
+
+  .animate-fade-up { animation: fadeUp 0.55s cubic-bezier(0.16, 1, 0.3, 1) both; }
+  .animate-fade-in { animation: fadeIn 0.5s ease-out both; }
+  .animate-pulse-lime { animation: pulseLime 2.4s ease-in-out infinite; }
+
+  .pulse-dot::before {
+    content: ""; display: inline-block;
+    width: 8px; height: 8px; border-radius: 9999px;
+    background: hsl(var(--lime));
+    margin-right: 10px; animation: pulseLime 2.4s ease-in-out infinite;
+    box-shadow: 0 0 0 4px hsla(108, 63%, 46%, 0.15);
+  }
+  .mask-fade-bottom {
+    -webkit-mask-image: linear-gradient(180deg,#000 60%,transparent 100%);
+            mask-image: linear-gradient(180deg,#000 60%,transparent 100%);
+  }
+}
+
+@keyframes fadeUp { from { opacity:0; transform: translateY(14px);} to {opacity:1; transform:translateY(0);} }
+@keyframes fadeIn { from {opacity:0} to {opacity:1} }
+@keyframes pulseLime { 0%,100% {opacity:1; transform:scale(1);} 50% {opacity:.65; transform:scale(0.9);} }
