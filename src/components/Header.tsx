@@ -34,15 +34,15 @@ const Header = () => {
 
   return (
     <header
-      className="fixed inset-x-0 top-0 z-[100] bg-transparent shadow-none border-0"
-      style={{ paddingTop: "env(safe-area-inset-top)" }}
+      className="fixed inset-x-0 top-0 z-[100] border-0"
+      style={{ paddingTop: "env(safe-area-inset-top)", backgroundColor: "rgba(255,255,255,0.55)", backdropFilter: "blur(20px) saturate(160%)", WebkitBackdropFilter: "blur(20px) saturate(160%)", borderBottom: "1px solid rgba(0,0,0,0.08)" }}
     >
-      <div className="relative z-10 max-w-[1200px] mx-auto px-4 md:px-8 h-24 md:h-28 flex items-center justify-between gap-4">
+      <div className="relative z-10 max-w-[1200px] mx-auto px-4 md:px-8 h-28 md:h-32 flex items-center justify-between gap-4">
         <Link to="/" className="flex shrink-0 items-center" aria-label="DataBuks home">
           <img
             src={logo}
             alt="DataBuks"
-            className="block h-[90px] w-auto md:h-[120px] lg:h-[140px] object-contain object-left"
+            className="block h-[110px] w-auto md:h-[150px] lg:h-[170px] object-contain object-left"
           />
         </Link>
 
