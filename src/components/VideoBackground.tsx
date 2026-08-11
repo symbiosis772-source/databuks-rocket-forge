@@ -1,7 +1,5 @@
-import { useEffect, useRef } from "react";
-import Hls from "hls.js";
-
-const SRC = "https://stream.mux.com/E3rAKyTB54G02a702jKVDAsRnWoRXwUss6mjjctaODp8w.m3u8";
+import { useEffect, useRef, useState } from "react";
+import backgroundVideo from "@/assets/video/databuks-background.webm";
 
 /**
  * Fixed full-viewport HLS video background. Poster shows instantly while HLS
@@ -9,6 +7,7 @@ const SRC = "https://stream.mux.com/E3rAKyTB54G02a702jKVDAsRnWoRXwUss6mjjctaODp8
  */
 const VideoBackground = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [isReady, setIsReady] = useState(false);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -19,37 +18,52 @@ const VideoBackground = () => {
       if (p && typeof p.catch === "function") p.catch(() => {});
     };
 
-    if (video.canPlayType("application/vnd.apple.mpegurl")) {
-      video.src = SRC;
-      video.addEventListener("loadedmetadata", tryPlay, { once: true });
-    } else if (Hls.isSupported()) {
-      const hls = new Hls({ enableWorker: true, lowLatencyMode: false });
-      hls.loadSource(SRC);
-      hls.attachMedia(video);
-      hls.on(Hls.Events.MANIFEST_PARSED, tryPlay);
-      return () => hls.destroy();
-    }
+    const showVideo = () => {
+      setIsReady(true);
+      tryPlay();
+    };
+
+    const resumeVideo = () => {
+      if (!document.hidden) tryPlay();
+    };
+
+    video.addEventListener("loadeddata", showVideo);
+    video.addEventListener("canplay", showVideo);
+    document.addEventListener("visibilitychange", resumeVideo);
+    window.addEventListener("pageshow", resumeVideo);
+    window.addEventListener("pointerdown", tryPlay, { once: true });
+
+    video.load();
+    tryPlay();
+
+    return () => {
+      video.removeEventListener("loadeddata", showVideo);
+      video.removeEventListener("canplay", showVideo);
+      document.removeEventListener("visibilitychange", resumeVideo);
+      window.removeEventListener("pageshow", resumeVideo);
+      window.removeEventListener("pointerdown", tryPlay);
+    };
   }, []);
 
   return (
     <div
       aria-hidden
-      className="fixed inset-0 -z-10 overflow-hidden"
-      style={{ background: "linear-gradient(135deg, #e8b4f8 0%, #c084fc 25%, #a78bfa 50%, #93c5fd 75%, #f9a8d4 100%)" }}
+      className="video-background fixed inset-0 -z-10 overflow-hidden"
     >
       <video
         ref={videoRef}
+        src={backgroundVideo}
         autoPlay
         muted
         loop
         playsInline
         preload="auto"
-        className="absolute inset-0 w-full h-full object-cover"
-        style={{ filter: "brightness(1.05) contrast(1.0) saturate(1.1)" }}
+        disablePictureInPicture
+        className={`video-background__media absolute inset-0 h-full w-full object-cover ${
+          isReady ? "is-ready" : ""
+        }`}
       />
-      {/* Subtle overlay for text readability without killing video colors */}
-      <div className="absolute inset-0" style={{ background: "rgba(255,255,255,0.15)" }} />
-      <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-transparent to-white/20" />
+      <div className="video-background__wash absolute inset-0" />
     </div>
   );
 };

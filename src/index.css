@@ -197,6 +197,21 @@
   .header-video-canvas {
     background: transparent;
   }
+  .video-background {
+    background: hsl(var(--stone));
+  }
+  .video-background__media {
+    opacity: 0;
+    filter: grayscale(1) brightness(1.05) contrast(0.92);
+    transform: scale(1.01);
+    transition: opacity 700ms ease;
+  }
+  .video-background__media.is-ready {
+    opacity: 1;
+  }
+  .video-background__wash {
+    background: hsl(var(--linen) / 0.28);
+  }
   .shadow-pill   { box-shadow: var(--shadow-pill); }
   .shadow-glow   { box-shadow: var(--shadow-xl-2); }
   .shadow-float  { box-shadow: var(--shadow-xl); }
