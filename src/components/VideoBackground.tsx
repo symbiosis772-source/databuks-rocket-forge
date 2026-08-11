@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import backgroundVideo from "@/assets/video/databuks-background.mp4";
+import backgroundVideo from "@/assets/video/databuks-background.webm";
 
 /**
  * Fixed full-viewport HLS video background. Poster shows instantly while HLS
