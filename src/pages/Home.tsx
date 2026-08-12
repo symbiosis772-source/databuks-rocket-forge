@@ -47,7 +47,7 @@ const Home = () => {
       />
       <main className="pt-8 md:pt-16">
         {/* HERO */}
-        <section className="relative overflow-hidden pt-28 md:pt-40 pb-20 md:pb-32">
+        <section className="relative overflow-hidden pt-16 md:pt-24 pb-16 md:pb-24">
           <div className="relative max-w-[1200px] mx-auto px-5 md:px-8 text-center animate-fade-up">
             <span className="eyebrow inline-flex items-center gap-2 mb-5 md:mb-6 text-[10px] md:text-[12px]">
               <span className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-graphite" />
