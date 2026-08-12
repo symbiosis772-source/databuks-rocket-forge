@@ -48,16 +48,31 @@ const Home = () => {
       />
       <main className="pt-8 md:pt-16">
         {/* HERO */}
-        <section className="max-w-[1200px] mx-auto px-5 md:px-8 pb-16 md:pb-28">
-          <div className="text-center animate-fade-up">
-            <span className="eyebrow hidden md:inline-flex items-center gap-2 mb-5 md:mb-6 text-[10px] md:text-[12px]">
-              <span className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-graphite" />
+        <section className="relative overflow-hidden -mt-8 md:-mt-16 pt-32 md:pt-44 pb-20 md:pb-32">
+          <img
+            src={heroNagpur.url}
+            alt=""
+            aria-hidden="true"
+            className="pointer-events-none select-none absolute inset-0 w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/45 to-black/80" />
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              background:
+                "radial-gradient(ellipse at center, transparent 0%, rgba(0,0,0,0.5) 100%)",
+            }}
+          />
+
+          <div className="relative max-w-[1200px] mx-auto px-5 md:px-8 text-center animate-fade-up">
+            <span className="eyebrow hidden md:inline-flex items-center gap-2 mb-5 md:mb-6 text-[10px] md:text-[12px] text-white/90">
+              <span className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-white" />
               A studio in Nagpur, working worldwide
             </span>
-            <h1 className="text-display-xl mx-auto max-w-[900px]">
+            <h1 className="text-display-xl mx-auto max-w-[900px] text-white">
               A quiet studio that ships loud products.
             </h1>
-            <p className="mt-4 md:mt-6 text-[15px] md:text-[23px] leading-[1.45] tracking-[-0.01em] text-slate-c max-w-[720px] mx-auto px-2">
+            <p className="mt-4 md:mt-6 text-[15px] md:text-[23px] leading-[1.45] tracking-[-0.01em] text-white/80 max-w-[720px] mx-auto px-2">
               DataBuks designs and builds custom websites, MVPs and AI workflows for founders and
               creators — delivered in weeks, not months.
             </p>
@@ -71,8 +86,8 @@ const Home = () => {
               </Button>
             </div>
 
-            <div className="mt-5 md:mt-6 text-[12px] md:text-[14px] text-slate-c flex items-center justify-center gap-2 px-2 text-center">
-              <Check className="w-3.5 h-3.5 md:w-4 md:h-4 text-graphite shrink-0" /> Free 30-min discovery call · fixed quote in 24 hours
+            <div className="mt-5 md:mt-6 text-[12px] md:text-[14px] text-white/70 flex items-center justify-center gap-2 px-2 text-center">
+              <Check className="w-3.5 h-3.5 md:w-4 md:h-4 text-white shrink-0" /> Free 30-min discovery call · fixed quote in 24 hours
             </div>
           </div>
         </section>
