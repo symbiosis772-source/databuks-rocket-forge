@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { Button } from "@/components/ui/button";
 import { portfolio } from "@/data/portfolio";
+import heroNagpur from "@/assets/hero-nagpur.png.asset.json";
 
 const services = [
   {
