@@ -1,28 +1,28 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import duskSky from "@/assets/dusk-sky.jpg";
+import heroNagpur from "@/assets/hero-nagpur.png.asset.json";
 import logo from "@/assets/brand/databuks-logo.png";
 
 const HeroSection = () => {
   return (
     <section className="relative overflow-hidden bg-obsidian text-white min-h-[100svh] flex items-center">
-      {/* Dusk-sky atmosphere */}
+      {/* Nagpur workspace hero background */}
       <img
-        src={duskSky}
+        src={heroNagpur.url}
         alt=""
         aria-hidden="true"
         width={1920}
-        height={1280}
-        className="pointer-events-none select-none absolute inset-0 w-full h-full object-cover opacity-90"
+        height={2560}
+        className="pointer-events-none select-none absolute inset-0 w-full h-full object-cover"
       />
-      {/* Vignette + dusk gradient blend */}
-      <div className="absolute inset-0 bg-gradient-to-b from-obsidian/95 via-obsidian/50 to-obsidian" />
+      {/* Dark readability wash */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-black/85" />
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "linear-gradient(180deg, rgba(15,16,17,0.85) 0%, rgba(19,29,39,0.5) 30%, rgba(26,71,136,0.25) 60%, rgba(15,16,17,0.95) 100%)",
+            "radial-gradient(ellipse at center, transparent 0%, rgba(0,0,0,0.55) 100%)",
         }}
       />
 
