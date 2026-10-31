@@ -4,33 +4,33 @@
 
 @layer base {
   :root {
-    --background: 48 24% 95%;         /* #F6F5EF warm ivory */
-    --foreground: 156 25% 12%;        /* #182822 dark text */
+    --background: 44 27% 95%;         /* #F7F4EE warm paper */
+    --foreground: 75 7% 14%;          /* #242621 main ink */
 
     --card: 0 0% 100%;                /* #FFFFFF */
-    --card-foreground: 156 25% 12%;
+    --card-foreground: 75 7% 14%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 156 25% 12%;
+    --popover-foreground: 75 7% 14%;
 
-    --primary: 167 54% 15%;           /* #123B32 deep forest */
-    --primary-foreground: 48 24% 95%; /* #F6F5EF ivory */
+    --primary: 10 58% 41%;            /* #A43F2B deep rust */
+    --primary-foreground: 0 0% 100%;  /* #FFFFFF */
 
-    --secondary: 120 14% 91%;         /* #E5ECE5 soft sage */
-    --secondary-foreground: 156 25% 12%;
+    --secondary: 197 25% 90%;         /* #DEE8EC mist blue */
+    --secondary-foreground: 75 7% 14%;
 
-    --muted: 120 14% 91%;             /* #E5ECE5 */
-    --muted-foreground: 153 9% 36%;   /* #53635C secondary text */
+    --muted: 50 11% 85%;              /* #DDDCD4 border/muted */
+    --muted-foreground: 84 4% 38%;    /* #62665E secondary text */
 
-    --accent: 74 81% 71%;             /* #D6F279 lime accent */
-    --accent-foreground: 156 25% 12%;
+    --accent: 23 54% 88%;             /* #F1DDD1 pale peach */
+    --accent-foreground: 75 7% 14%;
 
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 120 10% 86%;            /* #D8E0D8 */
-    --input: 120 10% 86%;
-    --ring: 167 54% 15%;              /* #123B32 forest ring */
+    --border: 50 11% 85%;             /* #DDDCD4 */
+    --input: 50 11% 85%;
+    --ring: 10 58% 41%;               /* #A43F2B rust ring */
 
     --radius: 0.75rem;                /* 12px */
   }
@@ -41,21 +41,23 @@
 
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
 
   body {
-    @apply bg-[#F6F5EF] text-[#182822] font-sans antialiased;
+    @apply bg-[#F7F4EE] text-[#242621] font-sans antialiased;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11", "tnum";
+    overflow-x: hidden;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-heading tracking-tight text-[#182822];
+    @apply font-heading tracking-tight text-[#242621];
   }
 }
 
-/* Custom focus ring with forest color */
+/* Custom focus ring with rust color */
 .focus-ring {
-  @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#123B32] focus-visible:ring-offset-2;
+  @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#A43F2B] focus-visible:ring-offset-2;
 }
 
 /* Respect prefers-reduced-motion */

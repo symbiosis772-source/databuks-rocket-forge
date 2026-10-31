@@ -27,9 +27,12 @@ export const siteConfig = {
   brand: {
     name: "DataBuks",
     legalName: "DataBuks Technology Services",
-    tagline: "Your next website, app or smarter workflow starts here.",
-    heroEyebrow: "DATABUKS • SOFTWARE DEVELOPMENT",
-    locationBadge: "SOFTWARE DEVELOPMENT • NAGPUR, INDIA",
+    tagline: "Technology that works for your business.",
+    heroEyebrow: "DATABUKS • WEBSITES, APPS & AUTOMATION",
+    heroHeadlinePrimary: "Technology that works",
+    heroHeadlineSecondary: "for your business.",
+    heroSupportingCopy: "We build websites, applications and connected workflows for Indian businesses—helping you serve customers and simplify everyday operations.",
+    locationBadge: "SOFTWARE STUDIO • NAGPUR, INDIA",
     city: "Nagpur",
     region: "Maharashtra",
     country: "India",
@@ -82,6 +85,10 @@ export const siteConfig = {
       ],
     },
     {
+      title: "Products",
+      path: "/#products",
+    },
+    {
       title: "Work",
       path: "/portfolio",
     },
@@ -95,11 +102,50 @@ export const siteConfig = {
     },
   ],
 
+  inHouseProducts: [
+    {
+      id: "sales-agent",
+      name: "Sales Agent",
+      status: "In development",
+      statusBadge: "Coming soon",
+      conceptBadge: "Concept preview",
+      headline: "AI-assisted lead qualification and follow-up routing.",
+      description: "Alongside client projects, we are developing an in-house sales agent designed to help Indian businesses capture visitor intent, collect required project information, and route qualified leads to the right team members.",
+      enquiryService: "sales-agent",
+      prototypeUrl: "https://databuks-frontend.vercel.app/",
+      prototypeLabel: "Preview prototype",
+      highlights: [
+        "Structured qualification questions tailored to your service or trade",
+        "Context collection before routing leads to your phone or CRM",
+        "Direct escalation path to your sales team with complete conversation history",
+      ],
+      notice: "In development. Public release dates and supported channels will be announced upon testing completion.",
+    },
+    {
+      id: "voice-agent",
+      name: "Customizable Voice Agent",
+      status: "In development",
+      statusBadge: "Coming soon",
+      conceptBadge: "Concept preview",
+      headline: "Spoken conversations and call triage customized for your business.",
+      description: "A voice-agent product being developed for business-specific conversations and workflows. Designed to answer routine inquiries, schedule appointments, and guide callers—with available customisation and integrations confirmed during consultation.",
+      enquiryService: "voice-agent",
+      prototypeUrl: "https://voice-agent-saas-web.vercel.app/",
+      prototypeLabel: "Preview prototype",
+      highlights: [
+        "Configurable for domain-specific conversation flows and FAQs",
+        "Integration options for calendar appointments and webhook updates",
+        "Handover protocols to human staff for escalations or complex requests",
+      ],
+      notice: "Customizable prototype. Telephony providers, language handling, and workflow connections are customized per client requirements.",
+    },
+  ],
+
   capabilitiesStrip: [
-    { title: "Business websites", detail: "Clean, responsive websites designed for enquiries and credibility." },
-    { title: "Apps & custom software", detail: "Accessible applications for customers and internal teams." },
-    { title: "Workflow automation", detail: "Connected tools that eliminate repetitive manual steps." },
-    { title: "AI integrations", detail: "Practical AI assistants with reliable human oversight." },
+    { title: "Websites", detail: "Fast, responsive websites designed for enquiries and credibility." },
+    { title: "Apps & Software", detail: "Accessible web and mobile applications for customers and internal teams." },
+    { title: "Automation", detail: "Connected workflows that eliminate repetitive manual data entry." },
+    { title: "AI Agents", detail: "Practical AI assistants and custom conversational tooling." },
   ],
 
   faqs: [
@@ -122,6 +168,14 @@ export const siteConfig = {
     {
       question: "What do you need from us to begin?",
       answer: "We start with a conversation to understand your business, your target customers, and what you want the software or website to accomplish. It helps if you have branding assets (logos, colours) and reference examples you like, but we can guide you through every step.",
+    },
+    {
+      question: "Are the Sales Agent and Voice Agent available to purchase right now?",
+      answer: "Client agency services (custom websites, apps, and automations) are available right now. Our Sales Agent and Voice Agent are proprietary in-house products currently in active development. If you would like an early preview, want to test our prototypes, or explore custom voice integration for your business, reach out to us through the enquiry form.",
+    },
+    {
+      question: "How can the Voice Agent be customized for our specific business?",
+      answer: "Every business has distinct communication channels and caller questions. Our voice agent architecture is designed to be customizable—including business-specific dialogue scripts, calendar booking links, telephony connectors, and CRM webhooks. Specific technical requirements and integration viability are confirmed during an exploratory consultation.",
     },
     {
       question: "What third-party costs continue after launch?",
