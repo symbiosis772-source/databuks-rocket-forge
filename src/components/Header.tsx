@@ -1,160 +1,267 @@
-import { useEffect, useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ArrowUpRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import logo from "@/assets/brand/databuks-logo.png";
+import { ChevronDown, Menu, X, ArrowRight, MessageSquareCode } from "lucide-react";
+import { siteConfig } from "@/config/siteConfig";
 
-const Header = () => {
-  const [open, setOpen] = useState(false);
+export const Header: React.FC = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
 
-  const navLinks = [
-    { label: "Services", href: "/services" },
-    { label: "Work", href: "/portfolio" },
-    { label: "Technologies", href: "/technologies" },
-    { label: "Pricing", href: "/pricing" },
-    { label: "About", href: "/about" },
-  ];
-
-  // Close on route change
   useEffect(() => {
-    setOpen(false);
-  }, [location.pathname]);
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-  // Lock body scroll when drawer is open
+  // Close menus on route change
   useEffect(() => {
-    if (open) {
-      const prev = document.body.style.overflow;
-      document.body.style.overflow = "hidden";
-      return () => {
-        document.body.style.overflow = prev;
-      };
-    }
-  }, [open]);
+    setMobileMenuOpen(false);
+    setServicesDropdownOpen(false);
+  }, [location.pathname, location.hash]);
+
+  // Click outside to close dropdown
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setServicesDropdownOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  const services = siteConfig.navigation[0].items || [];
 
   return (
     <header
-      className="fixed inset-x-0 top-0 z-[100] bg-transparent shadow-none border-0"
-      style={{ paddingTop: "env(safe-area-inset-top)" }}
+      className={`sticky top-0 z-50 transition-all duration-200 border-b ${
+        isScrolled
+          ? "bg-white/95 backdrop-blur-md border-slate-200/80 shadow-sm"
+          : "bg-white border-slate-200"
+      }`}
     >
-      <div className="relative z-10 max-w-[1200px] mx-auto px-4 md:px-8 h-24 md:h-28 flex items-center justify-between gap-4">
-        <Link to="/" className="flex shrink-0 items-center" aria-label="DataBuks home">
+      <div className="max-w-[1200px] mx-auto px-5 md:px-8 h-20 flex items-center justify-between gap-4">
+        {/* Brand Logo */}
+        <Link to="/" className="flex shrink-0 items-center gap-2 group" aria-label="DataBuks Home">
           <img
             src={logo}
-            alt="DataBuks"
-            className="block h-[110px] w-auto md:h-[150px] lg:h-[170px] object-contain object-left"
+            alt="DataBuks Technology Services"
+            className="h-10 md:h-12 w-auto object-contain transition-transform duration-150 group-hover:scale-[1.02]"
           />
         </Link>
 
-        <nav className="hidden md:flex items-center gap-4 lg:gap-6">
-          {navLinks.map((l) => {
-            const active = location.pathname === l.href;
-            return (
-              <Link
-                key={l.label}
-                to={l.href}
-                className={`text-[14px] tracking-[-0.005em] transition-colors ${
-                  active ? "text-graphite" : "text-iron hover:text-graphite"
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex items-center gap-1 lg:gap-2" aria-label="Main Navigation">
+          {/* Services with Dropdown */}
+          <div
+            className="relative"
+            ref={dropdownRef}
+            onMouseEnter={() => setServicesDropdownOpen(true)}
+            onMouseLeave={() => setServicesDropdownOpen(false)}
+          >
+            <button
+              type="button"
+              onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
+              className={`flex items-center gap-1 px-3.5 py-2 text-[15px] font-medium rounded-lg transition-colors ${
+                location.pathname.startsWith("/services")
+                  ? "text-blue-600 bg-blue-50/60"
+                  : "text-slate-700 hover:text-slate-900 hover:bg-slate-100/70"
+              }`}
+              aria-expanded={servicesDropdownOpen}
+              aria-haspopup="true"
+            >
+              <span>Services</span>
+              <ChevronDown
+                className={`w-4 h-4 transition-transform duration-200 ${
+                  servicesDropdownOpen ? "rotate-180 text-blue-600" : "text-slate-400"
                 }`}
+              />
+            </button>
+
+            {/* Dropdown Panel */}
+            {servicesDropdownOpen && (
+              <div
+                className="absolute top-full left-0 w-80 lg:w-96 bg-white rounded-xl shadow-dropdown border border-slate-200 py-3 px-2 mt-1 z-50 animate-in fade-in slide-in-from-top-2 duration-150"
+                role="menu"
               >
-                {l.label}
-              </Link>
-            );
-          })}
+                <div className="px-3 pb-2 mb-1 border-b border-slate-100 flex items-center justify-between">
+                  <span className="text-xs font-semibold uppercase tracking-wider text-slate-400">
+                    What We Build
+                  </span>
+                  <Link
+                    to="/services"
+                    className="text-xs font-medium text-blue-600 hover:text-blue-700 inline-flex items-center gap-1"
+                  >
+                    All Services <ArrowRight className="w-3 h-3" />
+                  </Link>
+                </div>
+                <div className="space-y-1">
+                  {services.map((item) => (
+                    <Link
+                      key={item.path}
+                      to={item.path}
+                      className="block p-2.5 rounded-lg hover:bg-blue-50/60 transition-colors group"
+                      role="menuitem"
+                    >
+                      <div className="text-[14px] font-semibold text-slate-900 group-hover:text-blue-600 transition-colors">
+                        {item.name}
+                      </div>
+                      <div className="text-xs text-slate-500 mt-0.5 leading-relaxed line-clamp-2">
+                        {item.description}
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* Work */}
+          <Link
+            to="/portfolio"
+            className={`px-3.5 py-2 text-[15px] font-medium rounded-lg transition-colors ${
+              location.pathname.startsWith("/portfolio")
+                ? "text-blue-600 bg-blue-50/60"
+                : "text-slate-700 hover:text-slate-900 hover:bg-slate-100/70"
+            }`}
+          >
+            Work
+          </Link>
+
+          {/* How We Work */}
+          <Link
+            to="/#process"
+            className="px-3.5 py-2 text-[15px] font-medium rounded-lg text-slate-700 hover:text-slate-900 hover:bg-slate-100/70 transition-colors"
+          >
+            How We Work
+          </Link>
+
+          {/* About */}
+          <Link
+            to="/about"
+            className={`px-3.5 py-2 text-[15px] font-medium rounded-lg transition-colors ${
+              location.pathname === "/about"
+                ? "text-blue-600 bg-blue-50/60"
+                : "text-slate-700 hover:text-slate-900 hover:bg-slate-100/70"
+            }`}
+          >
+            About
+          </Link>
         </nav>
 
+        {/* Right CTA */}
         <div className="hidden md:flex items-center gap-3">
-          <Button asChild size="sm">
-            <Link to="/contact">Start a project</Link>
-          </Button>
+          <Link
+            to="/contact"
+            className="inline-flex items-center justify-center px-5 py-2.5 text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-lg shadow-sm transition-all focus-ring active:scale-[0.99]"
+          >
+            Discuss Your Project
+          </Link>
         </div>
 
-        <button
-          className="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/40 backdrop-blur-md border border-black/5 text-charcoal"
-          onClick={() => setOpen(true)}
-          aria-label="Open menu"
-          aria-expanded={open}
-        >
-          <Menu className="w-5 h-5" strokeWidth={1.75} />
-        </button>
+        {/* Mobile Menu Toggle Button */}
+        <div className="flex items-center gap-2 md:hidden">
+          <Link
+            to="/contact"
+            className="px-3 py-1.5 text-xs font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-md"
+          >
+            Enquire
+          </Link>
+          <button
+            type="button"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="p-2 text-slate-700 hover:text-slate-900 hover:bg-slate-100 rounded-lg focus-ring"
+            aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={mobileMenuOpen}
+          >
+            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
       </div>
 
-      {/* Mobile drawer */}
-      <div
-        className={`md:hidden fixed inset-0 z-[110] transition-opacity duration-300 ${
-          open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
-        }`}
-        aria-hidden={!open}
-      >
-        {/* Backdrop */}
-        <button
-          type="button"
-          aria-label="Close menu"
-          onClick={() => setOpen(false)}
-          className="absolute inset-0 bg-charcoal/40 backdrop-blur-sm"
-        />
-
-        {/* Panel */}
-        <aside
-          role="dialog"
-          aria-modal="true"
-          className={`absolute top-0 right-0 h-full w-[82%] max-w-[340px] bg-linen/95 backdrop-blur-xl border-l border-black/10 shadow-2xl flex flex-col transition-transform duration-300 ease-out ${
-            open ? "translate-x-0" : "translate-x-full"
-          }`}
-        >
-          <div className="flex items-center justify-between px-5 h-14 border-b border-black/5">
-            <span className="eyebrow text-[10px]">Menu</span>
-            <button
-              onClick={() => setOpen(false)}
-              aria-label="Close menu"
-              className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-white/60 border border-black/5 text-charcoal"
-            >
-              <X className="w-4 h-4" />
-            </button>
+      {/* Mobile Menu Drawer */}
+      {mobileMenuOpen && (
+        <div className="md:hidden border-t border-slate-200 bg-white px-5 py-6 space-y-5 animate-in slide-in-from-top-2 duration-150 shadow-xl max-h-[calc(100vh-5rem)] overflow-y-auto">
+          {/* Services Section */}
+          <div>
+            <div className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">
+              Services
+            </div>
+            <div className="space-y-1.5 pl-1">
+              {services.map((item) => (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  className="block py-2 text-sm font-medium text-slate-800 hover:text-blue-600"
+                >
+                  {item.name}
+                </Link>
+              ))}
+              <Link
+                to="/services"
+                className="inline-flex items-center gap-1 py-1.5 text-xs font-semibold text-blue-600"
+              >
+                All services overview <ArrowRight className="w-3 h-3" />
+              </Link>
+            </div>
           </div>
 
-          <nav className="flex-1 overflow-y-auto px-4 py-5 flex flex-col gap-1">
-            {navLinks.map((l) => {
-              const active = location.pathname === l.href;
-              return (
-                <Link
-                  key={l.label}
-                  to={l.href}
-                  onClick={() => setOpen(false)}
-                  className={`group flex items-center justify-between px-4 py-3.5 rounded-2xl text-[16px] transition-colors ${
-                    active
-                      ? "bg-charcoal text-frost"
-                      : "text-charcoal hover:bg-white/70"
-                  }`}
-                >
-                  <span>{l.label}</span>
-                  <ArrowUpRight
-                    className={`w-4 h-4 transition-transform ${
-                      active ? "opacity-100" : "opacity-40 group-hover:opacity-100"
-                    }`}
-                  />
-                </Link>
-              );
-            })}
-          </nav>
+          <div className="border-t border-slate-100 pt-4 space-y-2">
+            <Link
+              to="/portfolio"
+              className="block py-2 text-base font-semibold text-slate-900 hover:text-blue-600"
+            >
+              Work & Case Studies
+            </Link>
+            <Link
+              to="/#process"
+              className="block py-2 text-base font-semibold text-slate-900 hover:text-blue-600"
+            >
+              How We Work (Process)
+            </Link>
+            <Link
+              to="/about"
+              className="block py-2 text-base font-semibold text-slate-900 hover:text-blue-600"
+            >
+              About DataBuks
+            </Link>
+            <Link
+              to="/pricing"
+              className="block py-2 text-base font-semibold text-slate-900 hover:text-blue-600"
+            >
+              Project Scope & Estimates
+            </Link>
+          </div>
 
-          <div className="px-4 pb-6 pt-3 border-t border-black/5 flex flex-col gap-3">
-            <Button asChild size="lg" className="w-full">
-              <Link to="/contact" onClick={() => setOpen(false)}>
-                Start a project
-              </Link>
-            </Button>
+          {/* Quick Action Buttons in Mobile Menu */}
+          <div className="border-t border-slate-100 pt-4 space-y-3">
+            <Link
+              to="/contact"
+              className="w-full inline-flex items-center justify-center py-3 px-4 text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-lg shadow-sm"
+            >
+              Discuss Your Project
+            </Link>
             <a
-              href="https://wa.me/918788606608"
+              href={siteConfig.brand.whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-center text-[13px] text-slate-c hover:text-charcoal transition-colors"
+              className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 text-sm font-semibold text-slate-800 bg-slate-100 hover:bg-slate-200 rounded-lg"
             >
-              or WhatsApp us →
+              <MessageSquareCode className="w-4 h-4 text-emerald-600" />
+              Chat on WhatsApp ({siteConfig.brand.phoneDisplay})
             </a>
+            <div className="text-center text-xs text-slate-400 pt-1">
+              {siteConfig.brand.supportedLanguages} • Based in {siteConfig.brand.city}
+            </div>
           </div>
-        </aside>
-      </div>
+        </div>
+      )}
     </header>
   );
 };
