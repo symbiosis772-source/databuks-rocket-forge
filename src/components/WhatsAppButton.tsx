@@ -8,7 +8,7 @@ export const WhatsAppButton: React.FC = () => {
         href={siteConfig.brand.whatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-5 right-5 z-40 w-12 h-12 sm:w-14 sm:h-14 bg-emerald-600 hover:bg-emerald-700 text-white rounded-full flex items-center justify-center shadow-lg transition-all duration-200 hover:scale-105 focus-ring"
+        className="fixed bottom-5 right-5 z-40 w-12 h-12 sm:w-14 sm:h-14 bg-[#123B32] hover:bg-[#0B2620] text-[#D6F279] border border-[#1B4F43] rounded-full flex items-center justify-center shadow-lg transition-all duration-200 hover:scale-105 focus-ring"
         aria-label="Chat with DataBuks on WhatsApp"
         title="Chat on WhatsApp"
       >

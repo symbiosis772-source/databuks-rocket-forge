@@ -23,29 +23,12 @@ export interface ServiceDetail {
   faqs: { question: string; answer: string }[];
 }
 
-export interface CaseStudy {
-  id: string;
-  slug: string;
-  title: string;
-  clientName: string;
-  industry: string;
-  tagline: string;
-  clientContext: string;
-  problem: string;
-  databuksContribution: string;
-  deliveredCapabilities: string[];
-  image: string;
-  category: "Websites" | "Apps & Software" | "Automation" | "AI";
-  liveUrl?: string;
-  toolsUsed: string[];
-  verifiedNote: string;
-}
-
 export const siteConfig = {
   brand: {
     name: "DataBuks",
     legalName: "DataBuks Technology Services",
-    tagline: "Websites, apps & automation built around your business.",
+    tagline: "Your next website, app or smarter workflow starts here.",
+    heroEyebrow: "DATABUKS • SOFTWARE DEVELOPMENT",
     locationBadge: "SOFTWARE DEVELOPMENT • NAGPUR, INDIA",
     city: "Nagpur",
     region: "Maharashtra",
@@ -59,15 +42,18 @@ export const siteConfig = {
     supportedLanguages: "English & Hindi communication available",
   },
 
-  // Central verified configuration to prevent inventing unverified claims
   verificationPolicy: {
-    displayTestimonials: false, // Omitted cleanly: only approved, signed-off client testimonials are published
-    displayAwards: false, // No unverified badges or fake ratings
-    displayTeamPhotos: false, // Real photography only when provided; no fake stock photos
+    displayTestimonials: false,
+    displayAwards: false,
+    displayTeamPhotos: false,
     strictScopePolicy: "All pricing and timelines are based on clear written scope discussed during consultation.",
   },
 
   navigation: [
+    {
+      title: "Home",
+      path: "/",
+    },
     {
       title: "Services",
       path: "/services",
@@ -79,7 +65,7 @@ export const siteConfig = {
           description: "Business websites, landing pages and e-commerce stores designed to turn visitors into enquiries.",
         },
         {
-          name: "App & Software Development",
+          name: "Apps & Custom Software",
           path: "/services/app-software-development",
           description: "Mobile apps, web portals and custom dashboards built for real customer and team workflows.",
         },
@@ -100,53 +86,53 @@ export const siteConfig = {
       path: "/portfolio",
     },
     {
-      title: "How We Work",
-      path: "/#process",
-    },
-    {
       title: "About",
       path: "/about",
+    },
+    {
+      title: "Contact",
+      path: "/contact",
     },
   ],
 
   capabilitiesStrip: [
     { title: "Business websites", detail: "Clean, responsive websites designed for enquiries and credibility." },
-    { title: "Mobile & web apps", detail: "Accessible applications for customers and internal teams." },
-    { title: "Custom dashboards", detail: "Centralised views for orders, inventory and business records." },
-    { title: "AI & workflow automation", detail: "Practical tool connections that eliminate repetitive manual steps." },
+    { title: "Apps & custom software", detail: "Accessible applications for customers and internal teams." },
+    { title: "Workflow automation", detail: "Connected tools that eliminate repetitive manual steps." },
+    { title: "AI integrations", detail: "Practical AI assistants with reliable human oversight." },
   ],
 
   faqs: [
     {
-      question: "What does a project cost?",
-      answer: "Every project has different requirements. Costs depend on the number of screens, custom features, integrations, and whether you need ongoing maintenance. Rather than quoting arbitrary fixed prices, we prepare a transparent, written scope and estimate after an initial discussion.",
+      question: "What affects the cost of a project?",
+      answer: "Every project has unique requirements. Costs depend on the number of screens, custom business logic, integrations (e.g. WhatsApp API, payment gateways, custom databases), and ongoing maintenance needs. We prepare a transparent, written scope and fixed-scope estimate after our initial discovery conversation.",
     },
     {
       question: "How long does development take?",
-      answer: "Timelines depend on project size, required third-party connections, and how quickly content and feedback are provided. A focused business website might take a few weeks, while a custom web application or ERP portal typically requires more staged development. We provide clear milestone dates before starting.",
+      answer: "Timelines depend on project size, required third-party connections, and how quickly content and feedback are provided. A focused business website typically takes a few weeks, while a custom web application or ERP portal requires staged development milestones. We provide clear milestone dates before starting.",
     },
     {
       question: "Can you improve an existing website or app?",
-      answer: "Yes. We frequently help businesses modernise outdated websites, fix mobile responsiveness, resolve speed issues, or add new features and workflows to existing software without rebuilding everything from scratch.",
+      answer: "Yes. We regularly help Indian businesses modernise outdated websites, fix mobile responsiveness, resolve slow load times, or add new features and workflows to existing software without rebuilding everything from scratch.",
     },
     {
-      question: "Can you connect our existing tools?",
-      answer: "In most cases, yes. If your tools have open APIs or webhook support (such as Google Sheets, WhatsApp Business API, CRM systems, payment gateways, or custom databases), we can build reliable automations and integrations between them.",
+      question: "Can you connect our existing business tools?",
+      answer: "In most cases, yes. If your tools support webhooks or open APIs (such as Google Sheets, WhatsApp Business API, CRM systems, payment gateways, or custom databases), we can build reliable automations and integrations between them.",
     },
     {
       question: "What do you need from us to begin?",
-      answer: "We start with a conversation to understand your business, your target customers, and what you want the software or website to accomplish. It helps if you have branding assets (logos, colours) and reference websites you like, but we can guide you through every step.",
+      answer: "We start with a conversation to understand your business, your target customers, and what you want the software or website to accomplish. It helps if you have branding assets (logos, colours) and reference examples you like, but we can guide you through every step.",
     },
     {
-      question: "What costs continue after launch?",
-      answer: "Ongoing costs typically include domain renewal, web hosting or cloud server fees, and any third-party subscription APIs you use (like WhatsApp messaging or payment processing). We clearly separate development fees from these third-party operating costs so there are no surprises.",
+      question: "What third-party costs continue after launch?",
+      answer: "Ongoing third-party costs typically include domain renewal, web hosting or cloud database fees, and any third-party subscription APIs you use (like WhatsApp messaging or payment processing). We clearly separate our development fees from these third-party operating costs so there are no surprises.",
     },
   ],
 
   workingPractices: [
     {
       title: "Direct communication",
-      description: "You work directly with the developers and designers building your project. No layers of non-technical account managers.",
+      description: "You work directly with the developers and designers building your project. No non-technical account managers.",
     },
     {
       title: "Written project scope",
@@ -165,14 +151,4 @@ export const siteConfig = {
       description: "We don't disappear after deployment. We agree on a post-launch warranty and support window to ensure stability.",
     },
   ],
-
-  budgetOptions: [
-    "Under ₹25,000",
-    "₹25,000 – ₹50,000",
-    "₹50,000 – ₹1,00,000",
-    "₹1,00,000 – ₹3,00,000",
-    "₹3,00,000+",
-    "Need guidance on budget",
-  ],
 };
-

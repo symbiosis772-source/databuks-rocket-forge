@@ -1,30 +1,39 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, MessageSquareCode } from "lucide-react";
+import { ArrowRight, MessageSquare } from "lucide-react";
 import { siteConfig } from "@/config/siteConfig";
 
 export const FinalCtaSection: React.FC = () => {
   return (
-    <section className="bg-[#0F172A] text-white py-16 md:py-20 relative overflow-hidden">
-      {/* Subtle background glow */}
-      <div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-blue-600/10 rounded-full blur-3xl pointer-events-none"
+    <section className="bg-[#123B32] text-[#F6F5EF] py-16 md:py-24 relative overflow-hidden">
+      {/* Restrained abstract line illustration in the background */}
+      <svg
+        className="absolute top-0 right-0 h-full w-1/2 opacity-10 pointer-events-none stroke-[#D6F279]"
+        viewBox="0 0 500 500"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
         aria-hidden="true"
-      />
+      >
+        <path d="M50 450 C 150 350, 250 400, 400 150 C 450 70, 480 30, 500 0" strokeWidth="1.5" strokeDasharray="4 4" />
+        <circle cx="400" cy="150" r="6" fill="#D6F279" />
+        <circle cx="200" cy="380" r="4" fill="#D6F279" />
+        <line x1="0" y1="250" x2="500" y2="250" strokeWidth="0.5" />
+        <line x1="250" y1="0" x2="250" y2="500" strokeWidth="0.5" />
+      </svg>
 
       <div className="max-w-[1200px] mx-auto px-5 md:px-8 relative z-10 text-center">
         <div className="max-w-2xl mx-auto space-y-4">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white font-heading">
-            Tell us what you want to build.
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#F6F5EF] font-heading">
+            Have something in mind? Let’s build the next step.
           </h2>
-          <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-xl mx-auto">
-            A new website, a business app or a workflow that takes too much manual effort—start with a conversation.
+          <p className="text-base sm:text-lg text-[#E5ECE5] leading-relaxed max-w-xl mx-auto">
+            A new business website, a custom web app or an automated workflow—start with a straightforward conversation.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 pt-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 pt-5">
             <Link
               to="/contact"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 text-base font-semibold text-white bg-blue-600 hover:bg-blue-500 rounded-lg shadow-sm transition-all focus-ring active:scale-[0.99]"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 text-base font-semibold text-[#182822] bg-[#D6F279] hover:bg-[#cbf056] rounded-lg shadow-sm transition-all focus-ring active:scale-[0.99]"
             >
               <span>Discuss Your Project</span>
               <ArrowRight className="w-4 h-4" />
@@ -34,14 +43,14 @@ export const FinalCtaSection: React.FC = () => {
               href={siteConfig.brand.whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 text-base font-semibold text-slate-200 bg-slate-800 hover:bg-slate-700 border border-slate-700 rounded-lg shadow-sm transition-all focus-ring"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 text-base font-semibold text-[#F6F5EF] bg-[#184239] hover:bg-[#1e5246] border border-[#276456] rounded-lg shadow-sm transition-all focus-ring"
             >
-              <MessageSquareCode className="w-5 h-5 text-emerald-400" />
+              <MessageSquare className="w-5 h-5 text-[#D6F279]" />
               <span>Chat on WhatsApp</span>
             </a>
           </div>
 
-          <div className="pt-3 text-xs text-slate-400">
+          <div className="pt-3 text-xs text-[#A3B8AD]">
             {siteConfig.brand.supportedLanguages} • Based in {siteConfig.brand.city}, Maharashtra
           </div>
         </div>
@@ -51,4 +60,3 @@ export const FinalCtaSection: React.FC = () => {
 };
 
 export default FinalCtaSection;
-

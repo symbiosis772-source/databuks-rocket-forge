@@ -1,32 +1,32 @@
 import React from "react";
-import { Globe, Smartphone, LayoutDashboard, Cpu } from "lucide-react";
+import { Globe, Smartphone, Workflow, Bot } from "lucide-react";
 
 export const CapabilitiesStrip: React.FC = () => {
   const capabilities = [
     {
       title: "Business websites",
-      detail: "Responsive & conversion-focused",
+      detail: "Clean, responsive & credible",
       icon: Globe,
     },
     {
-      title: "Mobile & web apps",
-      detail: "Clean user portals & MVPs",
+      title: "Apps & custom software",
+      detail: "Customer portals & MVPs",
       icon: Smartphone,
     },
     {
-      title: "Custom dashboards",
-      detail: "Real-time records & inventory",
-      icon: LayoutDashboard,
+      title: "Workflow automation",
+      detail: "Connected tools & less manual entry",
+      icon: Workflow,
     },
     {
-      title: "AI & workflow automation",
-      detail: "Connected tools & automated tasks",
-      icon: Cpu,
+      title: "AI integrations",
+      detail: "Assistants with human oversight",
+      icon: Bot,
     },
   ];
 
   return (
-    <section className="bg-white border-b border-slate-200 py-6 md:py-8">
+    <section className="bg-[#FFFFFF] border-b border-[#D8E0D8] py-6 md:py-7">
       <div className="max-w-[1200px] mx-auto px-5 md:px-8">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
           {capabilities.map((item) => {
@@ -34,16 +34,16 @@ export const CapabilitiesStrip: React.FC = () => {
             return (
               <div
                 key={item.title}
-                className="flex items-center gap-3.5 p-3 rounded-xl bg-slate-50/70 border border-slate-100 hover:border-slate-200 transition-colors"
+                className="flex items-center gap-3 p-3 rounded-xl bg-[#F6F5EF] border border-[#D8E0D8] transition-colors"
               >
-                <div className="w-10 h-10 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center shrink-0">
-                  <Icon className="w-5 h-5" />
+                <div className="w-9 h-9 rounded-lg bg-[#E5ECE5] text-[#123B32] flex items-center justify-center shrink-0">
+                  <Icon className="w-4 h-4" />
                 </div>
                 <div>
-                  <h2 className="text-sm font-semibold text-slate-900">
+                  <h2 className="text-xs sm:text-sm font-bold text-[#182822]">
                     {item.title}
                   </h2>
-                  <p className="text-xs text-slate-500 mt-0.5">
+                  <p className="text-[11px] text-[#53635C] mt-0.5">
                     {item.detail}
                   </p>
                 </div>
@@ -57,4 +57,3 @@ export const CapabilitiesStrip: React.FC = () => {
 };
 
 export default CapabilitiesStrip;
-

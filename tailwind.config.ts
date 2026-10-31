@@ -11,9 +11,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["Inter", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "sans-serif"],
-        heading: ["Manrope", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "sans-serif"],
-        display: ["Manrope", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "sans-serif"],
+        sans: ['"Plus Jakarta Sans"', '"Noto Sans Devanagari"', "system-ui", "-apple-system", "sans-serif"],
+        heading: ['"Plus Jakarta Sans"', '"Noto Sans Devanagari"', "system-ui", "-apple-system", "sans-serif"],
+        display: ['"Plus Jakarta Sans"', '"Noto Sans Devanagari"', "system-ui", "-apple-system", "sans-serif"],
         mono: ["ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "Consolas", "monospace"],
       },
       colors: {
@@ -51,14 +51,16 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
         brand: {
-          bg: "#F8FAFC",
+          ivory: "#F6F5EF",
           white: "#FFFFFF",
-          navy: "#0F172A",
-          blue: "#2563EB",
-          blueHover: "#1D4ED8",
-          bluePale: "#EFF6FF",
-          secondary: "#475569",
-          border: "#E2E8F0",
+          forest: "#123B32",
+          forestDark: "#0B2620",
+          forestLight: "#1B4F43",
+          dark: "#182822",
+          secondary: "#53635C",
+          sage: "#E5ECE5",
+          border: "#D8E0D8",
+          lime: "#D6F279",
         },
       },
       borderRadius: {
@@ -68,9 +70,10 @@ export default {
         "3xl": "20px",
       },
       boxShadow: {
-        card: "0 1px 3px 0 rgba(15, 23, 42, 0.05), 0 1px 2px -1px rgba(15, 23, 42, 0.05)",
-        cardHover: "0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04)",
-        dropdown: "0 10px 30px -5px rgba(15, 23, 42, 0.12), 0 4px 6px -2px rgba(15, 23, 42, 0.05)",
+        subtle: "0 1px 3px 0 rgba(24, 40, 34, 0.05), 0 1px 2px -1px rgba(24, 40, 34, 0.05)",
+        card: "0 2px 8px -2px rgba(24, 40, 34, 0.06), 0 1px 4px -1px rgba(24, 40, 34, 0.04)",
+        cardHover: "0 12px 24px -6px rgba(18, 59, 50, 0.09), 0 4px 8px -2px rgba(18, 59, 50, 0.04)",
+        dropdown: "0 10px 30px -5px rgba(18, 59, 50, 0.12), 0 4px 6px -2px rgba(18, 59, 50, 0.05)",
       },
       keyframes: {
         "accordion-down": { from: { height: "0" }, to: { height: "var(--radix-accordion-content-height)" } },
