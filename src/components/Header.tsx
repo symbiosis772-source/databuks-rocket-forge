@@ -40,7 +40,7 @@ export const Header: React.FC = () => {
 
   const isHomeActive = location.pathname === "/" || location.pathname === "/home";
   const isServicesActive = location.pathname.startsWith("/services");
-  const isProductsActive = location.hash === "#products";
+  const isProductsActive = location.pathname === "/products";
   const isWorkActive = location.pathname.startsWith("/portfolio");
   const isAboutActive = location.pathname === "/about";
   const isContactActive = location.pathname === "/contact";
@@ -153,20 +153,24 @@ export const Header: React.FC = () => {
             )}
           </div>
 
-          {/* Products (Anchors to upcoming in-house products section) */}
-          <a
-            href="/#products"
+          {/* Products (Dedicated Standalone Route) */}
+          <Link
+            to="/products"
             className={`px-3.5 py-2 text-[15px] font-medium rounded-lg transition-colors relative ${
               isProductsActive
                 ? "text-[#A43F2B] font-semibold bg-[#F1DDD1]/60"
                 : "text-[#242621] hover:text-[#A43F2B] hover:bg-[#F1DDD1]/40"
             }`}
+            aria-current={isProductsActive ? "page" : undefined}
           >
             Products
             <span className="ml-1.5 px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider bg-[#F1DDD1] text-[#A43F2B] rounded-full">
               Soon
             </span>
-          </a>
+            {isProductsActive && (
+              <span className="absolute bottom-1 left-3.5 right-3.5 h-0.5 bg-[#A43F2B] rounded-full" />
+            )}
+          </Link>
 
           {/* Work */}
           <Link
@@ -277,16 +281,21 @@ export const Header: React.FC = () => {
             </div>
 
             {/* Products (In-house) */}
-            <a
-              href="/#products"
+            <Link
+              to="/products"
               onClick={() => setMobileMenuOpen(false)}
-              className="flex items-center justify-between py-2.5 px-3 rounded-lg text-base font-semibold text-[#242621] hover:bg-[#F1DDD1]/40"
+              className={`flex items-center justify-between py-2.5 px-3 rounded-lg text-base font-semibold transition-colors ${
+                isProductsActive
+                  ? "text-[#A43F2B] bg-[#F1DDD1]/60 font-semibold"
+                  : "text-[#242621] hover:bg-[#F1DDD1]/40"
+              }`}
+              aria-current={isProductsActive ? "page" : undefined}
             >
               <span>Products</span>
               <span className="px-2 py-0.5 text-xs font-semibold uppercase tracking-wider bg-[#F1DDD1] text-[#A43F2B] rounded-full">
                 Coming soon
               </span>
-            </a>
+            </Link>
 
             {/* Work */}
             <Link

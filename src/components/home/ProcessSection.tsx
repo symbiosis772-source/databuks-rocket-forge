@@ -1,5 +1,7 @@
 import React from "react";
 import { Clock } from "lucide-react";
+import secWebp from "@/assets/futuristic-systems-architecture.webp";
+import secJpg from "@/assets/futuristic-systems-architecture.jpg";
 
 export const ProcessSection: React.FC = () => {
   const steps = [
@@ -28,17 +30,36 @@ export const ProcessSection: React.FC = () => {
   return (
     <section id="process" className="bg-[#F7F4EE] py-16 md:py-24 border-b border-[#DDDCD4] scroll-mt-24">
       <div className="max-w-[1240px] mx-auto px-5 md:px-8">
-        {/* Section Header */}
-        <div className="max-w-2xl mb-12 md:mb-16 space-y-3">
-          <span className="text-xs font-semibold uppercase tracking-wider text-[#A43F2B] block">
-            Structured Workflow
-          </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-[44px] lg:leading-[1.14] font-bold tracking-tight text-[#242621]">
-            A clear path from discussion to delivery.
-          </h2>
-          <p className="text-base sm:text-lg text-[#62665E] leading-relaxed">
-            Every project follows a defined four-stage process so you always know what is being built, what dependencies exist, and what comes next.
-          </p>
+        {/* Section Header & Secondary Artwork Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center mb-14 md:mb-16">
+          <div className="lg:col-span-6 space-y-4">
+            <span className="text-xs font-semibold uppercase tracking-wider text-[#A43F2B] block">
+              Structured Workflow
+            </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-[44px] lg:leading-[1.14] font-bold tracking-tight text-[#242621]">
+              A clear path from discussion to delivery.
+            </h2>
+            <p className="text-base sm:text-lg text-[#62665E] leading-relaxed">
+              Every project follows a defined four-stage process so you always know what is being built, what dependencies exist, and what comes next.
+            </p>
+          </div>
+
+          {/* Secondary Technology Artwork: Layered Translucent Systems */}
+          <div className="lg:col-span-6">
+            <div className="rounded-2xl lg:rounded-3xl overflow-hidden border border-[#DDDCD4] shadow-card bg-[#161817]">
+              <picture>
+                <source srcSet={secWebp} type="image/webp" />
+                <img
+                  src={secJpg}
+                  alt="Layered translucent digital architecture planes connected by fine illuminated circuits suggesting modular software systems"
+                  className="w-full aspect-[16/10] sm:aspect-[16/9] object-cover object-center"
+                  width="1376"
+                  height="768"
+                  loading="lazy"
+                />
+              </picture>
+            </div>
+          </div>
         </div>
 
         {/* 4 Stages: Clean horizontal on desktop, vertical on mobile */}

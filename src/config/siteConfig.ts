@@ -86,7 +86,7 @@ export const siteConfig = {
     },
     {
       title: "Products",
-      path: "/#products",
+      path: "/products",
     },
     {
       title: "Work",

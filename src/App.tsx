@@ -14,6 +14,7 @@ import Home from "./pages/Home";
 const About = lazy(() => import("./pages/About"));
 const Services = lazy(() => import("./pages/Services"));
 const ServiceDetailPage = lazy(() => import("./pages/services/ServiceDetailPage"));
+const Products = lazy(() => import("./pages/Products"));
 const Portfolio = lazy(() => import("./pages/Portfolio"));
 const CaseStudyDetail = lazy(() => import("./pages/CaseStudyDetail"));
 const Pricing = lazy(() => import("./pages/Pricing"));
@@ -33,8 +34,8 @@ export const App = () => (
         <Header />
         <Suspense
           fallback={
-            <div className="min-h-screen bg-[#F8FAFC] flex items-center justify-center">
-              <div className="w-8 h-8 rounded-full border-2 border-blue-600 border-t-transparent animate-spin" />
+            <div className="min-h-screen bg-[#F7F4EE] flex items-center justify-center">
+              <div className="w-8 h-8 rounded-full border-2 border-[#A43F2B] border-t-transparent animate-spin" />
             </div>
           }
         >
@@ -43,6 +44,9 @@ export const App = () => (
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Navigate to="/" replace />} />
             
+            {/* Products Route */}
+            <Route path="/products" element={<Products />} />
+
             {/* Services Overview & Specific Sub-routes */}
             <Route path="/services" element={<Services />} />
             <Route

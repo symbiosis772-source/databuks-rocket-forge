@@ -30,14 +30,15 @@ export const Contact: React.FC = () => {
 
   // Initialize service from URL query params if present
   useEffect(() => {
-    const sParam = searchParams.get("service");
-    if (sParam) {
-      if (sParam.includes("sales-agent")) setService("Sales Agent (In-House Product)");
-      else if (sParam.includes("voice-agent")) setService("Customizable Voice Agent (In-House Product)");
-      else if (sParam.includes("website")) setService("Website Development");
-      else if (sParam.includes("app") || sParam.includes("software")) setService("Apps & Custom Software");
-      else if (sParam.includes("auto")) setService("Business Automation");
-      else if (sParam.includes("ai")) setService("AI Agents & Integrations");
+    const param = searchParams.get("service") || searchParams.get("product");
+    if (param) {
+      const lower = param.toLowerCase();
+      if (lower.includes("sales")) setService("Sales Agent (In-House Product)");
+      else if (lower.includes("voice")) setService("Customizable Voice Agent (In-House Product)");
+      else if (lower.includes("website")) setService("Website Development");
+      else if (lower.includes("app") || lower.includes("software")) setService("Apps & Custom Software");
+      else if (lower.includes("auto")) setService("Business Automation");
+      else if (lower.includes("ai")) setService("AI Agents & Integrations");
     }
   }, [searchParams]);
 

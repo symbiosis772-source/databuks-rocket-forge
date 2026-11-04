@@ -63,10 +63,10 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <a
-                  href="/#products"
+                  to="/products"
                   className="text-[#DDDCD4] hover:text-[#FFFFFF] transition-colors inline-flex items-center gap-1.5"
                 >
-                  <span>In-House Products</span>
+                  <span>Products by DataBuks</span>
                   <span className="text-[10px] px-1.5 py-0.2 bg-[#363E3B] text-[#F1DDD1] rounded">Soon</span>
                 </a>
               </li>
