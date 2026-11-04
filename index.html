@@ -5,6 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="/favicon.ico" />
     
+    <!-- Pre-paint Theme Initialization: Eliminates any flash of unstyled content -->
+    <script>
+      (function() {
+        try {
+          var stored = localStorage.getItem('databuks-theme');
+          if (stored === 'dark') {
+            document.documentElement.classList.add('dark');
+            document.documentElement.style.colorScheme = 'dark';
+          } else {
+            // Strictly default to Light mode (White & Black)
+            document.documentElement.classList.remove('dark');
+            document.documentElement.style.colorScheme = 'light';
+          }
+        } catch (e) {}
+      })();
+    </script>
+
     <!-- Google Fonts: Instrument Sans (Primary), Instrument Serif (Editorial Emphasis), Noto Sans Devanagari (Fallback script) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -44,7 +61,7 @@
     }
     </script>
   </head>
-  <body class="bg-[#F7F4EE] text-[#242621] antialiased selection:bg-[#F1DDD1] selection:text-[#A43F2B]">
+  <body class="bg-[#FAFAFA] dark:bg-[#090909] text-[#111111] dark:text-[#F5F5F5] antialiased selection:bg-[#E5E5E5] dark:selection:bg-[#262626] selection:text-[#111111] dark:selection:text-[#F5F5F5]">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

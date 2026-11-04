@@ -4,6 +4,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { ThemeProvider } from "./context/ThemeContext";
 import ScrollToTop from "./components/ScrollToTop";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -26,68 +27,67 @@ const queryClient = new QueryClient();
 
 export const App = () => (
   <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <ScrollToTop />
-        <Header />
-        <Suspense
-          fallback={
-            <div className="min-h-screen bg-[#F7F4EE] flex items-center justify-center">
-              <div className="w-8 h-8 rounded-full border-2 border-[#A43F2B] border-t-transparent animate-spin" />
-            </div>
-          }
-        >
-          <Routes>
-            {/* Primary Routes */}
-            <Route path="/" element={<Home />} />
-            <Route path="/home" element={<Navigate to="/" replace />} />
-            
-            {/* Products Route */}
-            <Route path="/products" element={<Products />} />
+    <ThemeProvider>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <ScrollToTop />
+          <Header />
+          <Suspense
+            fallback={
+              <div className="min-h-screen bg-[#FAFAFA] dark:bg-[#090909] flex items-center justify-center">
+                <div className="w-8 h-8 rounded-full border-2 border-[#111111] dark:border-[#F5F5F5] border-t-transparent animate-spin" />
+              </div>
+            }
+          >
+            <Routes>
+              {/* Primary Routes */}
+              <Route path="/" element={<Home />} />
+              <Route path="/home" element={<Navigate to="/" replace />} />
+              
+              {/* Products Route */}
+              <Route path="/products" element={<Products />} />
 
-            {/* Services Overview & Specific Sub-routes */}
-            <Route path="/services" element={<Services />} />
-            <Route
-              path="/services/website-development"
-              element={<ServiceDetailPage forcedSlug="website-development" />}
-            />
-            <Route
-              path="/services/app-software-development"
-              element={<ServiceDetailPage forcedSlug="app-software-development" />}
-            />
-            <Route
-              path="/services/business-automation"
-              element={<ServiceDetailPage forcedSlug="business-automation" />}
-            />
-            <Route
-              path="/services/ai-agents"
-              element={<ServiceDetailPage forcedSlug="ai-agents" />}
-            />
-            <Route path="/services/:serviceSlug" element={<ServiceDetailPage />} />
+              {/* Services Overview & Specific Sub-routes */}
+              <Route path="/services" element={<Services />} />
+              <Route
+                path="/services/website-development"
+                element={<ServiceDetailPage forcedSlug="website-development" />}
+              />
+              <Route
+                path="/services/app-software-development"
+                element={<ServiceDetailPage forcedSlug="app-software-development" />}
+              />
+              <Route
+                path="/services/business-automation"
+                element={<ServiceDetailPage forcedSlug="business-automation" />}
+              />
+              <Route
+                path="/services/ai-agents"
+                element={<ServiceDetailPage forcedSlug="ai-agents" />}
+              />
+              <Route path="/services/:serviceSlug" element={<ServiceDetailPage />} />
 
-            {/* Portfolio & Case Study Routes */}
-            <Route path="/portfolio" element={<Portfolio />} />
-            <Route path="/portfolio/:slug" element={<CaseStudyDetail />} />
+              {/* Portfolio & Case Studies */}
+              <Route path="/portfolio" element={<Portfolio />} />
+              <Route path="/portfolio/:slug" element={<CaseStudyDetail />} />
 
-            {/* Company & Legal Routes */}
-            <Route path="/about" element={<About />} />
-            <Route path="/pricing" element={<Pricing />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/privacy" element={<Privacy />} />
+              {/* Company & Support Pages */}
+              <Route path="/about" element={<About />} />
+              <Route path="/pricing" element={<Pricing />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/privacy" element={<Privacy />} />
 
-            {/* Backward-compatibility / redirect */}
-            <Route path="/technologies" element={<Navigate to="/services" replace />} />
-
-            {/* 404 Catch-All */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </Suspense>
-        <Footer />
-        <WhatsAppButton />
-      </BrowserRouter>
-    </TooltipProvider>
+              {/* Catch-all 404 */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Suspense>
+          <Footer />
+          <WhatsAppButton />
+        </BrowserRouter>
+      </TooltipProvider>
+    </ThemeProvider>
   </QueryClientProvider>
 );
 

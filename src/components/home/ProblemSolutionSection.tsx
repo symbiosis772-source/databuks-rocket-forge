@@ -31,18 +31,18 @@ export const ProblemSolutionSection: React.FC = () => {
   ];
 
   return (
-    <section className="bg-[#080D16] py-16 md:py-20 border-b border-[#2A3850]">
+    <section className="bg-[#FAFAFA] dark:bg-[#090909] py-16 md:py-20 border-b border-[#DADADA] dark:border-[#303030] transition-colors">
       <div className="max-w-[1240px] mx-auto px-4 sm:px-6 md:px-8">
         {/* Section Heading */}
         <div className="max-w-2xl space-y-3 mb-10 md:mb-12">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#151F30] border border-[#2A3850] text-[#67E8F9] text-xs font-semibold uppercase tracking-wider">
-            <HelpCircle className="w-3.5 h-3.5 text-[#67E8F9]" />
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#F1F1F1] dark:bg-[#171717] border border-[#DADADA] dark:border-[#303030] text-[#111111] dark:text-[#F5F5F5] text-xs font-semibold uppercase tracking-wider">
+            <HelpCircle className="w-3.5 h-3.5 text-[#111111] dark:text-[#F5F5F5]" />
             <span>Problem to Solution</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#F4F7FC]">
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#111111] dark:text-[#F5F5F5]">
             What would you like to improve?
           </h2>
-          <p className="text-base sm:text-lg text-[#B5C1D3] leading-relaxed">
+          <p className="text-base sm:text-lg text-[#555555] dark:text-[#B5B5B5] leading-relaxed">
             Common business needs we discuss and solve with practical software.
           </p>
         </div>
@@ -54,50 +54,50 @@ export const ProblemSolutionSection: React.FC = () => {
             return (
               <div
                 key={item.problem}
-                className="rounded-2xl bg-[#151F30] border border-[#2A3850] p-6 flex flex-col justify-between shadow-card card-hover transition-all"
+                className="rounded-2xl bg-[#FFFFFF] dark:bg-[#171717] border border-[#DADADA] dark:border-[#303030] p-6 flex flex-col justify-between shadow-card card-hover transition-all"
               >
                 <div className="space-y-4">
                   {/* Icon & Category Pill */}
                   <div className="flex items-center justify-between">
-                    <div className="w-10 h-10 rounded-xl bg-[#101827] border border-[#2A3850] text-[#67E8F9] flex items-center justify-center">
+                    <div className="w-10 h-10 rounded-xl bg-[#F1F1F1] dark:bg-[#111111] border border-[#DADADA] dark:border-[#303030] text-[#111111] dark:text-[#F5F5F5] flex items-center justify-center">
                       <Icon className="w-5 h-5" />
                     </div>
-                    <span className="text-[11px] font-mono text-[#B5C1D3] uppercase tracking-wider">
+                    <span className="text-[11px] font-mono text-[#555555] dark:text-[#B5B5B5] uppercase tracking-wider">
                       Target Area
                     </span>
                   </div>
 
                   {/* Problem & Arrow & Solution */}
                   <div className="space-y-2">
-                    <div className="text-xs font-semibold text-[#B5C1D3]">
+                    <div className="text-xs font-semibold text-[#555555] dark:text-[#B5B5B5]">
                       Current situation:
                     </div>
-                    <p className="text-sm font-semibold text-[#F4F7FC] leading-snug">
+                    <p className="text-sm font-semibold text-[#111111] dark:text-[#F5F5F5] leading-snug">
                       "{item.problem}"
                     </p>
                   </div>
 
-                  <div className="pt-2 border-t border-[#2A3850] space-y-1.5">
-                    <div className="text-xs font-semibold text-[#67E8F9] flex items-center gap-1">
-                      <span>Practical solution:</span>
-                      <ArrowRight className="w-3 h-3" />
+                  <div className="pt-2 border-t border-[#DADADA] dark:border-[#303030] space-y-1.5">
+                    <div className="text-xs font-semibold text-[#111111] dark:text-[#F5F5F5]">
+                      What we build:
                     </div>
-                    <div className="text-sm font-bold text-[#F4F7FC]">
+                    <h3 className="text-base font-bold text-[#111111] dark:text-[#F5F5F5] tracking-tight">
                       {item.solution}
-                    </div>
-                    <p className="text-xs text-[#B5C1D3] leading-relaxed pt-1">
+                    </h3>
+                    <p className="text-xs md:text-sm text-[#555555] dark:text-[#B5B5B5] leading-relaxed">
                       {item.description}
                     </p>
                   </div>
                 </div>
 
-                <div className="pt-5 border-t border-[#2A3850] mt-4">
+                {/* Footer link */}
+                <div className="pt-5 mt-4 border-t border-[#DADADA] dark:border-[#303030]">
                   <Link
                     to={item.link}
-                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#67E8F9] hover:text-[#2563EB] transition-colors"
+                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#111111] dark:text-[#F5F5F5] hover:underline group"
                   >
                     <span>{item.linkText}</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
+                    <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
                   </Link>
                 </div>
               </div>

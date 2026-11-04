@@ -16,12 +16,12 @@ export const Privacy: React.FC = () => {
         <link rel="canonical" href="https://databuks.org/privacy" />
       </Helmet>
 
-      <main className="min-h-screen bg-[#080D16] text-[#F4F7FC]">
-        <div className="bg-[#101827] border-b border-[#2A3850] py-4">
+      <main className="min-h-screen bg-[#FAFAFA] dark:bg-[#090909] text-[#111111] dark:text-[#F5F5F5] transition-colors duration-200">
+        <div className="bg-[#F1F1F1] dark:bg-[#111111] border-b border-[#DADADA] dark:border-[#303030] py-4 transition-colors duration-200">
           <div className="max-w-[1240px] mx-auto px-5 md:px-8">
             <Link
               to="/"
-              className="inline-flex items-center gap-1.5 text-xs md:text-sm font-semibold text-[#B5C1D3] hover:text-[#67E8F9] transition-colors"
+              className="inline-flex items-center gap-1.5 text-xs md:text-sm font-semibold text-[#555555] dark:text-[#B5B5B5] hover:text-[#111111] dark:hover:text-[#F5F5F5] transition-colors"
             >
               <ArrowLeft className="w-4 h-4" />
               <span>Back to home</span>
@@ -29,91 +29,91 @@ export const Privacy: React.FC = () => {
           </div>
         </div>
 
-        <section className="py-12 md:py-16 bg-[#080D16]">
-          <div className="max-w-3xl mx-auto px-5 md:px-8 bg-[#151F30] rounded-2xl p-6 sm:p-10 border border-[#2A3850] shadow-card space-y-6 text-[#F4F7FC] text-sm leading-relaxed">
-            <div className="border-b border-[#2A3850] pb-5">
-              <div className="flex items-center gap-2 text-[#67E8F9] text-xs font-bold uppercase tracking-wider mb-2">
-                <Shield className="w-4 h-4 text-[#2563EB]" />
+        <section className="py-12 md:py-16 bg-[#FAFAFA] dark:bg-[#090909] transition-colors duration-200">
+          <div className="max-w-3xl mx-auto px-5 md:px-8 bg-[#FFFFFF] dark:bg-[#171717] rounded-2xl p-6 sm:p-10 border border-[#DADADA] dark:border-[#303030] shadow-card space-y-6 text-[#111111] dark:text-[#F5F5F5] text-sm leading-relaxed">
+            <div className="border-b border-[#DADADA] dark:border-[#303030] pb-5">
+              <div className="flex items-center gap-2 text-[#555555] dark:text-[#B5B5B5] text-xs font-bold uppercase tracking-wider mb-2">
+                <Shield className="w-4 h-4 text-[#111111] dark:text-[#F5F5F5]" />
                 <span>Legal & Data Policy</span>
               </div>
-              <h1 className="text-3xl font-bold text-[#F4F7FC] font-heading">
+              <h1 className="text-3xl font-bold text-[#111111] dark:text-[#F5F5F5] font-heading">
                 Privacy Policy
               </h1>
-              <p className="text-xs text-[#B5C1D3] mt-1">
+              <p className="text-xs text-[#555555] dark:text-[#B5B5B5] mt-1">
                 Last updated: 2026 • DataBuks Technology Services (Nagpur, India)
               </p>
             </div>
 
             <section className="space-y-3">
-              <h2 className="text-lg font-bold text-[#F4F7FC] font-heading">
+              <h2 className="text-lg font-bold text-[#111111] dark:text-[#F5F5F5] font-heading">
                 1. Overview
               </h2>
-              <p className="text-[#B5C1D3]">
+              <p className="text-[#555555] dark:text-[#B5B5B5]">
                 DataBuks Technology Services ("DataBuks", "we", "us", or "our") respects your privacy. This policy outlines how we handle information received when you visit our website (databuks.org), submit an enquiry form, or contact us via WhatsApp, phone, or email.
               </p>
             </section>
 
             <section className="space-y-3">
-              <h2 className="text-lg font-bold text-[#F4F7FC] font-heading">
+              <h2 className="text-lg font-bold text-[#111111] dark:text-[#F5F5F5] font-heading">
                 2. Information We Collect
               </h2>
-              <p className="text-[#B5C1D3]">
+              <p className="text-[#555555] dark:text-[#B5B5B5]">
                 We only collect information necessary to respond to your project enquiries and provide software development services:
               </p>
-              <ul className="list-disc pl-5 space-y-1.5 text-xs md:text-sm text-[#B5C1D3]">
-                <li><strong>Contact details:</strong> Name, email address, phone/WhatsApp number.</li>
-                <li><strong>Project requirements:</strong> Service requested, description of business needs.</li>
-                <li><strong>Technical logs:</strong> Basic non-identifying server logs (browser type, IP address, referring URL) for security monitoring.</li>
+              <ul className="list-disc pl-5 space-y-1.5 text-xs md:text-sm text-[#555555] dark:text-[#B5B5B5]">
+                <li><strong className="text-[#111111] dark:text-[#F5F5F5]">Contact details:</strong> Name, email address, phone/WhatsApp number.</li>
+                <li><strong className="text-[#111111] dark:text-[#F5F5F5]">Project requirements:</strong> Service requested, description of business needs.</li>
+                <li><strong className="text-[#111111] dark:text-[#F5F5F5]">Technical logs:</strong> Basic non-identifying server logs (browser type, IP address, referring URL) for security monitoring.</li>
               </ul>
             </section>
 
             <section className="space-y-3">
-              <h2 className="text-lg font-bold text-[#F4F7FC] font-heading">
+              <h2 className="text-lg font-bold text-[#111111] dark:text-[#F5F5F5] font-heading">
                 3. How We Use Your Information
               </h2>
-              <p className="text-[#B5C1D3]">
+              <p className="text-[#555555] dark:text-[#B5B5B5]">
                 The information you provide is used solely to:
               </p>
-              <ul className="list-disc pl-5 space-y-1.5 text-xs md:text-sm text-[#B5C1D3]">
+              <ul className="list-disc pl-5 space-y-1.5 text-xs md:text-sm text-[#555555] dark:text-[#B5B5B5]">
                 <li>Evaluate your project scope and prepare proposals.</li>
                 <li>Respond to your direct enquiries and messages.</li>
                 <li>Communicate during active development milestones.</li>
               </ul>
-              <p className="font-semibold text-[#67E8F9]">
+              <p className="font-semibold text-[#111111] dark:text-[#F5F5F5]">
                 We do not sell, rent, or trade your contact information with third-party marketers.
               </p>
             </section>
 
             <section className="space-y-3">
-              <h2 className="text-lg font-bold text-[#F4F7FC] font-heading">
+              <h2 className="text-lg font-bold text-[#111111] dark:text-[#F5F5F5] font-heading">
                 4. Third-Party Services
               </h2>
-              <p className="text-[#B5C1D3]">
+              <p className="text-[#555555] dark:text-[#B5B5B5]">
                 When you interact with our website or services, standard third-party infrastructure may be utilised:
               </p>
-              <ul className="list-disc pl-5 space-y-1.5 text-xs md:text-sm text-[#B5C1D3]">
-                <li><strong>Hosting & CDN:</strong> Vercel and Cloudflare for secure content delivery.</li>
-                <li><strong>Messaging:</strong> WhatsApp / Meta Cloud API when you choose to message our business phone number.</li>
+              <ul className="list-disc pl-5 space-y-1.5 text-xs md:text-sm text-[#555555] dark:text-[#B5B5B5]">
+                <li><strong className="text-[#111111] dark:text-[#F5F5F5]">Hosting & CDN:</strong> Vercel and Cloudflare for secure content delivery.</li>
+                <li><strong className="text-[#111111] dark:text-[#F5F5F5]">Messaging:</strong> WhatsApp / Meta Cloud API when you choose to message our business phone number.</li>
               </ul>
             </section>
 
             <section className="space-y-3">
-              <h2 className="text-lg font-bold text-[#F4F7FC] font-heading">
+              <h2 className="text-lg font-bold text-[#111111] dark:text-[#F5F5F5] font-heading">
                 5. Client Data Confidentiality
               </h2>
-              <p className="text-[#B5C1D3]">
+              <p className="text-[#555555] dark:text-[#B5B5B5]">
                 During custom software development, any proprietary business workflows, databases, or client credentials shared with DataBuks are treated with strict confidentiality. We sign formal Non-Disclosure Agreements (NDAs) upon request before reviewing proprietary codebases.
               </p>
             </section>
 
             <section className="space-y-3">
-              <h2 className="text-lg font-bold text-[#F4F7FC] font-heading">
+              <h2 className="text-lg font-bold text-[#111111] dark:text-[#F5F5F5] font-heading">
                 6. Your Rights & Contact Information
               </h2>
-              <p className="text-[#B5C1D3]">
+              <p className="text-[#555555] dark:text-[#B5B5B5]">
                 You may request access to, correction of, or deletion of your contact records at any time by contacting us:
               </p>
-              <div className="bg-[#101827] p-4 rounded-xl border border-[#2A3850] text-xs space-y-1 font-mono text-[#F4F7FC]">
+              <div className="bg-[#F1F1F1] dark:bg-[#111111] p-4 rounded-xl border border-[#DADADA] dark:border-[#303030] text-xs space-y-1 font-mono text-[#111111] dark:text-[#F5F5F5]">
                 <div>DataBuks Technology Services</div>
                 <div>Nagpur, Maharashtra, India</div>
                 <div>Email: {siteConfig.brand.email}</div>

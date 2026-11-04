@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { Globe, Layers, Workflow, Bot, ArrowRight, CheckCircle2 } from "lucide-react";
-import { siteConfig } from "@/config/siteConfig";
 
 export const Services: React.FC = () => {
   const services = [
@@ -55,18 +54,18 @@ export const Services: React.FC = () => {
         <link rel="canonical" href="https://databuks.org/services" />
       </Helmet>
 
-      <main className="min-h-screen bg-[#080D16] text-[#F4F7FC]">
+      <main className="min-h-screen bg-[#FAFAFA] dark:bg-[#090909] text-[#111111] dark:text-[#F5F5F5] transition-colors duration-200">
         {/* Hero Header */}
-        <section className="bg-[#101827] border-b border-[#2A3850] py-16 md:py-20">
+        <section className="bg-[#F1F1F1] dark:bg-[#111111] border-b border-[#DADADA] dark:border-[#303030] py-16 md:py-20 transition-colors duration-200">
           <div className="max-w-[1240px] mx-auto px-5 md:px-8">
             <div className="max-w-3xl space-y-4">
-              <span className="text-xs font-bold uppercase tracking-wider text-[#67E8F9] block">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#555555] dark:text-[#B5B5B5] block">
                 Development Capabilities
               </span>
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#F4F7FC] font-heading">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#111111] dark:text-[#F5F5F5] font-heading">
                 Software development and business automation services.
               </h1>
-              <p className="text-base sm:text-lg text-[#B5C1D3] leading-relaxed">
+              <p className="text-base sm:text-lg text-[#555555] dark:text-[#B5B5B5] leading-relaxed">
                 From your first business website to custom operational software and automated workflows, we provide practical engineering designed around how your company works.
               </p>
             </div>
@@ -74,58 +73,58 @@ export const Services: React.FC = () => {
         </section>
 
         {/* 4 Detailed Service Cards */}
-        <section className="py-16 md:py-20 bg-[#080D16]">
+        <section className="py-16 md:py-20 bg-[#FAFAFA] dark:bg-[#090909] transition-colors duration-200">
           <div className="max-w-[1240px] mx-auto px-5 md:px-8 space-y-8">
             {services.map((s, index) => {
               const Icon = s.icon;
               return (
                 <div
                   key={s.slug}
-                  className="bg-[#151F30] rounded-2xl p-6 sm:p-8 md:p-10 border border-[#2A3850] shadow-card hover:border-[#2563EB]/60 transition-all duration-200"
+                  className="bg-[#FFFFFF] dark:bg-[#171717] rounded-2xl p-6 sm:p-8 md:p-10 border border-[#DADADA] dark:border-[#303030] shadow-card hover:border-[#111111] dark:hover:border-[#F5F5F5] transition-all duration-200"
                 >
                   <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                     <div className="lg:col-span-7 space-y-4">
                       <div className="flex items-center gap-3">
-                        <div className="w-12 h-12 rounded-xl bg-[#101827] text-[#67E8F9] border border-[#2A3850] flex items-center justify-center">
+                        <div className="w-12 h-12 rounded-xl bg-[#F1F1F1] dark:bg-[#111111] text-[#111111] dark:text-[#F5F5F5] border border-[#DADADA] dark:border-[#303030] flex items-center justify-center">
                           <Icon className="w-6 h-6" />
                         </div>
                         <div>
-                          <span className="text-xs font-mono text-[#B5C1D3]">
+                          <span className="text-xs font-mono text-[#555555] dark:text-[#B5B5B5]">
                             Service 0{index + 1}
                           </span>
-                          <h2 className="text-2xl font-bold text-[#F4F7FC] font-heading">
+                          <h2 className="text-2xl font-bold text-[#111111] dark:text-[#F5F5F5] font-heading">
                             {s.title}
                           </h2>
                         </div>
                       </div>
 
-                      <p className="text-sm font-semibold text-[#67E8F9]">
+                      <p className="text-sm font-semibold text-[#111111] dark:text-[#F5F5F5]">
                         {s.tagline}
                       </p>
 
-                      <p className="text-sm text-[#B5C1D3] leading-relaxed">
+                      <p className="text-sm text-[#555555] dark:text-[#B5B5B5] leading-relaxed">
                         {s.description}
                       </p>
 
                       <div className="pt-2">
                         <Link
                           to={s.path}
-                          className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-white bg-[#2563EB] hover:bg-[#1D4ED8] rounded-xl shadow-sm transition-all focus-ring active:scale-[0.99]"
+                          className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-white bg-[#111111] hover:bg-[#262626] dark:bg-[#F5F5F5] dark:text-[#090909] dark:hover:bg-[#E5E5E5] rounded-xl shadow-subtle transition-all focus-ring active:scale-[0.99] group"
                         >
                           <span>Explore {s.title} in detail</span>
-                          <ArrowRight className="w-4 h-4" />
+                          <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                         </Link>
                       </div>
                     </div>
 
-                    <div className="lg:col-span-5 bg-[#101827] p-6 rounded-xl border border-[#2A3850]">
-                      <span className="text-xs font-semibold uppercase tracking-wider text-[#67E8F9] block mb-3">
+                    <div className="lg:col-span-5 bg-[#F1F1F1] dark:bg-[#111111] p-6 rounded-xl border border-[#DADADA] dark:border-[#303030]">
+                      <span className="text-xs font-semibold uppercase tracking-wider text-[#111111] dark:text-[#F5F5F5] block mb-3">
                         Typical Deliverables:
                       </span>
                       <ul className="space-y-2.5">
                         {s.deliverables.map((item, idx) => (
-                          <li key={idx} className="flex items-start gap-2 text-xs md:text-sm text-[#F4F7FC]">
-                            <CheckCircle2 className="w-4 h-4 text-[#2563EB] shrink-0 mt-0.5" />
+                          <li key={idx} className="flex items-start gap-2 text-xs md:text-sm text-[#111111] dark:text-[#F5F5F5]">
+                            <CheckCircle2 className="w-4 h-4 text-[#111111] dark:text-[#F5F5F5] shrink-0 mt-0.5" />
                             <span>{item}</span>
                           </li>
                         ))}
@@ -139,21 +138,21 @@ export const Services: React.FC = () => {
         </section>
 
         {/* Closing Consultation CTA */}
-        <section className="bg-[#101827] text-[#F4F7FC] py-14 md:py-16 border-t border-[#2A3850]">
+        <section className="bg-[#F1F1F1] dark:bg-[#111111] text-[#111111] dark:text-[#F5F5F5] py-14 md:py-16 border-t border-[#DADADA] dark:border-[#303030] transition-colors duration-200">
           <div className="max-w-[1240px] mx-auto px-5 md:px-8 text-center max-w-2xl">
-            <h2 className="text-2xl sm:text-3xl font-bold font-heading text-[#F4F7FC]">
+            <h2 className="text-2xl sm:text-3xl font-bold font-heading text-[#111111] dark:text-[#F5F5F5]">
               Have a project in mind?
             </h2>
-            <p className="text-[#B5C1D3] text-sm md:text-base mt-2.5 leading-relaxed">
+            <p className="text-[#555555] dark:text-[#B5B5B5] text-sm md:text-base mt-2.5 leading-relaxed">
               Tell us what you want to build or automate. We’ll discuss scope, provide a written estimate, and outline clear delivery milestones.
             </p>
             <div className="pt-6">
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-semibold text-white bg-[#2563EB] hover:bg-[#1D4ED8] rounded-xl shadow-sm transition-all focus-ring active:scale-[0.99]"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-semibold text-white bg-[#111111] hover:bg-[#262626] dark:bg-[#F5F5F5] dark:text-[#090909] dark:hover:bg-[#E5E5E5] rounded-xl shadow-subtle transition-all focus-ring active:scale-[0.99] group"
               >
                 <span>Discuss Your Project</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </div>
           </div>

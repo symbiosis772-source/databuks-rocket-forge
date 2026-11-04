@@ -50,39 +50,37 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // Premium Futuristic Theme Palette
+        // Monochrome Theme Design Tokens
+        light: {
+          bg: "#FAFAFA",
+          alt: "#F1F1F1",
+          card: "#FFFFFF",
+          text: "#111111",
+          muted: "#555555",
+          border: "#DADADA",
+          primary: "#111111",
+          primaryHover: "#262626",
+        },
         dark: {
-          bg: "#080D16",         // Main background
-          alt: "#101827",        // Alternate section background
-          card: "#151F30",       // Card surfaces
-          text: "#F4F7FC",       // Primary text
-          muted: "#B5C1D3",      // Secondary text
-          blue: "#2563EB",       // Primary blue
-          blueHover: "#1D4ED8",  // Blue hover
-          cyan: "#67E8F9",       // Cyan accent
-          border: "#2A3850",     // Borders
+          bg: "#090909",
+          alt: "#111111",
+          card: "#171717",
+          text: "#F5F5F5",
+          muted: "#B5B5B5",
+          border: "#303030",
+          primary: "#F5F5F5",
+          primaryHover: "#E5E5E5",
         },
         brand: {
-          paper: "#080D16",
-          white: "#151F30",
-          ink: "#F4F7FC",
-          muted: "#B5C1D3",
-          rust: "#2563EB",
-          rustHover: "#1D4ED8",
-          peach: "#1A263D",
-          mist: "#101827",
-          olive: "#132035",
-          border: "#2A3850",
-          dark: "#05080E",
-          darkMuted: "#B5C1D3",
-          cyan: "#67E8F9",
-          // Backward-compat aliases
-          ivory: "#080D16",
-          forest: "#2563EB",
-          forestDark: "#1D4ED8",
-          forestLight: "#3B82F6",
-          sage: "#101827",
-          lime: "#67E8F9",
+          paper: "#FAFAFA",
+          white: "#FFFFFF",
+          ink: "#111111",
+          muted: "#555555",
+          rust: "#111111",
+          rustHover: "#262626",
+          border: "#DADADA",
+          dark: "#090909",
+          mist: "#F1F1F1",
         },
       },
       borderRadius: {
@@ -92,14 +90,9 @@ export default {
         "3xl": "20px",
       },
       boxShadow: {
-        subtle: "0 1px 3px 0 rgba(0, 0, 0, 0.4), 0 1px 2px -1px rgba(0, 0, 0, 0.4)",
-        card: "0 4px 20px -2px rgba(3, 7, 18, 0.6), 0 2px 6px -2px rgba(3, 7, 18, 0.4)",
-        dropdown: "0 10px 25px -5px rgba(0, 0, 0, 0.6), 0 8px 10px -6px rgba(0, 0, 0, 0.6)",
-        glow: "0 0 25px -5px rgba(37, 99, 235, 0.35)",
-        cyanGlow: "0 0 20px -4px rgba(103, 232, 249, 0.25)",
-      },
-      transitionTimingFunction: {
-        editorial: "cubic-bezier(0.16, 1, 0.3, 1)",
+        subtle: "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
+        card: "0 4px 16px -2px rgba(0, 0, 0, 0.05)",
+        dropdown: "0 10px 25px -5px rgba(0, 0, 0, 0.08)",
       },
     },
   },
