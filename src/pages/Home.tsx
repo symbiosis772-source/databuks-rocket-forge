@@ -1,9 +1,8 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 import HomeHero from "@/components/home/HomeHero";
-import CapabilitiesStrip from "@/components/home/CapabilitiesStrip";
 import HomeServices from "@/components/home/HomeServices";
-import ApproachFeature from "@/components/home/ApproachFeature";
+import ProblemSolutionSection from "@/components/home/ProblemSolutionSection";
 import UpcomingProducts from "@/components/home/UpcomingProducts";
 import ProcessSection from "@/components/home/ProcessSection";
 import WorkInvitation from "@/components/home/WorkInvitation";
@@ -23,14 +22,28 @@ export const Home: React.FC = () => {
       </Helmet>
 
       <main className="min-h-screen bg-[#F7F4EE]">
+        {/* 1. Clear Hero & Software Illustration */}
         <HomeHero />
-        <CapabilitiesStrip />
+
+        {/* 2. Four Services with Practical Business Needs & Examples */}
         <HomeServices />
-        <ApproachFeature />
+
+        {/* 3. Compact Problem-to-Solution Section */}
+        <ProblemSolutionSection />
+
+        {/* 4. Upcoming In-House Products (Sales Agent & Customizable Voice Agent) */}
         <UpcomingProducts />
+
+        {/* 5. One Concise Delivery Process */}
         <ProcessSection />
+
+        {/* 6. Link to Real Client Work */}
         <WorkInvitation />
+
+        {/* 7. Five Useful FAQs */}
         <FaqSection />
+
+        {/* 8. Final Enquiry Call to Action */}
         <FinalCtaSection />
       </main>
     </>

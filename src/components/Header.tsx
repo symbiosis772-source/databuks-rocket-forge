@@ -49,7 +49,7 @@ export const Header: React.FC = () => {
     <header
       className={`sticky top-0 z-50 transition-all duration-200 border-b border-[#DDDCD4] ${
         isScrolled
-          ? "bg-[#F7F4EE]/95 backdrop-blur-md shadow-subtle"
+          ? "bg-[#F7F4EE] shadow-sm"
           : "bg-[#F7F4EE]"
       }`}
     >

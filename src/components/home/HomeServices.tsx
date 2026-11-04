@@ -1,143 +1,235 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import {
+  ArrowRight,
+  Globe,
+  Layers,
+  Workflow,
+  Cpu,
+  CheckCircle2,
+  ExternalLink,
+  Laptop,
+  Smartphone,
+  Database,
+  UserCheck,
+  Send,
+} from "lucide-react";
 
 export const HomeServices: React.FC = () => {
   const services = [
     {
       number: "01",
-      title: "Websites & E-commerce",
+      title: "Website Development",
       slug: "website-development",
       path: "/services/website-development",
-      explanation: "Clean, responsive websites engineered to establish authority and convert visitors into qualified business enquiries.",
+      explanation: "Help customers understand your business and take the next step.",
       examples: [
-        "Corporate & industrial marketing sites",
-        "Product catalogues with WhatsApp inquiry flows",
-        "E-commerce stores with automated order notifications",
+        "Business websites and digital catalogues",
+        "Online stores and enquiry landing pages",
       ],
+      // Handcrafted SVG/HTML visual: Desktop and mobile website layout
+      renderVisual: () => (
+        <div className="p-3.5 rounded-xl bg-[#F7F4EE] border border-[#DDDCD4] space-y-2">
+          <div className="flex items-center justify-between text-[11px] font-mono text-[#62665E]">
+            <span className="flex items-center gap-1.5 font-semibold text-[#242621]">
+              <Laptop className="w-3.5 h-3.5 text-[#A43F2B]" />
+              Responsive Web Layout
+            </span>
+            <span>Mobile-Ready</span>
+          </div>
+          {/* Wireframe browser and phone layout */}
+          <div className="flex items-end gap-3 pt-1">
+            {/* Desktop browser mockup */}
+            <div className="flex-1 rounded-lg bg-white border border-[#DDDCD4] p-2 space-y-1.5 shadow-xs">
+              <div className="flex items-center gap-1 pb-1 border-b border-[#DDDCD4]/60">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#DDDCD4]" />
+                <span className="w-1.5 h-1.5 rounded-full bg-[#DDDCD4]" />
+                <span className="w-1.5 h-1.5 rounded-full bg-[#DDDCD4]" />
+                <div className="h-2 w-16 bg-[#F7F4EE] rounded ml-1" />
+              </div>
+              <div className="h-6 rounded bg-[#F7F4EE] flex items-center px-1.5 justify-between">
+                <div className="h-2 w-12 bg-[#242621]/20 rounded" />
+                <div className="h-3 w-8 bg-[#A43F2B] rounded text-[7px] text-white flex items-center justify-center font-bold">Enquire</div>
+              </div>
+              <div className="grid grid-cols-2 gap-1">
+                <div className="h-5 rounded bg-[#F7F4EE]" />
+                <div className="h-5 rounded bg-[#F7F4EE]" />
+              </div>
+            </div>
+            {/* Mobile phone mockup */}
+            <div className="w-14 rounded-lg bg-white border border-[#DDDCD4] p-1.5 space-y-1 shadow-xs">
+              <div className="w-4 h-1 bg-[#DDDCD4] rounded-full mx-auto" />
+              <div className="h-4 rounded bg-[#F7F4EE]" />
+              <div className="h-3 rounded bg-[#A43F2B]/20" />
+            </div>
+          </div>
+        </div>
+      ),
     },
     {
       number: "02",
       title: "Apps & Custom Software",
       slug: "app-software-development",
       path: "/services/app-software-development",
-      explanation: "Tailored web applications and portals that solve operational bottlenecks or turn new business concepts into working MVPs.",
+      explanation: "Give customers or your team a system built around their tasks.",
       examples: [
-        "Internal staff dashboards & distributor portals",
-        "Inventory, booking and operations management tools",
-        "Early-stage SaaS and digital product MVPs",
+        "Booking tools and customer self-service portals",
+        "Operational dashboards and distributor portals",
       ],
+      // Handcrafted SVG/HTML visual: Dashboard and user interface
+      renderVisual: () => (
+        <div className="p-3.5 rounded-xl bg-[#F7F4EE] border border-[#DDDCD4] space-y-2">
+          <div className="flex items-center justify-between text-[11px] font-mono text-[#62665E]">
+            <span className="flex items-center gap-1.5 font-semibold text-[#242621]">
+              <Layers className="w-3.5 h-3.5 text-[#A43F2B]" />
+              Dashboard & Role Interface
+            </span>
+            <span>Task-Oriented</span>
+          </div>
+          {/* Dashboard card */}
+          <div className="rounded-lg bg-white border border-[#DDDCD4] p-2 space-y-1.5 shadow-xs">
+            <div className="flex items-center justify-between pb-1 border-b border-[#DDDCD4]/60 text-[9px] text-[#62665E]">
+              <span className="font-semibold text-[#242621]">Orders & Operations</span>
+              <span className="px-1.5 py-0.2 rounded bg-[#E5E7DA] text-[#242621]">Admin View</span>
+            </div>
+            <div className="grid grid-cols-3 gap-1">
+              <div className="p-1 rounded bg-[#F7F4EE] text-[9px]">
+                <div className="text-[#62665E]">Active</div>
+                <div className="font-bold text-[#242621]">24 Tasks</div>
+              </div>
+              <div className="p-1 rounded bg-[#F7F4EE] text-[9px]">
+                <div className="text-[#62665E]">Dispatched</div>
+                <div className="font-bold text-[#A43F2B]">18 Orders</div>
+              </div>
+              <div className="p-1 rounded bg-[#F7F4EE] text-[9px]">
+                <div className="text-[#62665E]">Staff</div>
+                <div className="font-bold text-[#242621]">6 Online</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      ),
     },
     {
       number: "03",
       title: "Automation & Integrations",
       slug: "business-automation",
       path: "/services/business-automation",
-      explanation: "Connect your existing software stack so data moves smoothly between CRM, spreadsheets, accounting, and messaging.",
+      explanation: "Connect your tools and reduce repeated manual steps.",
       examples: [
-        "Automated WhatsApp Business notifications",
-        "Lead capture to CRM & Google Sheets pipelines",
-        "Payment reconciliation & automated invoicing alerts",
+        "Enquiry routing and instant WhatsApp alerts",
+        "CRM updates, invoice sync and recurring reports",
       ],
+      // Handcrafted SVG/HTML visual: Connected workflow with beginning and end
+      renderVisual: () => (
+        <div className="p-3.5 rounded-xl bg-[#F7F4EE] border border-[#DDDCD4] space-y-2">
+          <div className="flex items-center justify-between text-[11px] font-mono text-[#62665E]">
+            <span className="flex items-center gap-1.5 font-semibold text-[#242621]">
+              <Workflow className="w-3.5 h-3.5 text-[#A43F2B]" />
+              Connected Workflow
+            </span>
+            <span>Zero Manual Entry</span>
+          </div>
+          {/* Flow with nodes */}
+          <div className="flex items-center justify-between gap-1.5 pt-1 text-center text-[9px]">
+            <div className="flex-1 p-1.5 rounded-lg bg-white border border-[#DDDCD4] shadow-xs">
+              <span className="font-bold text-[#242621] block">Web Form</span>
+              <span className="text-[#62665E] text-[8px]">New Lead</span>
+            </div>
+            <span className="text-[#A43F2B] font-bold">→</span>
+            <div className="flex-1 p-1.5 rounded-lg bg-white border border-[#DDDCD4] shadow-xs">
+              <span className="font-bold text-[#A43F2B] block">Sync Node</span>
+              <span className="text-[#62665E] text-[8px]">WhatsApp & Sheets</span>
+            </div>
+            <span className="text-[#A43F2B] font-bold">→</span>
+            <div className="flex-1 p-1.5 rounded-lg bg-white border border-[#DDDCD4] shadow-xs">
+              <span className="font-bold text-[#242621] block">Sales Rep</span>
+              <span className="text-[#62665E] text-[8px]">Notification</span>
+            </div>
+          </div>
+        </div>
+      ),
     },
     {
       number: "04",
-      title: "AI Agents & Features",
+      title: "AI Agents",
       slug: "ai-agents",
       path: "/services/ai-agents",
-      explanation: "Practical conversational and automated triage tools built directly into your everyday business workflows with clear human oversight.",
+      explanation: "Add AI assistance to defined business workflows.",
       examples: [
-        "Customer inquiry triage and qualification bots",
-        "Internal knowledge base search & document summarization",
-        "Structured routing with immediate handover to human staff",
+        "Knowledge search across company manuals and catalogues",
+        "Enquiry assistance with direct handover to human staff",
       ],
+      // Handcrafted SVG/HTML visual: Knowledge source -> assistant -> human handover
+      renderVisual: () => (
+        <div className="p-3.5 rounded-xl bg-[#F7F4EE] border border-[#DDDCD4] space-y-2">
+          <div className="flex items-center justify-between text-[11px] font-mono text-[#62665E]">
+            <span className="flex items-center gap-1.5 font-semibold text-[#242621]">
+              <Cpu className="w-3.5 h-3.5 text-[#A43F2B]" />
+              Knowledge & Human Handover
+            </span>
+            <span>Reliable Oversight</span>
+          </div>
+          {/* Flow */}
+          <div className="flex items-center justify-between gap-1.5 pt-1 text-center text-[9px]">
+            <div className="flex-1 p-1.5 rounded-lg bg-white border border-[#DDDCD4] shadow-xs flex flex-col items-center">
+              <Database className="w-3 h-3 text-[#62665E] mb-0.5" />
+              <span className="font-bold text-[#242621]">Knowledge</span>
+              <span className="text-[#62665E] text-[8px]">Catalog / Docs</span>
+            </div>
+            <span className="text-[#A43F2B] font-bold">→</span>
+            <div className="flex-1 p-1.5 rounded-lg bg-white border border-[#DDDCD4] shadow-xs flex flex-col items-center">
+              <Cpu className="w-3 h-3 text-[#A43F2B] mb-0.5" />
+              <span className="font-bold text-[#A43F2B]">Assistant</span>
+              <span className="text-[#62665E] text-[8px]">Guided Answer</span>
+            </div>
+            <span className="text-[#A43F2B] font-bold">→</span>
+            <div className="flex-1 p-1.5 rounded-lg bg-white border border-[#DDDCD4] shadow-xs flex flex-col items-center">
+              <UserCheck className="w-3 h-3 text-[#242621] mb-0.5" />
+              <span className="font-bold text-[#242621]">Team Member</span>
+              <span className="text-[#62665E] text-[8px]">Human Review</span>
+            </div>
+          </div>
+        </div>
+      ),
     },
   ];
 
   return (
     <section className="bg-[#FFFFFF] py-16 md:py-24 border-b border-[#DDDCD4]">
-      <div className="max-w-[1240px] mx-auto px-5 md:px-8">
+      <div className="max-w-[1240px] mx-auto px-4 sm:px-6 md:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-start">
-          {/* Left Column: Heading, Context & Original Line Illustration */}
+          {/* Left Column: Heading, Subtitle & Primary Link */}
           <div className="lg:col-span-5 lg:sticky lg:top-28 space-y-6">
             <div className="space-y-3">
               <span className="text-xs font-semibold uppercase tracking-wider text-[#A43F2B] block">
-                Engineering Capabilities
+                What We Build
               </span>
               <h2 className="text-3xl sm:text-4xl lg:text-[44px] lg:leading-[1.14] font-bold tracking-tight text-[#242621]">
                 Useful technology. Built around your business.
               </h2>
               <p className="text-base sm:text-lg text-[#62665E] leading-relaxed pt-1">
-                Whether you need a polished web presence, custom internal software or automated pipelines, we deliver practical systems shaped around the real way your company works.
+                From high-conversion websites to internal tools and automated pipelines, we deliver practical engineering shaped around how your business actually operates.
               </p>
             </div>
 
-            {/* Original Technical Line Illustration */}
-            <div className="p-5 rounded-2xl bg-[#F7F4EE] border border-[#DDDCD4] space-y-3">
-              <div className="flex items-center justify-between text-xs font-semibold text-[#62665E] uppercase tracking-wider">
-                <span>Architecture Blueprint</span>
-                <span className="text-[#A43F2B]">Direct Engineering</span>
-              </div>
-              <svg
-                viewBox="0 0 320 120"
-                className="w-full h-auto text-[#242621]"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                aria-hidden="true"
-              >
-                {/* Node 1: Web Interface */}
-                <rect x="10" y="20" width="70" height="70" rx="8" className="stroke-[#242621] fill-white" />
-                <line x1="20" y1="35" x2="65" y2="35" className="stroke-[#DDDCD4]" />
-                <line x1="20" y1="48" x2="55" y2="48" className="stroke-[#DDDCD4]" />
-                <line x1="20" y1="60" x2="60" y2="60" className="stroke-[#DDDCD4]" />
-                <circle cx="25" cy="75" r="3" className="fill-[#A43F2B] stroke-[#A43F2B]" />
-                <text x="34" y="78" fontSize="8" className="fill-[#242621] stroke-none font-sans font-medium">UI / Portal</text>
-
-                {/* Connecting Line 1 */}
-                <path d="M80 55 H125" className="stroke-[#A43F2B]" strokeDasharray="3 3" />
-                <polygon points="125,52 130,55 125,58" className="fill-[#A43F2B] stroke-[#A43F2B]" />
-
-                {/* Node 2: Logic & Automations */}
-                <rect x="130" y="15" width="80" height="80" rx="8" className="stroke-[#242621] fill-white" />
-                <circle cx="170" cy="45" r="14" className="stroke-[#A43F2B]" />
-                <path d="M170 37 V45 H177" className="stroke-[#A43F2B]" />
-                <text x="145" y="75" fontSize="8" className="fill-[#242621] stroke-none font-sans font-medium">Core Logic</text>
-
-                {/* Connecting Line 2 */}
-                <path d="M210 55 H245" className="stroke-[#A43F2B]" strokeDasharray="3 3" />
-                <polygon points="245,52 250,55 245,58" className="fill-[#A43F2B] stroke-[#A43F2B]" />
-
-                {/* Node 3: Database & Integrations */}
-                <rect x="250" y="20" width="60" height="70" rx="8" className="stroke-[#242621] fill-white" />
-                <ellipse cx="280" cy="38" rx="18" ry="6" className="stroke-[#62665E]" />
-                <path d="M262 38 V65 C262 68 298 68 298 65 V38" className="stroke-[#62665E]" />
-                <text x="260" y="78" fontSize="8" className="fill-[#242621] stroke-none font-sans font-medium">Database</text>
-              </svg>
-              <p className="text-[11px] text-[#62665E] leading-relaxed">
-                Every project is architected with clear boundaries, modular components, and full source code handover.
-              </p>
-            </div>
-
-            <div>
+            <div className="pt-1">
               <Link
                 to="/services"
                 className="inline-flex items-center gap-2 text-sm font-semibold text-[#A43F2B] hover:text-[#8C3423] group"
               >
-                <span>Read detailed service descriptions</span>
+                <span>Explore all service specifications</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </div>
           </div>
 
-          {/* Right Column: 4 Numbered Service Rows with Thin Dividers */}
+          {/* Right Column: 4 Service Rows with Plain Explanations, Examples & Small Illustrations */}
           <div className="lg:col-span-7 divide-y divide-[#DDDCD4]">
             {services.map((item) => (
               <div
                 key={item.number}
-                className="py-7 md:py-8 first:pt-0 last:pb-0 group transition-all"
+                className="py-7 md:py-8 first:pt-0 last:pb-0 space-y-4 group"
               >
                 <div className="flex items-baseline justify-between gap-4">
                   <span className="font-mono text-sm font-bold text-[#A43F2B]">
@@ -147,28 +239,26 @@ export const HomeServices: React.FC = () => {
                     to={item.path}
                     className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#62665E] hover:text-[#A43F2B] transition-colors"
                   >
-                    <span>Service Details</span>
+                    <span>View Service</span>
                     <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
                   </Link>
                 </div>
 
-                <h3 className="text-xl sm:text-2xl font-bold text-[#242621] tracking-tight mt-2 mb-2.5">
-                  <Link
-                    to={item.path}
-                    className="hover:text-[#A43F2B] transition-colors"
-                  >
-                    {item.title}
-                  </Link>
-                </h3>
-
-                <p className="text-sm sm:text-[15px] text-[#62665E] leading-relaxed mb-4">
-                  {item.explanation}
-                </p>
+                <div>
+                  <h3 className="text-xl sm:text-2xl font-bold text-[#242621] tracking-tight mb-2">
+                    <Link to={item.path} className="hover:text-[#A43F2B] transition-colors">
+                      {item.title}
+                    </Link>
+                  </h3>
+                  <p className="text-sm sm:text-base text-[#62665E] leading-relaxed">
+                    {item.explanation}
+                  </p>
+                </div>
 
                 {/* Practical Examples */}
                 <div className="space-y-1.5 pt-1">
                   <span className="text-[11px] font-semibold uppercase tracking-wider text-[#62665E] block">
-                    Common implementations:
+                    Practical examples:
                   </span>
                   <ul className="space-y-1 text-xs sm:text-sm text-[#242621]">
                     {item.examples.map((example) => (
@@ -178,6 +268,11 @@ export const HomeServices: React.FC = () => {
                       </li>
                     ))}
                   </ul>
+                </div>
+
+                {/* Small Illustrative Visual */}
+                <div className="pt-2">
+                  {item.renderVisual()}
                 </div>
               </div>
             ))}

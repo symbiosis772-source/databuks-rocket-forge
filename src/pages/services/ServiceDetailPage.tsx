@@ -5,6 +5,7 @@ import { servicesData, ServicePageData } from "@/data/servicesData";
 import { portfolioProjects } from "@/data/portfolioData";
 import { siteConfig } from "@/config/siteConfig";
 import { ImageModal } from "@/components/ui/ImageModal";
+import { ServiceExplanatoryVisual } from "@/components/services/ServiceExplanatoryVisual";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import {
   ArrowRight,
@@ -77,6 +78,26 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ forcedSlug
                 </a>
               </div>
             </div>
+          </div>
+        </section>
+
+        
+        {/* Explanatory Visual */}
+        <section className="py-12 md:py-16 bg-[#FFFFFF] border-b border-[#DDDCD4]">
+          <div className="max-w-[1240px] mx-auto px-5 md:px-8">
+            <div className="max-w-2xl mb-8">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#A43F2B] mb-2 block">
+                Architecture & Practical Implementation
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-bold text-[#242621] font-heading">
+                How this works in practice.
+              </h2>
+              <p className="text-sm md:text-base text-[#62665E] mt-2 leading-relaxed">
+                A clear, illustrative look at the interfaces and workflows we build for this service.
+              </p>
+            </div>
+
+            <ServiceExplanatoryVisual slug={data.slug} />
           </div>
         </section>
 
