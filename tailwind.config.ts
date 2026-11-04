@@ -50,26 +50,39 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        // Premium Futuristic Theme Palette
+        dark: {
+          bg: "#080D16",         // Main background
+          alt: "#101827",        // Alternate section background
+          card: "#151F30",       // Card surfaces
+          text: "#F4F7FC",       // Primary text
+          muted: "#B5C1D3",      // Secondary text
+          blue: "#2563EB",       // Primary blue
+          blueHover: "#1D4ED8",  // Blue hover
+          cyan: "#67E8F9",       // Cyan accent
+          border: "#2A3850",     // Borders
+        },
         brand: {
-          paper: "#F7F4EE",
-          white: "#FFFFFF",
-          ink: "#242621",
-          muted: "#62665E",
-          rust: "#A43F2B",
-          rustHover: "#8C3423",
-          peach: "#F1DDD1",
-          mist: "#DEE8EC",
-          olive: "#E5E7DA",
-          border: "#DDDCD4",
-          dark: "#242A28",
-          darkMuted: "#A2A8A2",
-          // Backward-compat aliases so subpages don't break
-          ivory: "#F7F4EE",
-          forest: "#A43F2B",
-          forestDark: "#8C3423",
-          forestLight: "#BD4E37",
-          sage: "#E5E7DA",
-          lime: "#A43F2B",
+          paper: "#080D16",
+          white: "#151F30",
+          ink: "#F4F7FC",
+          muted: "#B5C1D3",
+          rust: "#2563EB",
+          rustHover: "#1D4ED8",
+          peach: "#1A263D",
+          mist: "#101827",
+          olive: "#132035",
+          border: "#2A3850",
+          dark: "#05080E",
+          darkMuted: "#B5C1D3",
+          cyan: "#67E8F9",
+          // Backward-compat aliases
+          ivory: "#080D16",
+          forest: "#2563EB",
+          forestDark: "#1D4ED8",
+          forestLight: "#3B82F6",
+          sage: "#101827",
+          lime: "#67E8F9",
         },
       },
       borderRadius: {
@@ -79,18 +92,14 @@ export default {
         "3xl": "20px",
       },
       boxShadow: {
-        subtle: "0 1px 3px 0 rgba(24, 40, 34, 0.05), 0 1px 2px -1px rgba(24, 40, 34, 0.05)",
-        card: "0 2px 8px -2px rgba(24, 40, 34, 0.06), 0 1px 4px -1px rgba(24, 40, 34, 0.04)",
-        cardHover: "0 12px 24px -6px rgba(18, 59, 50, 0.09), 0 4px 8px -2px rgba(18, 59, 50, 0.04)",
-        dropdown: "0 10px 30px -5px rgba(18, 59, 50, 0.12), 0 4px 6px -2px rgba(18, 59, 50, 0.05)",
+        subtle: "0 1px 3px 0 rgba(0, 0, 0, 0.4), 0 1px 2px -1px rgba(0, 0, 0, 0.4)",
+        card: "0 4px 20px -2px rgba(3, 7, 18, 0.6), 0 2px 6px -2px rgba(3, 7, 18, 0.4)",
+        dropdown: "0 10px 25px -5px rgba(0, 0, 0, 0.6), 0 8px 10px -6px rgba(0, 0, 0, 0.6)",
+        glow: "0 0 25px -5px rgba(37, 99, 235, 0.35)",
+        cyanGlow: "0 0 20px -4px rgba(103, 232, 249, 0.25)",
       },
-      keyframes: {
-        "accordion-down": { from: { height: "0" }, to: { height: "var(--radix-accordion-content-height)" } },
-        "accordion-up": { from: { height: "var(--radix-accordion-content-height)" }, to: { height: "0" } },
-      },
-      animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
+      transitionTimingFunction: {
+        editorial: "cubic-bezier(0.16, 1, 0.3, 1)",
       },
     },
   },

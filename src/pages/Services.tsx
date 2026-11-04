@@ -55,18 +55,18 @@ export const Services: React.FC = () => {
         <link rel="canonical" href="https://databuks.org/services" />
       </Helmet>
 
-      <main className="min-h-screen bg-[#F7F4EE]">
+      <main className="min-h-screen bg-[#080D16] text-[#F4F7FC]">
         {/* Hero Header */}
-        <section className="bg-[#FFFFFF] border-b border-[#DDDCD4] py-16 md:py-20">
+        <section className="bg-[#101827] border-b border-[#2A3850] py-16 md:py-20">
           <div className="max-w-[1240px] mx-auto px-5 md:px-8">
             <div className="max-w-3xl space-y-4">
-              <span className="text-xs font-bold uppercase tracking-wider text-[#A43F2B] block">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#67E8F9] block">
                 Development Capabilities
               </span>
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#242621] font-heading">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#F4F7FC] font-heading">
                 Software development and business automation services.
               </h1>
-              <p className="text-base sm:text-lg text-[#62665E] leading-relaxed">
+              <p className="text-base sm:text-lg text-[#B5C1D3] leading-relaxed">
                 From your first business website to custom operational software and automated workflows, we provide practical engineering designed around how your company works.
               </p>
             </div>
@@ -74,43 +74,43 @@ export const Services: React.FC = () => {
         </section>
 
         {/* 4 Detailed Service Cards */}
-        <section className="py-16 md:py-20">
+        <section className="py-16 md:py-20 bg-[#080D16]">
           <div className="max-w-[1240px] mx-auto px-5 md:px-8 space-y-8">
             {services.map((s, index) => {
               const Icon = s.icon;
               return (
                 <div
                   key={s.slug}
-                  className="bg-[#FFFFFF] rounded-2xl p-6 sm:p-8 md:p-10 border border-[#DDDCD4] shadow-card hover:shadow-cardHover transition-shadow duration-200"
+                  className="bg-[#151F30] rounded-2xl p-6 sm:p-8 md:p-10 border border-[#2A3850] shadow-card hover:border-[#2563EB]/60 transition-all duration-200"
                 >
                   <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                     <div className="lg:col-span-7 space-y-4">
                       <div className="flex items-center gap-3">
-                        <div className="w-12 h-12 rounded-xl bg-[#E5E7DA] text-[#A43F2B] flex items-center justify-center">
+                        <div className="w-12 h-12 rounded-xl bg-[#101827] text-[#67E8F9] border border-[#2A3850] flex items-center justify-center">
                           <Icon className="w-6 h-6" />
                         </div>
                         <div>
-                          <span className="text-xs font-mono text-[#62665E]">
+                          <span className="text-xs font-mono text-[#B5C1D3]">
                             Service 0{index + 1}
                           </span>
-                          <h2 className="text-2xl font-bold text-[#242621] font-heading">
+                          <h2 className="text-2xl font-bold text-[#F4F7FC] font-heading">
                             {s.title}
                           </h2>
                         </div>
                       </div>
 
-                      <p className="text-sm font-semibold text-[#242621]">
+                      <p className="text-sm font-semibold text-[#67E8F9]">
                         {s.tagline}
                       </p>
 
-                      <p className="text-sm text-[#62665E] leading-relaxed">
+                      <p className="text-sm text-[#B5C1D3] leading-relaxed">
                         {s.description}
                       </p>
 
                       <div className="pt-2">
                         <Link
                           to={s.path}
-                          className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-white bg-[#A43F2B] hover:bg-[#8C3423] rounded-lg shadow-sm transition-colors"
+                          className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-white bg-[#2563EB] hover:bg-[#1D4ED8] rounded-xl shadow-sm transition-all focus-ring active:scale-[0.99]"
                         >
                           <span>Explore {s.title} in detail</span>
                           <ArrowRight className="w-4 h-4" />
@@ -118,14 +118,14 @@ export const Services: React.FC = () => {
                       </div>
                     </div>
 
-                    <div className="lg:col-span-5 bg-[#F7F4EE] p-6 rounded-xl border border-[#DDDCD4]">
-                      <span className="text-xs font-semibold uppercase tracking-wider text-[#A43F2B] block mb-3">
+                    <div className="lg:col-span-5 bg-[#101827] p-6 rounded-xl border border-[#2A3850]">
+                      <span className="text-xs font-semibold uppercase tracking-wider text-[#67E8F9] block mb-3">
                         Typical Deliverables:
                       </span>
                       <ul className="space-y-2.5">
                         {s.deliverables.map((item, idx) => (
-                          <li key={idx} className="flex items-start gap-2 text-xs md:text-sm text-[#242621]">
-                            <CheckCircle2 className="w-4 h-4 text-[#A43F2B] shrink-0 mt-0.5" />
+                          <li key={idx} className="flex items-start gap-2 text-xs md:text-sm text-[#F4F7FC]">
+                            <CheckCircle2 className="w-4 h-4 text-[#2563EB] shrink-0 mt-0.5" />
                             <span>{item}</span>
                           </li>
                         ))}
@@ -139,18 +139,18 @@ export const Services: React.FC = () => {
         </section>
 
         {/* Closing Consultation CTA */}
-        <section className="bg-[#A43F2B] text-[#F7F4EE] py-14 md:py-16">
+        <section className="bg-[#101827] text-[#F4F7FC] py-14 md:py-16 border-t border-[#2A3850]">
           <div className="max-w-[1240px] mx-auto px-5 md:px-8 text-center max-w-2xl">
-            <h2 className="text-2xl sm:text-3xl font-bold font-heading">
+            <h2 className="text-2xl sm:text-3xl font-bold font-heading text-[#F4F7FC]">
               Have a project in mind?
             </h2>
-            <p className="text-[#E5E7DA] text-sm md:text-base mt-2.5 leading-relaxed">
+            <p className="text-[#B5C1D3] text-sm md:text-base mt-2.5 leading-relaxed">
               Tell us what you want to build or automate. We’ll discuss scope, provide a written estimate, and outline clear delivery milestones.
             </p>
             <div className="pt-6">
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-semibold text-[#242621] bg-[#F1DDD1] hover:bg-[#cbf056] rounded-lg shadow-sm"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-semibold text-white bg-[#2563EB] hover:bg-[#1D4ED8] rounded-xl shadow-sm transition-all focus-ring active:scale-[0.99]"
               >
                 <span>Discuss Your Project</span>
                 <ArrowRight className="w-4 h-4" />

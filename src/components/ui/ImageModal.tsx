@@ -34,34 +34,34 @@ export const ImageModal: React.FC<ImageModalProps> = ({
 
   return (
     <div
-      className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8 bg-slate-950/80 backdrop-blur-sm animate-in fade-in duration-200"
+      className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8 bg-[#080D16]/85 backdrop-blur-md animate-in fade-in duration-200"
       onClick={onClose}
       role="dialog"
       aria-modal="true"
       aria-label={imageAlt}
     >
       <div
-        className="relative max-w-5xl w-full bg-white rounded-xl overflow-hidden shadow-2xl border border-slate-700"
+        className="relative max-w-5xl w-full bg-[#151F30] rounded-xl overflow-hidden shadow-2xl border border-[#2A3850]"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="flex items-center justify-between px-4 py-3 bg-slate-900 text-white border-b border-slate-800">
-          <p className="text-sm font-medium truncate pr-4 text-slate-200">
+        <div className="flex items-center justify-between px-4 py-3 bg-[#101827] text-[#F4F7FC] border-b border-[#2A3850]">
+          <p className="text-sm font-medium truncate pr-4 text-[#F4F7FC]">
             {caption || imageAlt}
           </p>
           <button
             type="button"
             onClick={onClose}
-            className="p-1.5 text-slate-400 hover:text-white hover:bg-slate-800 rounded-lg transition-colors"
+            className="p-1.5 text-[#B5C1D3] hover:text-white hover:bg-[#151F30] rounded-lg transition-colors"
             aria-label="Close modal"
           >
             <X className="w-5 h-5" />
           </button>
         </div>
-        <div className="p-2 md:p-4 bg-slate-100 flex items-center justify-center max-h-[80vh] overflow-auto">
+        <div className="p-2 md:p-4 bg-[#080D16] flex items-center justify-center max-h-[80vh] overflow-auto">
           <img
             src={imageSrc}
             alt={imageAlt}
-            className="w-full h-auto max-h-[75vh] object-contain rounded-lg shadow-sm"
+            className="w-auto h-auto max-w-full max-h-[75vh] object-contain rounded"
           />
         </div>
       </div>
@@ -70,4 +70,3 @@ export const ImageModal: React.FC<ImageModalProps> = ({
 };
 
 export default ImageModal;
-

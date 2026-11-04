@@ -31,7 +31,7 @@ export const siteConfig = {
     heroEyebrow: "DATABUKS • WEBSITES, APPS & AUTOMATION",
     heroHeadlinePrimary: "Websites, apps and automation",
     heroHeadlineSecondary: "for your business.",
-    heroSupportingCopy: "We help Indian businesses build their online presence, launch digital products and simplify everyday work with custom software and AI.",
+    heroSupportingCopy: "DataBuks builds websites, custom applications and AI-powered workflows for Indian businesses.",
     locationBadge: "SOFTWARE STUDIO • NAGPUR, INDIA",
     city: "Nagpur",
     region: "Maharashtra",

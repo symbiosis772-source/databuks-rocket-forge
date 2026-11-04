@@ -4,33 +4,33 @@
 
 @layer base {
   :root {
-    --background: 44 27% 95%;         /* #F7F4EE warm paper */
-    --foreground: 75 7% 14%;          /* #242621 main ink */
+    --background: 220 47% 6%;         /* #080D16 main background */
+    --foreground: 220 50% 97%;        /* #F4F7FC primary text */
 
-    --card: 0 0% 100%;                /* #FFFFFF */
-    --card-foreground: 75 7% 14%;
+    --card: 218 39% 14%;              /* #151F30 card surfaces */
+    --card-foreground: 220 50% 97%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 75 7% 14%;
+    --popover: 218 39% 14%;
+    --popover-foreground: 220 50% 97%;
 
-    --primary: 10 58% 41%;            /* #A43F2B deep rust */
+    --primary: 221 83% 53%;           /* #2563EB primary blue */
     --primary-foreground: 0 0% 100%;  /* #FFFFFF */
 
-    --secondary: 197 25% 90%;         /* #DEE8EC mist blue */
-    --secondary-foreground: 75 7% 14%;
+    --secondary: 220 42% 11%;         /* #101827 alternate background */
+    --secondary-foreground: 220 50% 97%;
 
-    --muted: 50 11% 85%;              /* #DDDCD4 border/muted */
-    --muted-foreground: 84 4% 38%;    /* #62665E secondary text */
+    --muted: 217 31% 24%;             /* #2A3850 border */
+    --muted-foreground: 217 25% 77%;  /* #B5C1D3 secondary text */
 
-    --accent: 23 54% 88%;             /* #F1DDD1 pale peach */
-    --accent-foreground: 75 7% 14%;
+    --accent: 187 92% 69%;            /* #67E8F9 cyan accent */
+    --accent-foreground: 220 47% 6%;
 
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 50 11% 85%;             /* #DDDCD4 */
-    --input: 50 11% 85%;
-    --ring: 10 58% 41%;               /* #A43F2B rust ring */
+    --border: 217 31% 24%;            /* #2A3850 */
+    --input: 217 31% 24%;
+    --ring: 221 83% 53%;              /* #2563EB */
 
     --radius: 0.75rem;                /* 12px */
   }
@@ -42,22 +42,32 @@
   html {
     scroll-behavior: smooth;
     overflow-x: clip;
+    background-color: #080D16;
+    color: #F4F7FC;
+    color-scheme: dark;
   }
 
   body {
-    @apply bg-[#F7F4EE] text-[#242621] font-sans antialiased;
+    background-color: #080D16;
+    color: #F4F7FC;
+    @apply font-sans antialiased;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11", "tnum";
     overflow-x: clip;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-heading tracking-tight text-[#242621];
+    @apply font-heading tracking-tight text-[#F4F7FC];
   }
 }
 
-/* Custom focus ring with rust color */
+/* Custom focus ring with electric blue color */
 .focus-ring {
-  @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#A43F2B] focus-visible:ring-offset-2;
+  @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB] focus-visible:ring-offset-2 focus-visible:ring-offset-[#080D16];
+}
+
+/* Smooth card hover lift */
+.card-hover {
+  @apply transition-all duration-200 hover:-translate-y-1 hover:border-[#2563EB]/60 hover:shadow-glow;
 }
 
 /* Respect prefers-reduced-motion */
@@ -69,5 +79,6 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+    transform: none !important;
   }
 }

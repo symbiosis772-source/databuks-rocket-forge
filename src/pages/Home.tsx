@@ -31,7 +31,7 @@ export const Home: React.FC = () => {
         <link rel="canonical" href="https://databuks.org/" />
       </Helmet>
 
-      <main className="min-h-screen bg-[#F7F4EE]">
+      <main className="min-h-screen bg-[#080D16]">
         {/* 1. Hero with Cinematic Digital Network Artwork & Agency Offer */}
         <HomeHero />
 

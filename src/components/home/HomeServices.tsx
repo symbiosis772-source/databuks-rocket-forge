@@ -7,12 +7,9 @@ import {
   Workflow,
   Cpu,
   CheckCircle2,
-  ExternalLink,
   Laptop,
-  Smartphone,
   Database,
   UserCheck,
-  Send,
 } from "lucide-react";
 
 export const HomeServices: React.FC = () => {
@@ -27,40 +24,36 @@ export const HomeServices: React.FC = () => {
         "Business websites and digital catalogues",
         "Online stores and enquiry landing pages",
       ],
-      // Handcrafted SVG/HTML visual: Desktop and mobile website layout
       renderVisual: () => (
-        <div className="p-3.5 rounded-xl bg-[#F7F4EE] border border-[#DDDCD4] space-y-2">
-          <div className="flex items-center justify-between text-[11px] font-mono text-[#62665E]">
-            <span className="flex items-center gap-1.5 font-semibold text-[#242621]">
-              <Laptop className="w-3.5 h-3.5 text-[#A43F2B]" />
+        <div className="p-3.5 rounded-xl bg-[#080D16] border border-[#2A3850] space-y-2">
+          <div className="flex items-center justify-between text-[11px] font-mono text-[#B5C1D3]">
+            <span className="flex items-center gap-1.5 font-semibold text-[#F4F7FC]">
+              <Laptop className="w-3.5 h-3.5 text-[#67E8F9]" />
               Responsive Web Layout
             </span>
-            <span>Mobile-Ready</span>
+            <span className="text-[#67E8F9]">Mobile-Ready</span>
           </div>
-          {/* Wireframe browser and phone layout */}
           <div className="flex items-end gap-3 pt-1">
-            {/* Desktop browser mockup */}
-            <div className="flex-1 rounded-lg bg-white border border-[#DDDCD4] p-2 space-y-1.5 shadow-xs">
-              <div className="flex items-center gap-1 pb-1 border-b border-[#DDDCD4]/60">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#DDDCD4]" />
-                <span className="w-1.5 h-1.5 rounded-full bg-[#DDDCD4]" />
-                <span className="w-1.5 h-1.5 rounded-full bg-[#DDDCD4]" />
-                <div className="h-2 w-16 bg-[#F7F4EE] rounded ml-1" />
+            <div className="flex-1 rounded-lg bg-[#151F30] border border-[#2A3850] p-2 space-y-1.5 shadow-xs">
+              <div className="flex items-center gap-1 pb-1 border-b border-[#2A3850]">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#2A3850]" />
+                <span className="w-1.5 h-1.5 rounded-full bg-[#2A3850]" />
+                <span className="w-1.5 h-1.5 rounded-full bg-[#2A3850]" />
+                <div className="h-2 w-16 bg-[#101827] rounded ml-1" />
               </div>
-              <div className="h-6 rounded bg-[#F7F4EE] flex items-center px-1.5 justify-between">
-                <div className="h-2 w-12 bg-[#242621]/20 rounded" />
-                <div className="h-3 w-8 bg-[#A43F2B] rounded text-[7px] text-white flex items-center justify-center font-bold">Enquire</div>
+              <div className="h-6 rounded bg-[#101827] flex items-center px-1.5 justify-between">
+                <div className="h-2 w-12 bg-[#B5C1D3]/30 rounded" />
+                <div className="h-3 w-8 bg-[#2563EB] rounded text-[7px] text-white flex items-center justify-center font-bold">Enquire</div>
               </div>
               <div className="grid grid-cols-2 gap-1">
-                <div className="h-5 rounded bg-[#F7F4EE]" />
-                <div className="h-5 rounded bg-[#F7F4EE]" />
+                <div className="h-5 rounded bg-[#101827]" />
+                <div className="h-5 rounded bg-[#101827]" />
               </div>
             </div>
-            {/* Mobile phone mockup */}
-            <div className="w-14 rounded-lg bg-white border border-[#DDDCD4] p-1.5 space-y-1 shadow-xs">
-              <div className="w-4 h-1 bg-[#DDDCD4] rounded-full mx-auto" />
-              <div className="h-4 rounded bg-[#F7F4EE]" />
-              <div className="h-3 rounded bg-[#A43F2B]/20" />
+            <div className="w-14 rounded-lg bg-[#151F30] border border-[#2A3850] p-1.5 space-y-1 shadow-xs">
+              <div className="w-4 h-1 bg-[#2A3850] rounded-full mx-auto" />
+              <div className="h-4 rounded bg-[#101827]" />
+              <div className="h-3 rounded bg-[#2563EB]/40" />
             </div>
           </div>
         </div>
@@ -76,34 +69,32 @@ export const HomeServices: React.FC = () => {
         "Booking tools and customer self-service portals",
         "Operational dashboards and distributor portals",
       ],
-      // Handcrafted SVG/HTML visual: Dashboard and user interface
       renderVisual: () => (
-        <div className="p-3.5 rounded-xl bg-[#F7F4EE] border border-[#DDDCD4] space-y-2">
-          <div className="flex items-center justify-between text-[11px] font-mono text-[#62665E]">
-            <span className="flex items-center gap-1.5 font-semibold text-[#242621]">
-              <Layers className="w-3.5 h-3.5 text-[#A43F2B]" />
+        <div className="p-3.5 rounded-xl bg-[#080D16] border border-[#2A3850] space-y-2">
+          <div className="flex items-center justify-between text-[11px] font-mono text-[#B5C1D3]">
+            <span className="flex items-center gap-1.5 font-semibold text-[#F4F7FC]">
+              <Layers className="w-3.5 h-3.5 text-[#67E8F9]" />
               Dashboard & Role Interface
             </span>
-            <span>Task-Oriented</span>
+            <span className="text-[#67E8F9]">Task-Oriented</span>
           </div>
-          {/* Dashboard card */}
-          <div className="rounded-lg bg-white border border-[#DDDCD4] p-2 space-y-1.5 shadow-xs">
-            <div className="flex items-center justify-between pb-1 border-b border-[#DDDCD4]/60 text-[9px] text-[#62665E]">
-              <span className="font-semibold text-[#242621]">Orders & Operations</span>
-              <span className="px-1.5 py-0.2 rounded bg-[#E5E7DA] text-[#242621]">Admin View</span>
+          <div className="rounded-lg bg-[#151F30] border border-[#2A3850] p-2 space-y-1.5 shadow-xs">
+            <div className="flex items-center justify-between pb-1 border-b border-[#2A3850] text-[9px] text-[#B5C1D3]">
+              <span className="font-semibold text-[#F4F7FC]">Orders & Operations</span>
+              <span className="px-1.5 py-0.2 rounded bg-[#101827] text-[#67E8F9] border border-[#2A3850]">Admin View</span>
             </div>
             <div className="grid grid-cols-3 gap-1">
-              <div className="p-1 rounded bg-[#F7F4EE] text-[9px]">
-                <div className="text-[#62665E]">Active</div>
-                <div className="font-bold text-[#242621]">24 Tasks</div>
+              <div className="p-1 rounded bg-[#101827] text-[9px]">
+                <div className="text-[#B5C1D3]">Active</div>
+                <div className="font-bold text-[#F4F7FC]">24 Tasks</div>
               </div>
-              <div className="p-1 rounded bg-[#F7F4EE] text-[9px]">
-                <div className="text-[#62665E]">Dispatched</div>
-                <div className="font-bold text-[#A43F2B]">18 Orders</div>
+              <div className="p-1 rounded bg-[#101827] text-[9px]">
+                <div className="text-[#B5C1D3]">Dispatched</div>
+                <div className="font-bold text-[#67E8F9]">18 Orders</div>
               </div>
-              <div className="p-1 rounded bg-[#F7F4EE] text-[9px]">
-                <div className="text-[#62665E]">Staff</div>
-                <div className="font-bold text-[#242621]">6 Online</div>
+              <div className="p-1 rounded bg-[#101827] text-[9px]">
+                <div className="text-[#B5C1D3]">Staff</div>
+                <div className="font-bold text-[#F4F7FC]">6 Online</div>
               </div>
             </div>
           </div>
@@ -120,31 +111,29 @@ export const HomeServices: React.FC = () => {
         "Enquiry routing and instant WhatsApp alerts",
         "CRM updates, invoice sync and recurring reports",
       ],
-      // Handcrafted SVG/HTML visual: Connected workflow with beginning and end
       renderVisual: () => (
-        <div className="p-3.5 rounded-xl bg-[#F7F4EE] border border-[#DDDCD4] space-y-2">
-          <div className="flex items-center justify-between text-[11px] font-mono text-[#62665E]">
-            <span className="flex items-center gap-1.5 font-semibold text-[#242621]">
-              <Workflow className="w-3.5 h-3.5 text-[#A43F2B]" />
+        <div className="p-3.5 rounded-xl bg-[#080D16] border border-[#2A3850] space-y-2">
+          <div className="flex items-center justify-between text-[11px] font-mono text-[#B5C1D3]">
+            <span className="flex items-center gap-1.5 font-semibold text-[#F4F7FC]">
+              <Workflow className="w-3.5 h-3.5 text-[#67E8F9]" />
               Connected Workflow
             </span>
-            <span>Zero Manual Entry</span>
+            <span className="text-[#67E8F9]">Zero Manual Entry</span>
           </div>
-          {/* Flow with nodes */}
           <div className="flex items-center justify-between gap-1.5 pt-1 text-center text-[9px]">
-            <div className="flex-1 p-1.5 rounded-lg bg-white border border-[#DDDCD4] shadow-xs">
-              <span className="font-bold text-[#242621] block">Web Form</span>
-              <span className="text-[#62665E] text-[8px]">New Lead</span>
+            <div className="flex-1 p-1.5 rounded-lg bg-[#151F30] border border-[#2A3850] shadow-xs">
+              <span className="font-bold text-[#F4F7FC] block">Web Form</span>
+              <span className="text-[#B5C1D3] text-[8px]">New Lead</span>
             </div>
-            <span className="text-[#A43F2B] font-bold">→</span>
-            <div className="flex-1 p-1.5 rounded-lg bg-white border border-[#DDDCD4] shadow-xs">
-              <span className="font-bold text-[#A43F2B] block">Sync Node</span>
-              <span className="text-[#62665E] text-[8px]">WhatsApp & Sheets</span>
+            <span className="text-[#67E8F9] font-bold">→</span>
+            <div className="flex-1 p-1.5 rounded-lg bg-[#151F30] border border-[#2563EB]/60 shadow-xs">
+              <span className="font-bold text-[#67E8F9] block">Sync Node</span>
+              <span className="text-[#B5C1D3] text-[8px]">WhatsApp & Sheets</span>
             </div>
-            <span className="text-[#A43F2B] font-bold">→</span>
-            <div className="flex-1 p-1.5 rounded-lg bg-white border border-[#DDDCD4] shadow-xs">
-              <span className="font-bold text-[#242621] block">Sales Rep</span>
-              <span className="text-[#62665E] text-[8px]">Notification</span>
+            <span className="text-[#67E8F9] font-bold">→</span>
+            <div className="flex-1 p-1.5 rounded-lg bg-[#151F30] border border-[#2A3850] shadow-xs">
+              <span className="font-bold text-[#F4F7FC] block">Sales Rep</span>
+              <span className="text-[#B5C1D3] text-[8px]">Notification</span>
             </div>
           </div>
         </div>
@@ -160,34 +149,32 @@ export const HomeServices: React.FC = () => {
         "Knowledge search across company manuals and catalogues",
         "Enquiry assistance with direct handover to human staff",
       ],
-      // Handcrafted SVG/HTML visual: Knowledge source -> assistant -> human handover
       renderVisual: () => (
-        <div className="p-3.5 rounded-xl bg-[#F7F4EE] border border-[#DDDCD4] space-y-2">
-          <div className="flex items-center justify-between text-[11px] font-mono text-[#62665E]">
-            <span className="flex items-center gap-1.5 font-semibold text-[#242621]">
-              <Cpu className="w-3.5 h-3.5 text-[#A43F2B]" />
+        <div className="p-3.5 rounded-xl bg-[#080D16] border border-[#2A3850] space-y-2">
+          <div className="flex items-center justify-between text-[11px] font-mono text-[#B5C1D3]">
+            <span className="flex items-center gap-1.5 font-semibold text-[#F4F7FC]">
+              <Cpu className="w-3.5 h-3.5 text-[#67E8F9]" />
               Knowledge & Human Handover
             </span>
-            <span>Reliable Oversight</span>
+            <span className="text-[#67E8F9]">Reliable Oversight</span>
           </div>
-          {/* Flow */}
           <div className="flex items-center justify-between gap-1.5 pt-1 text-center text-[9px]">
-            <div className="flex-1 p-1.5 rounded-lg bg-white border border-[#DDDCD4] shadow-xs flex flex-col items-center">
-              <Database className="w-3 h-3 text-[#62665E] mb-0.5" />
-              <span className="font-bold text-[#242621]">Knowledge</span>
-              <span className="text-[#62665E] text-[8px]">Catalog / Docs</span>
+            <div className="flex-1 p-1.5 rounded-lg bg-[#151F30] border border-[#2A3850] shadow-xs flex flex-col items-center">
+              <Database className="w-3 h-3 text-[#B5C1D3] mb-0.5" />
+              <span className="font-bold text-[#F4F7FC]">Knowledge</span>
+              <span className="text-[#B5C1D3] text-[8px]">Catalog / Docs</span>
             </div>
-            <span className="text-[#A43F2B] font-bold">→</span>
-            <div className="flex-1 p-1.5 rounded-lg bg-white border border-[#DDDCD4] shadow-xs flex flex-col items-center">
-              <Cpu className="w-3 h-3 text-[#A43F2B] mb-0.5" />
-              <span className="font-bold text-[#A43F2B]">Assistant</span>
-              <span className="text-[#62665E] text-[8px]">Guided Answer</span>
+            <span className="text-[#67E8F9] font-bold">→</span>
+            <div className="flex-1 p-1.5 rounded-lg bg-[#151F30] border border-[#2563EB]/60 shadow-xs flex flex-col items-center">
+              <Cpu className="w-3 h-3 text-[#67E8F9] mb-0.5" />
+              <span className="font-bold text-[#67E8F9]">Assistant</span>
+              <span className="text-[#B5C1D3] text-[8px]">Guided Answer</span>
             </div>
-            <span className="text-[#A43F2B] font-bold">→</span>
-            <div className="flex-1 p-1.5 rounded-lg bg-white border border-[#DDDCD4] shadow-xs flex flex-col items-center">
-              <UserCheck className="w-3 h-3 text-[#242621] mb-0.5" />
-              <span className="font-bold text-[#242621]">Team Member</span>
-              <span className="text-[#62665E] text-[8px]">Human Review</span>
+            <span className="text-[#67E8F9] font-bold">→</span>
+            <div className="flex-1 p-1.5 rounded-lg bg-[#151F30] border border-[#2A3850] shadow-xs flex flex-col items-center">
+              <UserCheck className="w-3 h-3 text-[#F4F7FC] mb-0.5" />
+              <span className="font-bold text-[#F4F7FC]">Team Member</span>
+              <span className="text-[#B5C1D3] text-[8px]">Human Review</span>
             </div>
           </div>
         </div>
@@ -196,19 +183,19 @@ export const HomeServices: React.FC = () => {
   ];
 
   return (
-    <section className="bg-[#FFFFFF] py-16 md:py-24 border-b border-[#DDDCD4]">
+    <section className="bg-[#101827] py-16 md:py-24 border-b border-[#2A3850]">
       <div className="max-w-[1240px] mx-auto px-4 sm:px-6 md:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-start">
           {/* Left Column: Heading, Subtitle & Primary Link */}
           <div className="lg:col-span-5 lg:sticky lg:top-28 space-y-6">
             <div className="space-y-3">
-              <span className="text-xs font-semibold uppercase tracking-wider text-[#A43F2B] block">
+              <span className="text-xs font-semibold uppercase tracking-wider text-[#67E8F9] block">
                 What We Build
               </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-[44px] lg:leading-[1.14] font-bold tracking-tight text-[#242621]">
+              <h2 className="text-3xl sm:text-4xl lg:text-[44px] lg:leading-[1.14] font-bold tracking-tight text-[#F4F7FC]">
                 Useful technology. Built around your business.
               </h2>
-              <p className="text-base sm:text-lg text-[#62665E] leading-relaxed pt-1">
+              <p className="text-base sm:text-lg text-[#B5C1D3] leading-relaxed pt-1">
                 From high-conversion websites to internal tools and automated pipelines, we deliver practical engineering shaped around how your business actually operates.
               </p>
             </div>
@@ -216,7 +203,7 @@ export const HomeServices: React.FC = () => {
             <div className="pt-1">
               <Link
                 to="/services"
-                className="inline-flex items-center gap-2 text-sm font-semibold text-[#A43F2B] hover:text-[#8C3423] group"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-[#67E8F9] hover:text-[#2563EB] group transition-colors"
               >
                 <span>Explore all service specifications</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -224,20 +211,20 @@ export const HomeServices: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Column: 4 Service Rows with Plain Explanations, Examples & Small Illustrations */}
-          <div className="lg:col-span-7 divide-y divide-[#DDDCD4]">
+          {/* Right Column: 4 Service Rows */}
+          <div className="lg:col-span-7 divide-y divide-[#2A3850]">
             {services.map((item) => (
               <div
                 key={item.number}
                 className="py-7 md:py-8 first:pt-0 last:pb-0 space-y-4 group"
               >
                 <div className="flex items-baseline justify-between gap-4">
-                  <span className="font-mono text-sm font-bold text-[#A43F2B]">
+                  <span className="font-mono text-sm font-bold text-[#2563EB]">
                     {item.number}
                   </span>
                   <Link
                     to={item.path}
-                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#62665E] hover:text-[#A43F2B] transition-colors"
+                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#B5C1D3] hover:text-[#67E8F9] transition-colors"
                   >
                     <span>View Service</span>
                     <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
@@ -245,25 +232,25 @@ export const HomeServices: React.FC = () => {
                 </div>
 
                 <div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-[#242621] tracking-tight mb-2">
-                    <Link to={item.path} className="hover:text-[#A43F2B] transition-colors">
+                  <h3 className="text-xl sm:text-2xl font-bold text-[#F4F7FC] tracking-tight mb-2">
+                    <Link to={item.path} className="hover:text-[#67E8F9] transition-colors">
                       {item.title}
                     </Link>
                   </h3>
-                  <p className="text-sm sm:text-base text-[#62665E] leading-relaxed">
+                  <p className="text-sm sm:text-base text-[#B5C1D3] leading-relaxed">
                     {item.explanation}
                   </p>
                 </div>
 
                 {/* Practical Examples */}
                 <div className="space-y-1.5 pt-1">
-                  <span className="text-[11px] font-semibold uppercase tracking-wider text-[#62665E] block">
+                  <span className="text-[11px] font-semibold uppercase tracking-wider text-[#B5C1D3] block">
                     Practical examples:
                   </span>
-                  <ul className="space-y-1 text-xs sm:text-sm text-[#242621]">
+                  <ul className="space-y-1 text-xs sm:text-sm text-[#F4F7FC]">
                     {item.examples.map((example) => (
                       <li key={example} className="flex items-center gap-2">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-[#A43F2B] shrink-0" />
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#67E8F9] shrink-0" />
                         <span>{example}</span>
                       </li>
                     ))}
