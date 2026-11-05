@@ -16,7 +16,7 @@ export const WorkInvitation: React.FC = () => {
               Want to explore our client work?
             </h2>
             <p className="text-base text-[#555555] dark:text-[#B5B5B5] leading-relaxed">
-              We have designed and engineered business websites, customer portals, operational tools and automation pipelines for Indian businesses and founders. Visit our dedicated portfolio to review real project case studies, specifications, and architecture details.
+              We have designed and engineered business websites, customer portals, operational tools and automation pipelines for businesses and founders across industries. Visit our dedicated portfolio to review real project case studies, specifications, and architecture details.
             </p>
           </div>
 

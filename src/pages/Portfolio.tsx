@@ -21,7 +21,7 @@ export const Portfolio: React.FC = () => {
         <title>Portfolio & Case Studies — DataBuks Selected Work</title>
         <meta
           name="description"
-          content="Explore real websites, web applications, portals, and automations delivered by DataBuks for businesses across India."
+          content="Explore real websites, web applications, portals, and automations delivered by DataBuks for businesses and founders worldwide."
         />
         <link rel="canonical" href="https://databuks.org/portfolio" />
       </Helmet>
@@ -35,7 +35,7 @@ export const Portfolio: React.FC = () => {
                 Selected Work
               </span>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#111111] dark:text-[#F5F5F5] font-heading">
-                Websites, apps & software delivered for Indian businesses.
+                Websites, apps & software delivered for businesses across industries.
               </h1>
               <p className="text-base sm:text-lg text-[#555555] dark:text-[#B5B5B5] leading-relaxed">
                 Review our delivered projects across real estate, B2B distribution, education, manufacturing, and e-commerce. Factual functionality, straightforward delivery.

@@ -20,7 +20,7 @@ export const About: React.FC = () => {
         <title>About DataBuks — Software Development Studio in Nagpur, India</title>
         <meta
           name="description"
-          content="Learn about DataBuks: an independent software studio in Nagpur, India building custom websites, web applications and automations for Indian businesses."
+          content="Learn about DataBuks: an independent software studio in Nagpur, India building custom websites, web applications and automations for businesses and founders worldwide."
         />
         <link rel="canonical" href="https://databuks.org/about" />
       </Helmet>
@@ -38,7 +38,7 @@ export const About: React.FC = () => {
                 Practical software development, built around how your business works.
               </h1>
               <p className="text-base sm:text-lg text-[#555555] dark:text-[#B5B5B5] leading-relaxed">
-                DataBuks is an independent software studio in Nagpur, Maharashtra. We partner with Indian business owners, distributors, and startup founders to design and build websites, custom operational portals, and workflow automations.
+                DataBuks is an independent software studio in Nagpur, Maharashtra. We partner with business owners, distributors, and startup founders worldwide to design and build websites, custom operational portals, and workflow automations.
               </p>
             </div>
           </div>
@@ -54,7 +54,7 @@ export const About: React.FC = () => {
                   Why DataBuks exists.
                 </h2>
                 <p className="text-[#555555] dark:text-[#B5B5B5]">
-                  Many Indian businesses find themselves stuck between two bad options: expensive agencies that charge hefty fees for generic designs with layers of non-technical account managers, or rigid off-the-shelf software packages that force operations into an awkward template.
+                  Many businesses find themselves stuck between two bad options: expensive agencies that charge hefty fees for generic designs with layers of non-technical account managers, or rigid off-the-shelf software packages that force operations into an awkward template.
                 </p>
                 <p className="text-[#555555] dark:text-[#B5B5B5]">
                   DataBuks provides a direct, capable alternative. When you engage DataBuks, you work directly with the developers and designers building your project. We listen to the exact way you handle enquiries, process orders, or distribute products, and build software that aligns with your real business process.
@@ -64,7 +64,7 @@ export const About: React.FC = () => {
                   Who we help.
                 </h3>
                 <p className="text-[#555555] dark:text-[#B5B5B5]">
-                  Our work primarily serves growing Indian SMEs, B2B wholesale distributors, education providers, professional service firms, and early-stage founders looking to validate a software MVP.
+                  Our work primarily serves growing SMEs, B2B wholesale distributors, education providers, professional service firms, and early-stage founders looking to validate a software MVP.
                 </p>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
@@ -116,7 +116,7 @@ export const About: React.FC = () => {
                     Proudly based in Nagpur, Maharashtra
                   </h4>
                   <p className="text-xs text-[#555555] dark:text-[#B5B5B5] leading-relaxed">
-                    We work with clients locally across Vidarbha and remotely throughout India. All consultations are available in both English and Hindi.
+                    We work with clients locally in Maharashtra and remotely with teams worldwide. Consultations are available in both English and Hindi.
                   </p>
                   <div className="pt-1 text-xs font-semibold text-[#111111] dark:text-[#F5F5F5]">
                     Phone & WhatsApp: {siteConfig.brand.phoneDisplay}
@@ -175,7 +175,7 @@ export const About: React.FC = () => {
                   Practical Integrations
                 </h3>
                 <p className="text-xs md:text-sm text-[#555555] dark:text-[#B5B5B5] mt-2 leading-relaxed">
-                  Official WhatsApp Business Cloud APIs, Indian payment gateways (Razorpay/UPI), and resilient webhooks built with automatic retry queues.
+                  Official WhatsApp Business Cloud APIs, secure payment gateways (Stripe/Razorpay/UPI), and resilient webhooks built with automatic retry queues.
                 </p>
               </div>
             </div>

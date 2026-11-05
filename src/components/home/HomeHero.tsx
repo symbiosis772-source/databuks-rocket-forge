@@ -35,7 +35,7 @@ export const HomeHero: React.FC = () => {
 
             {/* Supporting Copy */}
             <p className="text-base sm:text-lg md:text-[18px] text-[#555555] dark:text-[#B5B5B5] leading-[1.65] max-w-xl">
-              DataBuks builds websites, custom applications and AI-powered workflows for Indian businesses.
+              DataBuks builds websites, custom applications and AI-powered workflows for businesses and founders worldwide.
             </p>
 
             {/* CTA Buttons */}
@@ -65,7 +65,7 @@ export const HomeHero: React.FC = () => {
               <span className="text-[#DADADA] dark:text-[#303030] hidden sm:inline">•</span>
               <span>Direct engineering team</span>
               <span className="text-[#DADADA] dark:text-[#303030] hidden sm:inline">•</span>
-              <span>Based in Nagpur, India</span>
+              <span>Based in Nagpur, India. Working worldwide.</span>
             </div>
           </div>
 

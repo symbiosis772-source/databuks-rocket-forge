@@ -41,7 +41,7 @@ export const servicesData: Record<string, ServicePageData> = {
     heroHeadline: "Business websites built to turn visitors into real enquiries.",
     heroSubtitle: "We design and develop clean, fast-loading websites that communicate your credibility, explain what you offer, and make it effortless for customers across India to contact you.",
     whoIsThisFor: {
-      summary: "Ideal for growing Indian businesses that want a polished online presence that represents their real standard of work.",
+      summary: "Ideal for growing businesses that want a polished online presence that represents their real standard of work.",
       points: [
         {
           title: "Service businesses & consultancies",
@@ -53,7 +53,7 @@ export const servicesData: Record<string, ServicePageData> = {
         },
         {
           title: "Retail & e-commerce brands",
-          detail: "Direct-to-consumer businesses wanting an intuitive shopping experience with integrated Indian payment gateways (Razorpay, UPI, Cards).",
+          detail: "Direct-to-consumer businesses wanting an intuitive shopping experience with integrated payment gateways (Razorpay, UPI, Cards).",
         },
         {
           title: "High-intent landing pages",
@@ -68,7 +68,7 @@ export const servicesData: Record<string, ServicePageData> = {
       },
       {
         title: "Slow load times on mobile connections",
-        description: "Heavy themes and unoptimised images drive away mobile visitors. We build lightweight, efficient pages optimised for Indian mobile networks.",
+        description: "Heavy themes and unoptimised images drive away mobile visitors. We build lightweight, efficient pages optimised for fast loading across all networks.",
       },
       {
         title: "Confusing visitor journeys and missed enquiries",
@@ -93,7 +93,7 @@ export const servicesData: Record<string, ServicePageData> = {
       {
         title: "E-commerce stores & D2C storefronts",
         description: "Complete shopping experiences with secure checkouts and inventory tracking.",
-        items: ["UPI & Indian payment gateways", "Order notification emails & SMS", "Inventory management", "Mobile-optimised checkout flow"],
+        items: ["Integrated payment gateways", "Order notification emails & SMS", "Inventory management", "Mobile-optimised checkout flow"],
       },
       {
         title: "Focused landing pages",
@@ -133,7 +133,7 @@ export const servicesData: Record<string, ServicePageData> = {
     faqs: [
       {
         question: "Will my website look good on mobile phones?",
-        answer: "Yes, absolutely. Over 75% of web traffic in India is mobile. We design for smartphones first, ensuring fast tap targets, readable text, and fast load speeds.",
+        answer: "Yes, absolutely. Over 70% of web traffic is mobile. We design for smartphones first, ensuring fast tap targets, readable text, and fast load speeds.",
       },
       {
         question: "Can visitors contact me directly via WhatsApp?",

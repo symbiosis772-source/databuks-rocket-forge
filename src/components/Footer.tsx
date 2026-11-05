@@ -29,7 +29,7 @@ export const Footer: React.FC = () => {
               />
             </Link>
             <p className="text-[#555555] dark:text-[#B5B5B5] text-sm leading-relaxed max-w-sm">
-              DataBuks builds websites, custom applications and AI-powered workflows for Indian businesses—helping you serve customers and simplify everyday operations.
+              DataBuks builds websites, custom applications and AI-powered workflows for businesses and founders worldwide—helping you serve customers and simplify everyday operations.
             </p>
             <div className="space-y-2 text-xs text-[#555555] dark:text-[#B5B5B5] pt-1">
               <div className="flex items-center gap-2">
@@ -67,6 +67,14 @@ export const Footer: React.FC = () => {
                   className="text-[#555555] dark:text-[#B5B5B5] hover:text-[#111111] dark:hover:text-[#F5F5F5] transition-colors"
                 >
                   Services
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/ai-solutions"
+                  className="text-[#555555] dark:text-[#B5B5B5] hover:text-[#111111] dark:hover:text-[#F5F5F5] transition-colors"
+                >
+                  AI Solutions
                 </Link>
               </li>
               <li>
@@ -153,6 +161,14 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <Link
+                  to="/ai-solutions"
+                  className="text-[#555555] dark:text-[#B5B5B5] hover:text-[#111111] dark:hover:text-[#F5F5F5] transition-colors font-medium"
+                >
+                  AI Solutions Hub (12 Models)
+                </Link>
+              </li>
+              <li>
+                <Link
                   to="/services"
                   className="text-[#111111] dark:text-[#F5F5F5] hover:underline transition-colors inline-flex items-center gap-1 text-xs font-semibold pt-1"
                 >
@@ -199,7 +215,7 @@ export const Footer: React.FC = () => {
               <li>• Direct developer access</li>
               <li>• Full source code ownership</li>
               <li>• English & Hindi support</li>
-              <li>• Hosted on Indian & global cloud</li>
+              <li>• Hosted on reliable global cloud</li>
             </ul>
           </div>
         </div>
@@ -217,7 +233,7 @@ export const Footer: React.FC = () => {
               Contact
             </Link>
             <span className="text-[#DADADA] dark:text-[#303030]">|</span>
-            <span>Based in {siteConfig.brand.city}, {siteConfig.brand.region}</span>
+            <span>Based in {siteConfig.brand.city}, India. Working worldwide.</span>
           </div>
         </div>
       </div>

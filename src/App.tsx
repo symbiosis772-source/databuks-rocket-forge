@@ -15,6 +15,7 @@ import Home from "./pages/Home";
 const About = lazy(() => import("./pages/About"));
 const Services = lazy(() => import("./pages/Services"));
 const ServiceDetailPage = lazy(() => import("./pages/services/ServiceDetailPage"));
+const AiSolutions = lazy(() => import("./pages/AiSolutions"));
 const Products = lazy(() => import("./pages/Products"));
 const Portfolio = lazy(() => import("./pages/Portfolio"));
 const CaseStudyDetail = lazy(() => import("./pages/CaseStudyDetail"));
@@ -48,6 +49,9 @@ export const App = () => (
               
               {/* Products Route */}
               <Route path="/products" element={<Products />} />
+
+              {/* AI Solutions Hub */}
+              <Route path="/ai-solutions" element={<AiSolutions />} />
 
               {/* Services Overview & Specific Sub-routes */}
               <Route path="/services" element={<Services />} />

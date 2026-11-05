@@ -30,9 +30,24 @@ export const Contact: React.FC = () => {
 
   // Initialize service from URL query params if present
   useEffect(() => {
-    const param = searchParams.get("service") || searchParams.get("product");
-    if (param) {
-      const lower = param.toLowerCase();
+    const solutionParam = searchParams.get("solution");
+    const serviceParam = searchParams.get("service");
+    const productParam = searchParams.get("product");
+
+    if (solutionParam) {
+      setService("AI Agents & Integrations");
+      // Format solution slug into a readable title (e.g. company-knowledge-assistant -> Company Knowledge Assistant)
+      const formattedTitle = solutionParam
+        .split("-")
+        .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+        .join(" ");
+      setDescription(
+        (prev) =>
+          prev ||
+          `I am interested in discussing the "${formattedTitle}" solution for our business. Here are details about our workflow, documents, and current bottlenecks:`
+      );
+    } else if (serviceParam || productParam) {
+      const lower = (serviceParam || productParam || "").toLowerCase();
       if (lower.includes("sales")) setService("Sales Agent (In-House Product)");
       else if (lower.includes("voice")) setService("Customizable Voice Agent (In-House Product)");
       else if (lower.includes("website")) setService("Website Development");
@@ -109,7 +124,7 @@ export const Contact: React.FC = () => {
         <title>Let’s Understand Your Project — Contact DataBuks Nagpur</title>
         <meta
           name="description"
-          content="Discuss your website, custom software application, or business automation project with DataBuks. Direct developer consultation in English and Hindi. Based in Nagpur, India."
+          content="Discuss your website, custom software application, or business automation project with DataBuks. Direct developer consultation in English and Hindi. Based in Nagpur, India. Working worldwide."
         />
         <link rel="canonical" href="https://databuks.org/contact" />
       </Helmet>
@@ -239,7 +254,7 @@ export const Contact: React.FC = () => {
                         <option value="Website Development" className="bg-[#FFFFFF] dark:bg-[#090909] text-[#111111] dark:text-[#F5F5F5]">Website Development (Business site, e-commerce, catalogue)</option>
                         <option value="Apps & Custom Software" className="bg-[#FFFFFF] dark:bg-[#090909] text-[#111111] dark:text-[#F5F5F5]">Apps & Custom Software (Customer portal, ERP, MVP)</option>
                         <option value="Business Automation" className="bg-[#FFFFFF] dark:bg-[#090909] text-[#111111] dark:text-[#F5F5F5]">Business Automation (WhatsApp alerts, CRM sync, reporting)</option>
-                        <option value="AI Agents & Integrations" className="bg-[#FFFFFF] dark:bg-[#090909] text-[#111111] dark:text-[#F5F5F5]">AI Agents & Integrations (Knowledge assistant, triage)</option>
+                        <option value="AI Agents & Integrations" className="bg-[#FFFFFF] dark:bg-[#090909] text-[#111111] dark:text-[#F5F5F5]">Custom AI Solutions & Agents (RAG systems, triage, workflow agents)</option>
                         <option value="Sales Agent (In-House Product)" className="bg-[#FFFFFF] dark:bg-[#090909] text-[#111111] dark:text-[#F5F5F5]">Sales Agent (In-House Product — Concept / Early Access)</option>
                         <option value="Customizable Voice Agent (In-House Product)" className="bg-[#FFFFFF] dark:bg-[#090909] text-[#111111] dark:text-[#F5F5F5]">Customizable Voice Agent (In-House Product — Early Access)</option>
                         <option value="Other / Not Sure" className="bg-[#FFFFFF] dark:bg-[#090909] text-[#111111] dark:text-[#F5F5F5]">Other / Need guidance</option>

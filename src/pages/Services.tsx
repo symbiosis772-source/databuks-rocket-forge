@@ -11,7 +11,7 @@ export const Services: React.FC = () => {
       path: "/services/website-development",
       icon: Globe,
       tagline: "Present your business clearly and give customers an easy way to enquire, book or buy.",
-      description: "Fast, responsive business websites, B2B catalogues, and e-commerce storefronts designed for real conversions across Indian mobile networks.",
+      description: "Fast, responsive business websites, B2B catalogues, and e-commerce storefronts designed for real conversions across desktop and mobile devices.",
       deliverables: ["Responsive custom design", "Contact & WhatsApp enquiry capture", "On-page SEO & OpenGraph setup", "Full source code handover"],
     },
     {
@@ -49,7 +49,7 @@ export const Services: React.FC = () => {
         <title>Software & Website Services — DataBuks Nagpur</title>
         <meta
           name="description"
-          content="Explore custom website development, web applications, business automation and practical AI agents built by DataBuks for Indian businesses."
+          content="Explore custom website development, web applications, business automation and practical AI agents built by DataBuks for businesses and founders worldwide."
         />
         <link rel="canonical" href="https://databuks.org/services" />
       </Helmet>

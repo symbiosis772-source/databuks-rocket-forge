@@ -81,6 +81,32 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ forcedSlug
           </div>
         </section>
 
+        {/* Dedicated Hub Banner for AI Agents */}
+        {slug === "ai-agents" && (
+          <section className="bg-[#FFFFFF] dark:bg-[#171717] border-b border-[#DADADA] dark:border-[#303030] py-6 transition-colors duration-200">
+            <div className="max-w-[1240px] mx-auto px-5 md:px-8">
+              <div className="p-5 sm:p-6 rounded-2xl bg-[#FAFAFA] dark:bg-[#111111] border border-[#DADADA] dark:border-[#303030] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                <div className="space-y-1 max-w-2xl">
+                  <div className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#111111] dark:text-[#F5F5F5]">
+                    <span className="w-2 h-2 rounded-full bg-[#111111] dark:bg-[#F5F5F5]" />
+                    <span>Dedicated AI Solutions Hub</span>
+                  </div>
+                  <p className="text-sm text-[#555555] dark:text-[#B5B5B5] leading-relaxed">
+                    Explore our filterable catalogue of 12 custom AI & automation architectures—including RAG knowledge assistants, customer triage agents, and document intake pipelines.
+                  </p>
+                </div>
+                <Link
+                  to="/ai-solutions"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 text-xs font-semibold rounded-xl text-white bg-[#111111] hover:bg-[#262626] dark:bg-[#F5F5F5] dark:text-[#090909] dark:hover:bg-[#E5E5E5] transition-all shadow-subtle shrink-0"
+                >
+                  <span>Explore AI Solutions Hub</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* Explanatory Visual */}
         <section className="py-12 md:py-16 bg-[#FAFAFA] dark:bg-[#090909] border-b border-[#DADADA] dark:border-[#303030] transition-colors duration-200">
           <div className="max-w-[1240px] mx-auto px-5 md:px-8">

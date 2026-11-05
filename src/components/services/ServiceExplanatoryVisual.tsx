@@ -72,7 +72,7 @@ export const ServiceExplanatoryVisual: React.FC<ServiceExplanatoryVisualProps> =
                     Engineered Valves & Pipeline Solutions
                   </h4>
                   <p className="text-xs text-[#555555] dark:text-[#B5B5B5] leading-relaxed">
-                    Precision-grade components delivered across India with full mill test certificates.
+                    Precision-grade components delivered with full mill test certificates and verified specifications.
                   </p>
                 </div>
 

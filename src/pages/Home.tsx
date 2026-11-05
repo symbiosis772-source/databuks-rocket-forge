@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import HomeHero from "@/components/home/HomeHero";
 import HomeServices from "@/components/home/HomeServices";
+import HomeAiSection from "@/components/home/HomeAiSection";
 import ProblemSolutionSection from "@/components/home/ProblemSolutionSection";
 import ProcessSection from "@/components/home/ProcessSection";
 import WorkInvitation from "@/components/home/WorkInvitation";
@@ -26,7 +27,7 @@ export const Home: React.FC = () => {
         <title>DataBuks — Technology That Works For Your Business</title>
         <meta
           name="description"
-          content="DataBuks builds websites, applications and connected workflows for Indian businesses—helping you serve customers and simplify everyday operations. Based in Nagpur, India."
+          content="DataBuks builds websites, applications and connected workflows for businesses and founders worldwide—helping you serve customers and simplify everyday operations. Based in Nagpur, India. Working worldwide."
         />
         <link rel="canonical" href="https://databuks.org/" />
       </Helmet>
@@ -37,6 +38,9 @@ export const Home: React.FC = () => {
 
         {/* 2. Four Services with Practical Business Needs & Examples */}
         <HomeServices />
+
+        {/* 2.5 Concise AI Capabilities Section */}
+        <HomeAiSection />
 
         {/* 3. Compact Problem-to-Solution Section */}
         <ProblemSolutionSection />

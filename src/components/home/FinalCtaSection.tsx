@@ -51,7 +51,7 @@ export const FinalCtaSection: React.FC = () => {
           </div>
 
           <div className="pt-3 text-xs text-[#555555] dark:text-[#B5B5B5]">
-            {siteConfig.brand.supportedLanguages} • Engineering studio in {siteConfig.brand.city}, Maharashtra
+            {siteConfig.brand.supportedLanguages} • Engineering studio in {siteConfig.brand.city}, India • Working worldwide
           </div>
         </div>
       </div>

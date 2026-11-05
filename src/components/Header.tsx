@@ -43,6 +43,7 @@ export const Header: React.FC = () => {
 
   const isHomeActive = location.pathname === "/" || location.pathname === "/home";
   const isServicesActive = location.pathname.startsWith("/services");
+  const isAiSolutionsActive = location.pathname === "/ai-solutions";
   const isProductsActive = location.pathname === "/products";
   const isWorkActive = location.pathname.startsWith("/portfolio");
   const isAboutActive = location.pathname === "/about";
@@ -81,12 +82,12 @@ export const Header: React.FC = () => {
           />
         </Link>
 
-        {/* Desktop Navigation: Home | Services | Products | Work | About */}
-        <nav className="hidden md:flex items-center gap-1 lg:gap-2" aria-label="Main Navigation">
+        {/* Desktop Navigation: Home | Services | AI Solutions | Products | Work | About */}
+        <nav className="hidden md:flex items-center gap-0.5 lg:gap-1.5" aria-label="Main Navigation">
           {/* Home Link */}
           <Link
             to="/"
-            className={`px-3.5 py-2 text-[15px] font-medium rounded-lg transition-colors relative ${
+            className={`px-2.5 lg:px-3 py-2 text-[14px] lg:text-[15px] font-medium rounded-lg transition-colors relative ${
               isHomeActive
                 ? "text-[#111111] dark:text-[#F5F5F5] font-semibold bg-[#F1F1F1] dark:bg-[#171717]"
                 : "text-[#555555] hover:text-[#111111] hover:bg-[#F1F1F1]/80 dark:text-[#B5B5B5] dark:hover:text-[#F5F5F5] dark:hover:bg-[#171717]/80"
@@ -95,7 +96,7 @@ export const Header: React.FC = () => {
           >
             Home
             {isHomeActive && (
-              <span className="absolute bottom-1 left-3.5 right-3.5 h-0.5 bg-[#111111] dark:bg-[#F5F5F5] rounded-full" />
+              <span className="absolute bottom-1 left-2.5 right-2.5 lg:left-3 lg:right-3 h-0.5 bg-[#111111] dark:bg-[#F5F5F5] rounded-full" />
             )}
           </Link>
 
@@ -109,7 +110,7 @@ export const Header: React.FC = () => {
             <button
               type="button"
               onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
-              className={`flex items-center gap-1 px-3.5 py-2 text-[15px] font-medium rounded-lg transition-colors ${
+              className={`flex items-center gap-1 px-2.5 lg:px-3 py-2 text-[14px] lg:text-[15px] font-medium rounded-lg transition-colors ${
                 isServicesActive
                   ? "text-[#111111] dark:text-[#F5F5F5] font-semibold bg-[#F1F1F1] dark:bg-[#171717]"
                   : "text-[#555555] hover:text-[#111111] hover:bg-[#F1F1F1]/80 dark:text-[#B5B5B5] dark:hover:text-[#F5F5F5] dark:hover:bg-[#171717]/80"
@@ -159,15 +160,49 @@ export const Header: React.FC = () => {
                       </div>
                     </Link>
                   ))}
+                  <div className="pt-1 mt-1 border-t border-[#DADADA] dark:border-[#303030]">
+                    <Link
+                      to="/ai-solutions"
+                      className="flex items-center justify-between p-2.5 rounded-lg bg-[#FAFAFA] dark:bg-[#111111] hover:bg-[#F1F1F1] dark:hover:bg-[#222222] transition-colors group"
+                      role="menuitem"
+                    >
+                      <div>
+                        <div className="text-[13px] font-bold text-[#111111] dark:text-[#F5F5F5] flex items-center gap-1.5">
+                          <span>Custom AI Solutions Hub</span>
+                          <span className="px-1.5 py-0.2 text-[10px] uppercase font-semibold bg-[#111111] text-white dark:bg-[#F5F5F5] dark:text-[#111111] rounded">12 Models</span>
+                        </div>
+                        <div className="text-[11px] text-[#555555] dark:text-[#B5B5B5] mt-0.5">
+                          Explore RAG, agents, and workflow automations
+                        </div>
+                      </div>
+                      <ArrowRight className="w-3.5 h-3.5 text-[#555555] dark:text-[#B5B5B5] group-hover:translate-x-0.5 transition-transform" />
+                    </Link>
+                  </div>
                 </div>
               </div>
             )}
           </div>
 
+          {/* AI Solutions Link (New Hub) */}
+          <Link
+            to="/ai-solutions"
+            className={`px-2.5 lg:px-3 py-2 text-[14px] lg:text-[15px] font-medium rounded-lg transition-colors relative ${
+              isAiSolutionsActive
+                ? "text-[#111111] dark:text-[#F5F5F5] font-semibold bg-[#F1F1F1] dark:bg-[#171717]"
+                : "text-[#555555] hover:text-[#111111] hover:bg-[#F1F1F1]/80 dark:text-[#B5B5B5] dark:hover:text-[#F5F5F5] dark:hover:bg-[#171717]/80"
+            }`}
+            aria-current={isAiSolutionsActive ? "page" : undefined}
+          >
+            AI Solutions
+            {isAiSolutionsActive && (
+              <span className="absolute bottom-1 left-2.5 right-2.5 lg:left-3 lg:right-3 h-0.5 bg-[#111111] dark:bg-[#F5F5F5] rounded-full" />
+            )}
+          </Link>
+
           {/* Products (Dedicated Standalone Route) */}
           <Link
             to="/products"
-            className={`px-3.5 py-2 text-[15px] font-medium rounded-lg transition-colors relative flex items-center gap-1.5 ${
+            className={`px-2.5 lg:px-3 py-2 text-[14px] lg:text-[15px] font-medium rounded-lg transition-colors relative flex items-center gap-1.5 ${
               isProductsActive
                 ? "text-[#111111] dark:text-[#F5F5F5] font-semibold bg-[#F1F1F1] dark:bg-[#171717]"
                 : "text-[#555555] hover:text-[#111111] hover:bg-[#F1F1F1]/80 dark:text-[#B5B5B5] dark:hover:text-[#F5F5F5] dark:hover:bg-[#171717]/80"
@@ -179,14 +214,14 @@ export const Header: React.FC = () => {
               Soon
             </span>
             {isProductsActive && (
-              <span className="absolute bottom-1 left-3.5 right-3.5 h-0.5 bg-[#111111] dark:bg-[#F5F5F5] rounded-full" />
+              <span className="absolute bottom-1 left-2.5 right-2.5 lg:left-3 lg:right-3 h-0.5 bg-[#111111] dark:bg-[#F5F5F5] rounded-full" />
             )}
           </Link>
 
           {/* Work */}
           <Link
             to="/portfolio"
-            className={`px-3.5 py-2 text-[15px] font-medium rounded-lg transition-colors relative ${
+            className={`px-2.5 lg:px-3 py-2 text-[14px] lg:text-[15px] font-medium rounded-lg transition-colors relative ${
               isWorkActive
                 ? "text-[#111111] dark:text-[#F5F5F5] font-semibold bg-[#F1F1F1] dark:bg-[#171717]"
                 : "text-[#555555] hover:text-[#111111] hover:bg-[#F1F1F1]/80 dark:text-[#B5B5B5] dark:hover:text-[#F5F5F5] dark:hover:bg-[#171717]/80"
@@ -195,14 +230,14 @@ export const Header: React.FC = () => {
           >
             Work
             {isWorkActive && (
-              <span className="absolute bottom-1 left-3.5 right-3.5 h-0.5 bg-[#111111] dark:bg-[#F5F5F5] rounded-full" />
+              <span className="absolute bottom-1 left-2.5 right-2.5 lg:left-3 lg:right-3 h-0.5 bg-[#111111] dark:bg-[#F5F5F5] rounded-full" />
             )}
           </Link>
 
           {/* About */}
           <Link
             to="/about"
-            className={`px-3.5 py-2 text-[15px] font-medium rounded-lg transition-colors relative ${
+            className={`px-2.5 lg:px-3 py-2 text-[14px] lg:text-[15px] font-medium rounded-lg transition-colors relative ${
               isAboutActive
                 ? "text-[#111111] dark:text-[#F5F5F5] font-semibold bg-[#F1F1F1] dark:bg-[#171717]"
                 : "text-[#555555] hover:text-[#111111] hover:bg-[#F1F1F1]/80 dark:text-[#B5B5B5] dark:hover:text-[#F5F5F5] dark:hover:bg-[#171717]/80"
@@ -211,7 +246,7 @@ export const Header: React.FC = () => {
           >
             About
             {isAboutActive && (
-              <span className="absolute bottom-1 left-3.5 right-3.5 h-0.5 bg-[#111111] dark:bg-[#F5F5F5] rounded-full" />
+              <span className="absolute bottom-1 left-2.5 right-2.5 lg:left-3 lg:right-3 h-0.5 bg-[#111111] dark:bg-[#F5F5F5] rounded-full" />
             )}
           </Link>
         </nav>
@@ -236,7 +271,7 @@ export const Header: React.FC = () => {
           {/* Primary Action Button */}
           <Link
             to="/contact"
-            className="inline-flex items-center justify-center px-5 py-2.5 text-sm font-semibold text-white bg-[#111111] hover:bg-[#262626] dark:bg-[#F5F5F5] dark:text-[#090909] dark:hover:bg-[#E5E5E5] rounded-xl shadow-subtle transition-all focus-ring active:scale-[0.99]"
+            className="inline-flex items-center justify-center px-4 lg:px-5 py-2.5 text-xs lg:text-sm font-semibold text-white bg-[#111111] hover:bg-[#262626] dark:bg-[#F5F5F5] dark:text-[#090909] dark:hover:bg-[#E5E5E5] rounded-xl shadow-subtle transition-all focus-ring active:scale-[0.99] shrink-0"
           >
             Discuss Your Project
           </Link>
@@ -321,6 +356,20 @@ export const Header: React.FC = () => {
                 </Link>
               </div>
             </div>
+
+            {/* AI Solutions */}
+            <Link
+              to="/ai-solutions"
+              onClick={() => setMobileMenuOpen(false)}
+              className={`block py-2.5 px-3 rounded-lg text-base font-semibold transition-colors ${
+                isAiSolutionsActive
+                  ? "text-[#111111] dark:text-[#F5F5F5] bg-[#F1F1F1] dark:bg-[#171717]"
+                  : "text-[#555555] dark:text-[#B5B5B5] hover:bg-[#F1F1F1] dark:hover:bg-[#171717]"
+              }`}
+              aria-current={isAiSolutionsActive ? "page" : undefined}
+            >
+              AI Solutions
+            </Link>
 
             {/* Products (In-house) */}
             <Link
